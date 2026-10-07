@@ -210,22 +210,6 @@
     });
   }
 
-  /* ---------- 首頁：研究領域（捲動時依序浮現） ---------- */
-
-  function renderResearch() {
-    const el = $("[data-research]");
-    if (!el || !SITE.research) return;
-
-    if (!SITE.research.length) { el.closest(".research").hidden = true; return; }
-
-    el.innerHTML = SITE.research.map((r, i) => `
-      <li class="research__item reveal" data-reveal="blur" data-delay="${Math.min(i, 4)}">
-        <span class="research__idx">${String(i + 1).padStart(2, "0")}</span>
-        <h3 class="research__name">${esc(r.title)}</h3>
-        ${r.desc ? `<p class="research__desc">${esc(r.desc)}</p>` : ""}
-      </li>`).join("");
-  }
-
   /* ---------- 首頁資訊流（學術論文 + 投資研究，新的排前面） ---------- */
 
   function renderHomeFeed() {
@@ -720,7 +704,6 @@
     renderInsights();
     renderArticle();
     renderStats();
-    renderResearch();
     initReveal();
     initScrollDriver();
     initMagnetic();
