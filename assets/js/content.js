@@ -13,6 +13,8 @@ window.SITE = {
      --------------------------------------------------------------- */
   profile: {
     name:      { en: "Lai Tung Yuen",        zh: "黎東源" },
+    /* 左側導覽列顯示的文字（可改成名字，或留空自動用 name） */
+    navBrand:  "Home",
     /* 首頁大圖下方那行小字（role）已移除；
        若要恢復，加回 role: { en: "...", zh: "..." } 即可 */
     affiliation: { en: "Duke University", zh: "Duke Kunshan University" },
@@ -64,12 +66,13 @@ window.SITE = {
     /* 自我介紹：每個字串是一個段落。zh 留空則只顯示英文。 */
     intro: {
       en: [
-        "I am an undergraduate student in the dual-bachelor's degree program of Duke University and Duke Kunshan University, pursuing a Bachelor of Arts in Quantitative Political Economy (Public Policy track).",
+        "Dongyuan Li is an undergraduate student in the dual-bachelor's degree program of Duke University and Duke Kunshan University, pursuing a Bachelor of Arts in Quantitative Political Economy (Public Policy track).",
         "My academic and research interests center on the intersection of law, finance and policy: corporate governance and financial risk, financial regulation and securities law, law and economics, as well as political economy. I aim to understand legal and market issues from both policy-oriented and quantitative perspectives."
       ],
       zh: []
     },
-    /* 側欄資訊卡：可自由增刪 */
+    /* 側欄資訊卡已於 2026-10-08 移除（頁面改為大圖版型）。
+       若要恢復，把 facts 內容加回來並在 about.html 掛上 data-about-facts */
     facts: [
       { label: "Name / 姓名",         value: "Lai Tung Yuen" },
       { label: "Affiliation / 單位",  value: "Duke University" },

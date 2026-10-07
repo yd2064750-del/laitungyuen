@@ -13,7 +13,7 @@
 
 <header class="nav">
   <div class="nav__inner">
-    <a class="nav__brand" href="index.html" data-nav-brand>Lai Tung Yuen</a>
+    <a class="nav__brand" href="index.html" data-nav-brand>Home</a>
     <nav class="nav__links" aria-label="主導覽">
       <a class="nav__link" href="about.html">About Me</a>
       <a class="nav__link" href="academics.html">Academics</a>
@@ -28,30 +28,22 @@
 
 <main>
 
-  <!-- ========== 頁首 ========== -->
-  <section class="page-head wrap">
-    <h1 class="reveal">About Me</h1>
-    <div class="tc-title reveal" data-delay="1">關於我</div>
-    <div class="lede reveal" data-delay="2" data-about-intro></div>
+  <!-- ========== About Me：大圖 + 左淡右深的漸層遮罩，文字為白色 ========== -->
+  <section class="about-hero">
+    <div class="about-hero__media">
+      <img src="assets/img/about.jpg" alt="" fetchpriority="high">
+    </div>
+    <div class="about-hero__scrim" aria-hidden="true"></div>
+    <div class="about-hero__caption">
+      <h1 class="about-hero__title">About Me</h1>
+      <div class="about-hero__bio" data-about-intro></div>
+      <a class="about-hero__email" href="#" data-email></a>
+    </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- ========== 簡歷 ========== -->
-  <section class="section wrap">
-    <div class="resume">
-
-      <!-- 左側黏性資訊卡 -->
-      <aside class="resume__side reveal">
-        <dl data-about-facts></dl>
-      </aside>
-
-      <!-- 右側可滾動時間軸 -->
-      <div data-about>
-        <div data-about-sections></div>
-      </div>
-
-    </div>
+  <!-- 教育背景／經歷時間軸：content.js 的 about.sections 有內容時才會出現 -->
+  <section class="section wrap" data-about-sections-wrap hidden>
+    <div data-about-sections></div>
   </section>
 
 </main>

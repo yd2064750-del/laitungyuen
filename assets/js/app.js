@@ -45,8 +45,9 @@
     const p = SITE.profile || {};
     const name = t(p.name, "en");
 
-    // 導航品牌
-    $$("[data-nav-brand]").forEach(el => { el.textContent = name; });
+    // 導航品牌（content.js 的 profile.navBrand，留空則用姓名）
+    const brand = p.navBrand || name;
+    $$("[data-nav-brand]").forEach(el => { el.textContent = brand; });
 
     // 頁腳姓名
     $$("[data-footer-name]").forEach(el => { el.textContent = name; });
@@ -84,9 +85,7 @@
     const nav = $(".nav");
     if (!nav) return;
 
-    // 品牌名
-    const brand = $("[data-nav-brand]");
-    if (brand && SITE.profile) brand.textContent = t(SITE.profile.name, "en");
+    // 品牌名由 initChrome 統一處理（見 profile.navBrand）
 
     // 滾動狀態
     const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 8);
@@ -171,28 +170,63 @@
     window.addEventListener("resize", update);
   }
 
-  /* ---------- 首頁：三入口 ---------- */
+  /* ---------- 首頁資訊流（學術論文 + 投資研究，新的排前面） ---------- */
 
-  function renderEntries() {
-    const grid = $("[data-entries]");
-    if (!grid || !SITE.entries) return;
-    // 卡片只保留英文標題。
-    // 若日後想恢復中文副標題與描述，把下面被註解掉的兩行放回來即可
-    //   <div class="entry__tc">${esc(e.tc || "")}</div>
-    //   <p class="entry__desc">${esc(e.desc || e.descEn || "")}</p>
-    grid.innerHTML = SITE.entries.map((e, i) => `
-      <a class="entry reveal" href="${esc(e.href)}" data-delay="${i}">
-        <div class="entry__en">${esc(e.en)}</div>
-        <span class="entry__arrow" aria-hidden="true">${arrowSvg}</span>
+  function renderHomeFeed() {
+    const el = $("[data-home-feed]");
+    if (!el) return;
+
+    const items = [];
+
+    (SITE.publications || []).forEach(p => {
+      items.push({
+        type: "pub",
+        id: p.id,
+        sort: (p.year || "0000") + "-00-00",
+        dateLabel: p.year || "",
+        kind: p.type || "Publication",
+        title: p.title,
+        desc: p.abstract || ""
+      });
+    });
+
+    (SITE.insights || []).forEach(p => {
+      items.push({
+        type: "post",
+        id: p.id,
+        sort: p.date || "0000-00-00",
+        dateLabel: p.date || "",
+        kind: p.category || "Insight",
+        title: p.title,
+        desc: p.excerpt || ""
+      });
+    });
+
+    // 越新發布的排越上面
+    items.sort((a, b) => String(b.sort).localeCompare(String(a.sort)));
+
+    if (!items.length) {
+      el.innerHTML = `<div class="empty">尚無內容。</div>`;
+      return;
+    }
+
+    el.innerHTML = items.map((it, i) => `
+      <a class="post reveal" href="article.html?type=${it.type}&id=${encodeURIComponent(it.id)}" data-delay="${i % 3}">
+        <div class="post__meta">
+          ${it.dateLabel ? `<span>${esc(it.dateLabel)}</span><span>·</span>` : ""}
+          <span>${esc(it.kind)}</span>
+        </div>
+        <h3 class="post__title">${esc(it.title)}</h3>
+        ${it.desc ? `<p class="post__excerpt">${esc(it.desc)}</p>` : ""}
+        <div class="post__more">閱讀全文 ${arrowSvg}</div>
       </a>`).join("");
   }
 
   /* ---------- 關於我：簡歷 ---------- */
 
   function renderAbout() {
-    const root = $("[data-about]");
-    if (!root || !SITE.about) return;
     const a = SITE.about;
+    if (!a) return;
 
     // 側欄
     const side = $("[data-about-facts]");
@@ -213,10 +247,14 @@
       intro.innerHTML = paras.map(p => `<p>${esc(p)}</p>`).join("");
     }
 
-    // 時間軸
+    // 時間軸（about.sections 為空時整塊隱藏）
     const main = $("[data-about-sections]");
     if (!main) return;
-    main.innerHTML = (a.sections || []).map(sec => `
+    const wrap = $("[data-about-sections-wrap]") || main;
+    const secs = a.sections || [];
+    if (!secs.length) { wrap.hidden = true; return; }
+    wrap.hidden = false;
+    main.innerHTML = secs.map(sec => `
       <section class="section--tight reveal">
         <h2 style="font-size:var(--fs-xl);margin-bottom:1.75rem">
           ${esc(t(sec.title, "en"))}
@@ -235,10 +273,6 @@
             </article>`).join("")}
         </div>
       </section>`).join("");
-
-    // 頁首
-    const nameEl = $("[data-about-name]");
-    if (nameEl) nameEl.textContent = t(SITE.profile.name, "en");
   }
 
   /* ---------- 學術成果 ---------- */
@@ -384,8 +418,6 @@
     }
 
     document.title = `${item.title} — ${t(SITE.profile.name, "en")}`;
-    const nameEl = $("[data-nav-brand]");
-    if (nameEl) nameEl.textContent = t(SITE.profile.name, "en");
 
     /* --- 頁首 --- */
     const self = t(SITE.profile.name, "en");
@@ -457,7 +489,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     initChrome();
     initNav();
-    renderEntries();
+    renderHomeFeed();
     renderAbout();
     renderAcademics();
     renderInsights();
