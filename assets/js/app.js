@@ -632,7 +632,7 @@
     const self = t(SITE.profile.name, "en");
     const metaBits = isPub
       ? [authorLine(item.authors || [], self), item.venue, item.year].filter(Boolean)
-      : [item.category, item.date, item.readTime].filter(Boolean);
+      : [item.category, item.date].filter(Boolean);
 
     const head = $("[data-article-head]");
     if (head) {

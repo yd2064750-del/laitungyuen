@@ -156,8 +156,6 @@ window.SITE = {
              "Law", "Political Philosophy", "Academic Writing", "Duke Kunshan University"],
       title: "Beyond Institutions: Who Will Restrain Power?",
       excerpt: "I'm pleased to share my latest article published as part of the ILMS Law & Society Series IV at Duke Kunshan University.",
-      /* 預估閱讀時間。會顯示在標題下方的資訊列；不想顯示就改成空字串 "" */
-      readTime: "1 min",
       body: [
         { p: [
           "On August 31, Professor Yao Yang, Dean of the Di-shui-hu Advanced Finance Institute at Shanghai University of Finance and Economics, delivered a thought-provoking lecture at Duke Kunshan University titled “Rethinking Rule of Man.”"
@@ -192,7 +190,6 @@ window.SITE = {
       tags: ["Macro", "Markets"],
       title: "文章標題一：關於市場週期的觀察",
       excerpt: "一段 1–2 句的摘要，讓讀者在列表頁就能判斷要不要點進來讀。",
-      readTime: "8 min",
       body: [
         { h: "第一節小標題", p: ["段落內容待上傳。", "第二段內容。"] }
       ]
@@ -204,7 +201,6 @@ window.SITE = {
       tags: ["Valuation"],
       title: "文章標題二：估值方法筆記",
       excerpt: "摘要待上傳。",
-      readTime: "6 min",
       body: []
     },
     {
@@ -214,7 +210,6 @@ window.SITE = {
       tags: ["Portfolio"],
       title: "文章標題三：資產配置的思考",
       excerpt: "摘要待上傳。",
-      readTime: "10 min",
       body: []
     }
   ],
