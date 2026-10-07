@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# 編輯器
+.vscode/
+.idea/
+
+# 本地預覽
+.serve/
+
+# WorkBuddy 專案資料（不發佈）
+.workbuddy/

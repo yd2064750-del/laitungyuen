@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tung Yuen Lai — Personal Site</title>
+<meta name="description" content="個人網站：學術成果與投資研究。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="">
+
+<!-- ========== 導航 ========== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" data-nav-brand>Your Name</a>
+    <nav class="nav__links" aria-label="主導覽">
+      <a class="nav__link" href="about.html">About Me</a>
+      <a class="nav__link" href="academics.html">Academics</a>
+      <a class="nav__link" href="insights.html">Insights</a>
+      <!-- 若要放 CV：把 href 改成你的 PDF 路徑，例如 assets/cv.pdf -->
+      <a class="nav__link" href="#">CV</a>
+    </nav>
+    <button class="nav__toggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ========== Hero：圖片佔據螢幕上方二分之一 ========== -->
+  <section class="hero" aria-label="主視覺">
+    <div class="hero__media">
+      <img src="assets/img/hero.jpg" alt="個人照片" fetchpriority="high">
+    </div>
+    <div class="hero__scrim"></div>
+    <div class="hero__caption">
+      <h1 class="hero__name" data-hero-name>Tung Yuen Lai</h1>
+      <div class="hero__role" data-hero-role></div>
+    </div>
+  </section>
+
+  <!-- ========== 三個入口 ========== -->
+  <section class="entries" aria-label="主要區塊">
+    <div class="entries__grid" data-entries>
+      <!-- 由 app.js 依 content.js 渲染 -->
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== 頁腳 ========== -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>&copy; <span data-year>2026</span> <span data-footer-name>Tung Yuen Lai</span>. All rights reserved.</div>
+    <div>
+      <a href="#" data-email>Email</a> ·
+      <a href="about.html">About</a> ·
+      <a href="academics.html">Academics</a> ·
+      <a href="insights.html">Insights</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

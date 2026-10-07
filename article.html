@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading — Your Name</title>
+<meta name="description" content="閱讀全文。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="">
+
+<!-- 閱讀進度條 -->
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" data-nav-brand>Your Name</a>
+    <nav class="nav__links" aria-label="主導覽">
+      <a class="nav__link" href="about.html">About Me</a>
+      <a class="nav__link" href="academics.html">Academics</a>
+      <a class="nav__link" href="insights.html">Insights</a>
+      <a class="nav__link" href="#">CV</a>
+    </nav>
+    <button class="nav__toggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="reader" data-article>
+  <div class="wrap wrap--read">
+
+    <!-- 返回 -->
+    <div style="padding-top:calc(var(--nav-h) + 1.5rem)">
+      <a class="reader__back" href="insights.html" data-article-back></a>
+    </div>
+
+    <!-- 標題區 -->
+    <header class="reader__head reveal" data-article-head></header>
+
+    <!-- 正文 -->
+    <article class="prose stagger" data-article-body></article>
+
+    <!-- 上一篇 / 下一篇 -->
+    <nav class="pager" aria-label="文章導覽" data-article-pager></nav>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>&copy; <span data-year>2026</span> <span data-footer-name>Tung Yuen Lai</span>. All rights reserved.</div>
+    <div>
+      <a href="#" data-email>Email</a> ·
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
