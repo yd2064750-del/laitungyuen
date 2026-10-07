@@ -156,7 +156,8 @@ window.SITE = {
              "Law", "Political Philosophy", "Academic Writing", "Duke Kunshan University"],
       title: "Beyond Institutions: Who Will Restrain Power?",
       excerpt: "I'm pleased to share my latest article published as part of the ILMS Law & Society Series IV at Duke Kunshan University.",
-      readTime: "4 min",
+      /* 預估閱讀時間。會顯示在標題下方的資訊列；不想顯示就改成空字串 "" */
+      readTime: "1 min",
       body: [
         { p: [
           "On August 31, Professor Yao Yang, Dean of the Di-shui-hu Advanced Finance Institute at Shanghai University of Finance and Economics, delivered a thought-provoking lecture at Duke Kunshan University titled “Rethinking Rule of Man.”"
