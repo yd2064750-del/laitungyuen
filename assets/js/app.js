@@ -134,40 +134,96 @@
     targets.forEach(el => io.observe(el));
   }
 
-  /* ---------- 首頁 Hero 視差 ---------- */
+  /* ---------- 捲動驅動（全站唯一的 scroll 監聽） ----------
+     統一在同一個 requestAnimationFrame 裡處理：
+       · 導覽列毛玻璃狀態
+       · 閱讀進度條（用 transform: scaleX，走 GPU）
+       · Hero 縮放進度（寫入 CSS 變數 --hero-t，實際動畫交給 CSS）
+     只寫 CSS 變數、不直接改樣式，避免 layout thrashing。
+     ------------------------------------------------------- */
 
-  function initParallax() {
-    const media = $(".hero__media");
-    if (!media) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
+  function initScrollDriver() {
+    const root = document.documentElement;
+    const nav = $(".nav");
+    const bar = $(".progress");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let ticking = false;
+
     const update = () => {
-      const y = window.scrollY;
-      if (y < window.innerHeight) media.style.transform = `translate3d(0, ${y * 0.28}px, 0)`;
       ticking = false;
+      const y = window.scrollY;
+      const vh = Math.max(window.innerHeight, 1);
+
+      if (nav) nav.classList.toggle("is-scrolled", y > 8);
+
+      if (bar) {
+        const max = document.documentElement.scrollHeight - vh;
+        const p = max > 0 ? Math.min(Math.max(y / max, 0), 1) : 0;
+        bar.style.transform = `scaleX(${p.toFixed(4)})`;
+      }
+
+      // 尊重 reduced-motion：不做視差，只把進度歸零
+      root.style.setProperty("--hero-t", reduce ? "0" : Math.min(y / vh, 1).toFixed(4));
     };
-    window.addEventListener("scroll", () => {
+
+    const onScroll = () => {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    window.addEventListener("orientationchange", onScroll);
   }
 
-  /* ---------- 閱讀進度條 ---------- */
+  /* ---------- 磁吸式 hover（只有滑鼠裝置才啟用） ---------- */
 
-  function initProgress() {
-    const bar = $(".progress");
-    if (!bar) return;
-    let ticking = false;
-    const update = () => {
-      const h = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
-      ticking = false;
-    };
-    update();
-    window.addEventListener("scroll", () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(update); }
-    }, { passive: true });
-    window.addEventListener("resize", update);
+  function initMagnetic() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    const MAX_X = 5, MAX_Y = 4;   // 位移上限，維持克制
+
+    $$("[data-magnetic]").forEach(el => {
+      let raf = null;
+
+      const onMove = (e) => {
+        const r = el.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) / (r.width || 1);
+        const dy = (e.clientY - (r.top + r.height / 2)) / (r.height || 1);
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          el.style.transform =
+            `translate3d(${(dx * MAX_X).toFixed(2)}px, ${(dy * MAX_Y).toFixed(2)}px, 0)`;
+        });
+      };
+
+      const onLeave = () => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = null;
+        el.style.transform = "";
+      };
+
+      el.addEventListener("mousemove", onMove);
+      el.addEventListener("mouseleave", onLeave);
+      el.addEventListener("blur", onLeave);
+    });
+  }
+
+  /* ---------- 首頁：研究領域（捲動時依序浮現） ---------- */
+
+  function renderResearch() {
+    const el = $("[data-research]");
+    if (!el || !SITE.research) return;
+
+    if (!SITE.research.length) { el.closest(".research").hidden = true; return; }
+
+    el.innerHTML = SITE.research.map((r, i) => `
+      <li class="research__item reveal" data-reveal="blur" data-delay="${Math.min(i, 4)}">
+        <span class="research__idx">${String(i + 1).padStart(2, "0")}</span>
+        <h3 class="research__name">${esc(r.title)}</h3>
+        ${r.desc ? `<p class="research__desc">${esc(r.desc)}</p>` : ""}
+      </li>`).join("");
   }
 
   /* ---------- 首頁資訊流（學術論文 + 投資研究，新的排前面） ---------- */
@@ -287,7 +343,7 @@
       const p = SITE.profile;
       const acadName = t(p.nameAcademic || p.name, "en");
       card.innerHTML = `
-        <img class="scholar__avatar" src="${esc(p.avatar)}" alt="${esc(acadName)}">
+        <img class="scholar__avatar" src="${esc(p.avatar)}" alt="${esc(acadName)}" loading="lazy" decoding="async">
         <div class="scholar__name">${esc(acadName)}</div>
         <div class="scholar__affil">${esc(t(p.affiliation, "en"))}</div>
         <div class="scholar__links">
@@ -562,11 +618,14 @@
     const idx = src.findIndex(x => x.id === id);
     const item = idx >= 0 ? src[idx] : null;
 
-    // 返回連結
+    // 返回連結：只留一個箭頭（文字放在 aria-label / title，維持無障礙）
     const back = $("[data-article-back]");
     if (back) {
+      const label = isPub ? "返回學術成果 / Back to Academics" : "返回投資研究 / Back to Insights";
       back.href = isPub ? "academics.html" : "insights.html";
-      back.innerHTML = `${backSvg} ${isPub ? "返回學術成果 / Back to Academics" : "返回投資研究 / Back to Insights"}`;
+      back.innerHTML = backSvg;
+      back.setAttribute("aria-label", label);
+      back.setAttribute("title", label);
     }
 
     if (!item) {
@@ -661,8 +720,9 @@
     renderInsights();
     renderArticle();
     renderStats();
+    renderResearch();
     initReveal();
-    initParallax();
-    initProgress();
+    initScrollDriver();
+    initMagnetic();
   });
 })();

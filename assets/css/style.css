@@ -125,6 +125,8 @@ p  { margin: 0 0 1.1em; }
   backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid transparent;
   transition: border-color .3s var(--ease), background .3s var(--ease);
+  /* 跨頁轉場時導覽列保持不動 */
+  view-transition-name: site-nav;
 }
 .nav.is-scrolled { border-bottom-color: var(--border-soft); }
 
@@ -174,8 +176,11 @@ p  { margin: 0 0 1.1em; }
   overflow: hidden;
   background: var(--surface);
 }
+/* Hero：捲動時緩慢縮小（--hero-t 由 JS 寫入，0→1）
+   縮放用 transform，只走 GPU，不觸發 layout */
 .hero__media {
-  position: absolute; inset: -12% 0;
+  position: absolute; inset: 0;
+  transform: scale(calc(1.10 - var(--hero-t, 0) * 0.10));
   will-change: transform;
 }
 .hero__media img {
@@ -185,10 +190,10 @@ p  { margin: 0 0 1.1em; }
      數字越大 → 畫面越往下（人臉完整、山景較少）。
      可在 style.css 的 :root 調整 --hero-focus。 */
   object-position: center var(--hero-focus);
-  transform: scale(1.04);
-  animation: heroKen 14s var(--ease) forwards;
+  transform: scale(1.05);
+  animation: heroKen 12s var(--ease) forwards;
 }
-@keyframes heroKen { from { transform: scale(1.12); } to { transform: scale(1.04); } }
+@keyframes heroKen { from { transform: scale(1.05); } to { transform: scale(1.00); } }
 
 .hero__scrim {
   position: absolute; inset: 0;
@@ -200,9 +205,21 @@ p  { margin: 0 0 1.1em; }
   padding: 0 var(--gutter);
   max-width: var(--maxw); margin: 0 auto;
   text-shadow: 0 1px 20px rgba(0, 0, 0, .35);
+  /* 捲動時淡出（透明度會被瀏覽器自動夾在 0–1） */
+  opacity: calc(1 - var(--hero-t, 0) * 2);
 }
 .hero__name { font-size: clamp(1.6rem, 4vw, 2.75rem); letter-spacing: -0.01em; }
 .hero__role { font-size: var(--fs-sm); opacity: .9; margin-top: .35rem; letter-spacing: .06em; }
+
+/* 文字進場：opacity + translateY */
+.hero__name, .hero__role {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroTextIn 1.1s var(--ease) forwards;
+}
+.hero__name { animation-delay: .2s; }
+.hero__role { animation-delay: .38s; }
+@keyframes heroTextIn { to { opacity: 1; transform: translateY(0); } }
 
 /* ---------- 6. 首页三个入口 ---------- */
 .entries { padding: clamp(3rem, 9vh, 6rem) 0 clamp(3rem, 8vh, 5rem); }
@@ -242,7 +259,48 @@ p  { margin: 0 0 1.1em; }
 .entry__arrow svg { width: 15px; height: 15px; }
 .entry:hover .entry__arrow svg { transform: translateX(4px); }
 
-/* ---------- 7. 页面头部（子页） ---------- */
+/* ---------- 6b. 首頁研究領域（捲動敘事） ---------- */
+.research { padding: clamp(3.5rem, 11vh, 8rem) 0 clamp(2rem, 6vh, 4rem); }
+.research__inner {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+.research__aside { position: sticky; top: calc(var(--nav-h) + 16vh); }
+.research__title { font-size: var(--fs-lg); letter-spacing: -0.01em; }
+
+.research__list { list-style: none; margin: 0; padding: 0; }
+.research__item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0 1rem;
+  align-items: baseline;
+  padding: clamp(2.5rem, 10vh, 6.5rem) 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.research__item:first-child { padding-top: 0; }
+.research__item:last-child { border-bottom: 0; padding-bottom: 0; }
+.research__idx {
+  font-size: var(--fs-xs);
+  letter-spacing: .14em;
+  color: var(--text-3);
+}
+.research__name {
+  font-size: clamp(1.65rem, 4vw, 2.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+.research__desc {
+  grid-column: 2;
+  margin: .9rem 0 0;
+  max-width: 52ch;
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+
+/* ---------- 7. 頁面頭部（子頁） ---------- */
 .page-head {
   padding: calc(var(--nav-h) + clamp(2.5rem, 8vh, 5rem)) 0 clamp(1.5rem, 4vh, 2.5rem);
 }
@@ -255,9 +313,13 @@ p  { margin: 0 0 1.1em; }
 .page-head .lede p:last-child { margin-bottom: 0; }
 
 /* 卷动进度条 */
+/* 捲動進度條：用 transform: scaleX 而非 width，避免每帧重新排版 */
 .progress {
-  position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 120;
-  background: var(--accent); transition: width .1s linear;
+  position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 120;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  will-change: transform;
 }
 
 /* ---------- 8a. 關於我：大圖版型 ---------- */
@@ -529,7 +591,7 @@ p  { margin: 0 0 1.1em; }
   position: relative;
 }
 .post::after { content: ""; position: absolute; inset: 0; border-radius: inherit; border: 1px solid var(--border-soft); pointer-events: none; }
-.post:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); background: #fff; color: var(--text); }
+.post:hover { transform: translateY(-6px) scale(1.006); box-shadow: var(--shadow-lg); background: #fff; color: var(--text); }
 .post__meta { font-size: var(--fs-xs); letter-spacing: .08em; color: var(--text-3); text-transform: uppercase; display: flex; gap: .6rem; }
 .post__title { font-size: var(--fs-lg); line-height: 1.3; }
 .post__excerpt { font-size: var(--fs-sm); color: var(--text-2); flex: 1; }
@@ -542,8 +604,22 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------- 11. 内文阅读页 ---------- */
 .reader { padding-bottom: 6rem; }
-.reader__back { font-size: var(--fs-sm); display: inline-flex; align-items: center; gap: .4rem; color: var(--text-2); }
-.reader__back:hover { color: var(--text); }
+/* 返回：只有一個箭頭 */
+.reader__back {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  color: var(--text-2);
+  border: 1px solid transparent;
+  transition: color .35s var(--ease), border-color .35s var(--ease),
+              background .35s var(--ease), transform .35s var(--ease);
+}
+.reader__back svg { width: 16px; height: 16px; transition: transform .45s var(--ease); }
+.reader__back:hover {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--surface);
+}
+.reader__back:hover svg { transform: translateX(-3px); }
 .reader__head { padding: clamp(1.5rem, 4vh, 3rem) 0 clamp(1rem, 3vh, 2rem); border-bottom: 1px solid var(--border-soft); margin-bottom: clamp(2rem, 5vh, 3.5rem); }
 .reader__title { font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -0.02em; }
 .reader__byline { margin-top: 1rem; font-size: var(--fs-sm); color: var(--text-2); }
@@ -608,7 +684,16 @@ p  { margin: 0 0 1.1em; }
   transform: translateY(28px);
   transition: opacity .9s var(--ease), transform .9s var(--ease);
 }
-.reveal.is-visible { opacity: 1; transform: none; }
+/* 變體：柔和模糊淡入（用在研究領域這種大標） */
+.reveal[data-reveal="blur"] {
+  transform: translateY(22px) scale(.995);
+  filter: blur(10px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease);
+}
+/* 變體：由略小放大進場 */
+.reveal[data-reveal="scale"] { transform: translateY(22px) scale(.97); }
+
+.reveal.is-visible { opacity: 1; transform: none; filter: blur(0); }
 .reveal[data-delay="1"] { transition-delay: .09s; }
 .reveal[data-delay="2"] { transition-delay: .18s; }
 .reveal[data-delay="3"] { transition-delay: .27s; }
@@ -628,7 +713,15 @@ p  { margin: 0 0 1.1em; }
 .stagger.is-visible > *:nth-child(6) { transition-delay: .40s; }
 .stagger.is-visible > *:nth-child(n+7) { transition-delay: .45s; }
 
-/* 页面进入 */
+/* 跨頁轉場（View Transitions API；不支援的瀏覽器會直接忽略） */
+@view-transition { navigation: auto; }
+
+::view-transition-old(root),
+::view-transition-new(root) { animation-duration: .4s; animation-timing-function: var(--ease); }
+
+::view-transition-group(site-nav) { animation-duration: .4s; }
+
+/* 頁面進入（舊瀏覽器的後備） */
 @keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
 body { animation: pageIn .5s var(--ease) both; }
 
@@ -638,6 +731,9 @@ body { animation: pageIn .5s var(--ease) both; }
   .resume__side, .scholar__card { position: static; }
   .entries__grid { grid-template-columns: 1fr; }
   .entry { min-height: auto; }
+  /* 平板：研究領域改單欄，取消黏性 */
+  .research__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .research__aside { position: static; }
 }
 
 @media (max-width: 640px) {
@@ -658,6 +754,10 @@ body { animation: pageIn .5s var(--ease) both; }
   .nav__link { padding: .75rem 0; font-size: 1rem; width: 100%; border-bottom: 1px solid var(--border-soft); }
   .nav__link::after { display: none; }
   .hero { height: 46vh; }
+  /* 手機：縮放幅度減半，減少長距離位移 */
+  .hero__media { transform: scale(calc(1.06 - var(--hero-t, 0) * 0.06)); }
+  .research__item { grid-template-columns: 1fr; gap: .6rem; padding: clamp(2rem, 8vh, 3.5rem) 0; }
+  .research__desc { grid-column: 1; }
 }
 
 /* ---------- 15. 无障碍 / 减少动效 ---------- */
@@ -668,7 +768,19 @@ body { animation: pageIn .5s var(--ease) both; }
     transition-duration: .001ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal, .stagger > * { opacity: 1; transform: none; }
+  .reveal, .stagger > * { opacity: 1; transform: none; filter: none; }
+
+  /* 關閉視差與捲動縮放 */
+  .hero__media { transform: none !important; }
+  .hero__media img { animation: none; transform: none; }
+  .hero__caption { opacity: 1 !important; }
+  .hero__name, .hero__role { opacity: 1; transform: none; animation: none; }
+
+  /* 黏性區塊改為一般流動，避免長距離位移 */
+  .research__aside { position: static; }
+
+  /* 磁吸位移一律取消 */
+  [data-magnetic] { transform: none !important; }
 }
 
 /* ---------- 16. 打印 ---------- */

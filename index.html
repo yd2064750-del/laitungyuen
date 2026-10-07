@@ -14,11 +14,11 @@
   <div class="nav__inner">
     <a class="nav__brand" href="index.html" data-nav-brand>Home</a>
     <nav class="nav__links" aria-label="主導覽">
-      <a class="nav__link" href="about.html">About Me</a>
-      <a class="nav__link" href="academics.html">Academics</a>
-      <a class="nav__link" href="insights.html">Insights</a>
+      <a class="nav__link" data-magnetic href="about.html">About Me</a>
+      <a class="nav__link" data-magnetic href="academics.html">Academics</a>
+      <a class="nav__link" data-magnetic href="insights.html">Insights</a>
       <!-- 若要放 CV：把 href 改成你的 PDF 路徑，例如 assets/cv.pdf -->
-      <a class="nav__link" href="#">CV</a>
+      <a class="nav__link" data-magnetic href="#">CV</a>
     </nav>
     <button class="nav__toggle" aria-label="開啟選單" aria-expanded="false">
       <span></span><span></span>
@@ -37,6 +37,19 @@
     <div class="hero__caption">
       <h1 class="hero__name" data-hero-name>Lai Tung Yuen</h1>
       <div class="hero__role" data-hero-role></div>
+    </div>
+  </section>
+
+  <!-- ========== 研究領域：捲動時依序浮現 ========== -->
+  <section class="research" aria-label="研究領域">
+    <div class="wrap research__inner">
+      <div class="research__aside">
+        <p class="eyebrow reveal">Research</p>
+        <h2 class="research__title reveal" data-delay="1">研究領域</h2>
+      </div>
+      <ol class="research__list" data-research>
+        <!-- 由 app.js 依 content.js 的 research 渲染 -->
+      </ol>
     </div>
   </section>
 
