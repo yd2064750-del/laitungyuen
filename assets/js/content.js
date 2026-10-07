@@ -12,7 +12,7 @@ window.SITE = {
      1. 個人基本資料（導航、首頁、頁腳都會用到）
      --------------------------------------------------------------- */
   profile: {
-    name:      { en: "Tung Yuen Lai",        zh: "黎东源" },
+    name:      { en: "Tung Yuen Lai",        zh: "黎東源" },
     /* 首頁大圖下方那行小字；留空則不顯示 */
     role:      { en: "Economics & Investment Research", zh: "經濟與投資研究" },
     affiliation: { en: "Duke University", zh: "Duke Kunshan University" },
