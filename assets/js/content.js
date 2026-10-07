@@ -180,7 +180,7 @@ window.SITE = {
           "Many thanks to Professor Yao Yang, the Institute of Law, Markets and Society (ILMS) at Duke Kunshan University, and everyone who contributed to the event."
         ]},
         { h: "Read the full article", p: [
-          "The full piece is available here: <a href=\"https://lnkd.in/gzjkZPb7\" target=\"_blank\" rel=\"noopener\">Read the full article →</a>"
+          "The full piece is available here: <a href=\"https://mp.weixin.qq.com/s/QBh2dBbZnnqm-784HTGJ8w\" target=\"_blank\" rel=\"noopener\">Read the full article →</a>"
         ]}
       ]
     },
