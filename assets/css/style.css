@@ -36,7 +36,7 @@
   --fs-hero:   clamp(2.5rem, 6vw, 5rem);
 
   /* 间距 */
-  --gutter: clamp(1.25rem, 5vw, 6rem);
+  --gutter: clamp(1.5rem, 5vw, 6rem);
   --maxw: 1120px;
   --maxw-read: 680px;
 
@@ -100,8 +100,11 @@ p  { margin: 0 0 1.1em; }
 /* ---------- 3. 布局工具 ---------- */
 .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
 .wrap--read { max-width: var(--maxw-read); }
-.section { padding: clamp(4rem, 10vh, 7rem) 0; }
-.section--tight { padding: clamp(2.5rem, 6vh, 4rem) 0; }
+/* 注意：這兩個只能用 padding-block。
+   若寫成 padding 簡寫，會把 .wrap 的左右內距蓋成 0，
+   桌機有大邊距看不出來，手機就會貼邊。 */
+.section { padding-block: clamp(4rem, 10vh, 7rem); }
+.section--tight { padding-block: clamp(2.5rem, 6vh, 4rem); }
 .center { text-align: center; }
 .muted { color: var(--text-2); }
 .small { font-size: var(--fs-sm); }
@@ -261,7 +264,8 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------- 7. 頁面頭部（子頁） ---------- */
 .page-head {
-  padding: calc(var(--nav-h) + clamp(2.5rem, 8vh, 5rem)) 0 clamp(1.5rem, 4vh, 2.5rem);
+  /* 同上：用 padding-block 才不會蓋掉 .wrap 的左右內距 */
+  padding-block: calc(var(--nav-h) + clamp(2.5rem, 8vh, 5rem)) clamp(1.5rem, 4vh, 2.5rem);
 }
 .page-head h1 { font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -0.02em; }
 .page-head .tc-title { font-family: var(--font-tc); font-size: var(--fs-base); color: var(--text-2); letter-spacing: .16em; margin-top: .75rem; }
