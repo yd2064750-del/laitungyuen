@@ -451,15 +451,20 @@
     redraw();
   }
 
-  /* ---------- 點擊量記錄（後台統計用） ---------- */
+  /* ---------- 點擊量記錄（同時回傳最新次數，供文章頁公開顯示） ---------- */
 
-  function recordView(kind, id) {
+  async function recordView(kind, id) {
     const tr = SITE.tracking;
-    if (!tr || !tr.enabled || !tr.endpoint) return;
+    if (!tr || !tr.enabled || !tr.endpoint) return null;
     const url = `${tr.endpoint}/hit/${encodeURIComponent(tr.namespace)}/${encodeURIComponent(kind + "-" + id)}`;
-    // 用 1×1 圖片送出，不阻塞頁面、不受 CORS 限制
-    const img = new Image();
-    img.src = url;
+    try {
+      const r = await fetch(url);
+      if (!r.ok) return null;
+      const j = await r.json();
+      return Number(j.value) || 0;
+    } catch (e) {
+      return null;   // 服務暫時不通就只是不顯示，不打緊
+    }
   }
 
   /* ---------- 後台統計（stats.html） ---------- */
@@ -572,8 +577,13 @@
 
     document.title = `${item.title} — ${t(SITE.profile.name, "en")}`;
 
-    // 記錄這次點擊（站長可在 stats.html 看到）
-    recordView(isPub ? "pub" : "post", item.id);
+    // 記錄這次點擊，並把累計次數公開顯示在文章最下方
+    recordView(isPub ? "pub" : "post", item.id).then(n => {
+      const el = $("[data-viewcount]");
+      if (!el || n === null) return;
+      el.textContent = `${n} 次閱讀`;
+      el.hidden = false;
+    });
 
     /* --- 頁首 --- */
     const self = t(SITE.profile.name, "en");

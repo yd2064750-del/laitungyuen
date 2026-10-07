@@ -569,6 +569,16 @@ p  { margin: 0 0 1.1em; }
 .prose pre code { background: none; padding: 0; }
 .prose hr { border: 0; border-top: 1px solid var(--border-soft); margin: 2.5rem 0; }
 
+/* 公開的閱讀次數：淺色小字、靠右下 */
+.viewcount {
+  margin: 3rem 0 0;
+  text-align: right;
+  font-size: var(--fs-xs);
+  letter-spacing: .06em;
+  color: var(--text-3);
+}
+.viewcount[hidden] { display: none; }
+
 /* 文章末尾：上一篇/下一篇 */
 .pager { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-soft); }
 .pager a { font-size: var(--fs-sm); max-width: 45%; }
