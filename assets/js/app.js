@@ -203,9 +203,15 @@
       `).join("");
     }
 
-    // 自我介紹
+    // 自我介紹（支援多段落：intro.en / intro.zh 可以是字串或字串陣列）
     const intro = $("[data-about-intro]");
-    if (intro && a.intro) intro.textContent = t(a.intro, "zh");
+    if (intro && a.intro) {
+      const toArr = (v) => Array.isArray(v) ? v.filter(Boolean) : (v ? [v] : []);
+      const zh = toArr(a.intro.zh);
+      const en = toArr(a.intro.en);
+      const paras = zh.length ? zh : en;
+      intro.innerHTML = paras.map(p => `<p>${esc(p)}</p>`).join("");
+    }
 
     // 時間軸
     const main = $("[data-about-sections]");

@@ -12,9 +12,9 @@ window.SITE = {
      1. 個人基本資料（導航、首頁、頁腳都會用到）
      --------------------------------------------------------------- */
   profile: {
-    name:      { en: "Tung Yuen Lai",        zh: "黎東源" },
-    /* 首頁大圖下方那行小字；留空則不顯示 */
-    role:      { en: "Economics & Investment Research", zh: "經濟與投資研究" },
+    name:      { en: "Lai Tung Yuen",        zh: "黎東源" },
+    /* 首頁大圖下方那行小字（role）已移除；
+       若要恢復，加回 role: { en: "...", zh: "..." } 即可 */
     affiliation: { en: "Duke University", zh: "Duke Kunshan University" },
     email:     "dl437@duke.edu",
     location:  { en: "Hong Kong, Shanghai", zh: "東莞" },
@@ -61,59 +61,26 @@ window.SITE = {
      sections 內每個 item 就是時間軸上的一條
      --------------------------------------------------------------- */
   about: {
+    /* 自我介紹：每個字串是一個段落。zh 留空則只顯示英文。 */
     intro: {
-      en: "Short one-paragraph introduction about yourself.",
-      zh: "一段簡短的自我介紹，說明你的研究興趣與目前在做的事情。"
+      en: [
+        "I am an undergraduate student in the dual-bachelor's degree program of Duke University and Duke Kunshan University, pursuing a Bachelor of Arts in Quantitative Political Economy (Public Policy track).",
+        "My academic and research interests center on the intersection of law, finance and policy: corporate governance and financial risk, financial regulation and securities law, law and economics, as well as political economy. I aim to understand legal and market issues from both policy-oriented and quantitative perspectives."
+      ],
+      zh: []
     },
     /* 側欄資訊卡：可自由增刪 */
     facts: [
-      { label: "Name / 姓名",         value: "Tung Yuen Lai" },
+      { label: "Name / 姓名",         value: "Lai Tung Yuen" },
       { label: "Affiliation / 單位",  value: "Duke University" },
-      { label: "Field / 領域",        value: "Economics · Investment Research" },
+      { label: "Field / 領域",        value: "Quantitative Political Economy" },
       { label: "Email",               value: "dl437@duke.edu", href: "mailto:dl437@duke.edu" },
       { label: "Location / 地點",     value: "Hong Kong · Shanghai" }
     ],
-    sections: [
-      {
-        title: { en: "Education", zh: "教育背景" },
-        items: [
-          {
-            period: "2023 — 2027",
-            title:  { en: "B.Sc. in Economics", zh: "經濟學學士" },
-            sub:    { en: "Your University", zh: "你的大學" },
-            desc:   { en: "", zh: "主修方向、GPA、相關課程或榮譽。" },
-            bullets: []
-          }
-        ]
-      },
-      {
-        title: { en: "Experience", zh: "工作與實習經歷" },
-        items: [
-          {
-            period: "2025 — Present",
-            title:  { en: "Research Assistant", zh: "研究助理" },
-            sub:    { en: "Your Lab / Firm", zh: "所屬實驗室或機構" },
-            desc:   { en: "", zh: "" },
-            bullets: [
-              "負責的工作內容一",
-              "負責的工作內容二"
-            ]
-          }
-        ]
-      },
-      {
-        title: { en: "Skills & Interests", zh: "技能與興趣" },
-        items: [
-          {
-            period: "",
-            title:  { en: "Technical", zh: "技術能力" },
-            sub:    { en: "", zh: "" },
-            desc:   { en: "", zh: "" },
-            bullets: ["Python · R · SQL · Stata", "計量經濟學 · 時間序列分析"]
-          }
-        ]
-      }
-    ]
+    /* 教育背景 / 工作經歷 —— 內容待補，先留空。
+       要恢復時間軸時，在陣列裡加回物件即可，格式：
+       { title: {en, zh}, items: [ { period, title:{en,zh}, sub:{en,zh}, desc:{en,zh}, bullets:[] } ] } */
+    sections: []
   },
 
   /* ---------------------------------------------------------------
@@ -132,7 +99,7 @@ window.SITE = {
       id: "pub-1",
       year: "2026",
       title: "Paper Title Goes Here: A Study of Asset Pricing",
-      authors: ["Your Name", "Co-Author A", "Co-Author B"],
+      authors: ["Lai Tung Yuen", "Co-Author A", "Co-Author B"],
       venue: "Journal of Financial Economics",
       type: "Journal Article",
       citedBy: 0,
@@ -146,7 +113,7 @@ window.SITE = {
       id: "pub-2",
       year: "2025",
       title: "Second Paper Title — Working Paper",
-      authors: ["Your Name"],
+      authors: ["Lai Tung Yuen"],
       venue: "Working Paper",
       type: "Working Paper",
       citedBy: 0,
@@ -160,7 +127,7 @@ window.SITE = {
       id: "pub-3",
       year: "2025",
       title: "Third Paper Title — Conference Presentation",
-      authors: ["Your Name", "Co-Author C"],
+      authors: ["Lai Tung Yuen", "Co-Author C"],
       venue: "Annual Meeting of the AFA",
       type: "Conference",
       citedBy: 0,

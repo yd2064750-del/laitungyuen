@@ -52,8 +52,8 @@
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.10);
 
   /* 首頁大圖的垂直裁切焦點（直式照片用在橫幅時使用）
-     38% ≈ 山景為主、人臉露出下半   48% ≈ 人臉完整、山景較少 */
-  --hero-focus: 44%;
+     數字越小 → 畫面越往上；數字越大 → 畫面越往下 */
+  --hero-focus: 20%;
 }
 
 /* ---------- 2. 基础重置 ---------- */
@@ -247,6 +247,10 @@ p  { margin: 0 0 1.1em; }
 .page-head h1 { font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -0.02em; }
 .page-head .tc-title { font-family: var(--font-tc); font-size: var(--fs-base); color: var(--text-2); letter-spacing: .16em; margin-top: .75rem; }
 .page-head p.lede { margin-top: 1.25rem; max-width: 62ch; color: var(--text-2); }
+/* 自我介紹多段落 */
+.page-head .lede { max-width: 68ch; color: var(--text-2); }
+.page-head .lede p { margin: 0 0 1em; line-height: 1.75; }
+.page-head .lede p:last-child { margin-bottom: 0; }
 
 /* 卷动进度条 */
 .progress {
