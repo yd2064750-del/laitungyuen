@@ -281,32 +281,18 @@
     const list = $("[data-pubs]");
     if (!list || !SITE.publications) return;
 
-    const sc = SITE.scholar || {};
-
     // 側欄卡片
     const card = $("[data-scholar-card]");
     if (card) {
       const p = SITE.profile;
+      const acadName = t(p.nameAcademic || p.name, "en");
       card.innerHTML = `
-        <img class="scholar__avatar" src="${esc(p.avatar)}" alt="${esc(t(p.name, "en"))}">
-        <div class="scholar__name">${esc(t(p.name, "en"))}</div>
+        <img class="scholar__avatar" src="${esc(p.avatar)}" alt="${esc(acadName)}">
+        <div class="scholar__name">${esc(acadName)}</div>
         <div class="scholar__affil">${esc(t(p.affiliation, "en"))}</div>
         <div class="scholar__links">
           ${(p.links || []).map(l => `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join("")}
-        </div>
-        <table class="stats">
-          <caption>Citations</caption>
-          <tbody>
-            <tr><th>Cited by</th><td>${esc(sc.stats ? sc.stats.citations : 0)}</td></tr>
-            <tr><th>h-index</th><td>${esc(sc.stats ? sc.stats.hIndex : 0)}</td></tr>
-            <tr><th>i10-index</th><td>${esc(sc.stats ? sc.stats.i10Index : 0)}</td></tr>
-          </tbody>
-        </table>
-        ${(sc.interests && sc.interests.length) ? `
-          <div style="margin-top:1.5rem">
-            <div class="eyebrow">Research Interests</div>
-            <div class="tags">${sc.interests.map(i => `<span class="tag">${esc(i)}</span>`).join("")}</div>
-          </div>` : ""}`;
+        </div>`;
     }
 
     // 依年份分組
@@ -345,22 +331,45 @@
 
   /* ---------- Insights ---------- */
 
+  // 取一篇文章的標籤（沒有 tags 就退回 category）
+  const itemTags = (p) => (p.tags && p.tags.length) ? p.tags : (p.category ? [p.category] : []);
+
+  // 統計所有標籤出現的文章數，多的排前面
+  function tagCounts() {
+    const map = new Map();
+    (SITE.insights || []).forEach(p => {
+      new Set(itemTags(p)).forEach(t => map.set(t, (map.get(t) || 0) + 1));
+    });
+    return Array.from(map, ([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  }
+
   function renderInsights() {
     const list = $("[data-posts]");
     if (!list || !SITE.insights) return;
 
-    const cats = ["All", ...new Set(SITE.insights.map(p => p.category).filter(Boolean))];
-    const bar = $("[data-filters]");
-    if (bar) {
-      bar.innerHTML = cats.map((c, i) =>
-        `<button class="filter${i === 0 ? " is-active" : ""}" data-cat="${esc(c)}">${esc(c)}</button>`
-      ).join("");
-    }
+    const bar = $("[data-tagbar]");
+    const TOP_N = 5;               // 預設最多顯示 5 個標籤
+    const tags = tagCounts();
+    const maxCount = tags.length ? tags[0].count : 1;
 
-    const draw = (cat) => {
-      const items = SITE.insights.filter(p => cat === "All" || p.category === cat);
+    let active = null;             // 目前選取的標籤
+    let panelOpen = false;         // 是否展開「全部標籤」
+    let query = "";                // 標籤搜尋字串
+
+    const searchSvg = `<svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden="true">
+        <circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M10.6 10.6 14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>`;
+
+    /* --- 文章列表（新的排前面） --- */
+    const ordered = [...SITE.insights]
+      .sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+
+    const drawPosts = () => {
+      const items = ordered.filter(p => !active || itemTags(p).includes(active));
       if (!items.length) {
-        list.innerHTML = `<div class="empty" style="grid-column:1/-1">尚無文章。內容待上傳。</div>`;
+        list.innerHTML = `<div class="empty">這個標籤底下還沒有文章。</div>`;
         initReveal();
         return;
       }
@@ -377,16 +386,160 @@
       initReveal();
     };
 
-    draw("All");
+    /* --- 標籤列 --- */
+    const drawTags = () => {
+      if (!bar) return;
+
+      const shown = tags.slice(0, TOP_N);
+      const matched = query
+        ? tags.filter(t => t.name.toLowerCase().includes(query.toLowerCase()))
+        : tags;
+
+      bar.innerHTML = `
+        <div class="tagbar__row">
+          ${shown.map(t => `
+            <button class="tagpill${active === t.name ? " is-active" : ""}" data-tag="${esc(t.name)}">
+              ${esc(t.name)}<span class="tagpill__n">${t.count}</span>
+            </button>`).join("")}
+          <button class="tagbar__search${panelOpen ? " is-active" : ""}" data-toggle
+                  aria-expanded="${panelOpen}" title="搜尋標籤" aria-label="搜尋標籤">${searchSvg}</button>
+        </div>
+        <div class="tagpanel" ${panelOpen ? "" : "hidden"}>
+          <input class="tagpanel__input" type="search" placeholder="搜尋標籤…"
+                 value="${esc(query)}" aria-label="搜尋標籤">
+          <div class="tagpanel__cloud">
+            ${matched.length ? matched.map(t => {
+              const scale = 0.92 + 0.38 * (t.count / maxCount);
+              return `<button class="tagpill tagpill--cloud${active === t.name ? " is-active" : ""}"
+                        data-tag="${esc(t.name)}" style="font-size:${scale.toFixed(2)}rem">
+                        ${esc(t.name)}<span class="tagpill__n">${t.count}</span>
+                      </button>`;
+            }).join("") : `<p class="tagpanel__empty">沒有符合「${esc(query)}」的標籤。</p>`}
+          </div>
+          <p class="tagpanel__hint">標籤依文章數量排序，字越大表示文章越多。</p>
+        </div>`;
+
+      // 游標停在搜尋框時不要因為重繪而失焦
+      if (panelOpen && query) {
+        const input = $(".tagpanel__input", bar);
+        if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); }
+      }
+    };
+
+    const redraw = () => { drawTags(); drawPosts(); };
 
     if (bar) {
       bar.addEventListener("click", (e) => {
-        const btn = e.target.closest(".filter");
-        if (!btn) return;
-        $$(".filter", bar).forEach(b => b.classList.toggle("is-active", b === btn));
-        draw(btn.dataset.cat);
+        const toggle = e.target.closest("[data-toggle]");
+        if (toggle) { panelOpen = !panelOpen; drawTags(); return; }
+
+        const pill = e.target.closest("[data-tag]");
+        if (pill) {
+          const name = pill.dataset.tag;
+          active = (active === name) ? null : name;   // 再點一次取消篩選
+          redraw();
+        }
+      });
+
+      bar.addEventListener("input", (e) => {
+        if (!e.target.classList.contains("tagpanel__input")) return;
+        query = e.target.value;
+        drawTags();
       });
     }
+
+    redraw();
+  }
+
+  /* ---------- 點擊量記錄（後台統計用） ---------- */
+
+  function recordView(kind, id) {
+    const tr = SITE.tracking;
+    if (!tr || !tr.enabled || !tr.endpoint) return;
+    const url = `${tr.endpoint}/hit/${encodeURIComponent(tr.namespace)}/${encodeURIComponent(kind + "-" + id)}`;
+    // 用 1×1 圖片送出，不阻塞頁面、不受 CORS 限制
+    const img = new Image();
+    img.src = url;
+  }
+
+  /* ---------- 後台統計（stats.html） ---------- */
+
+  function renderStats() {
+    const root = $("[data-stats]");
+    if (!root) return;
+
+    const tr = SITE.tracking || {};
+    const gate = $("[data-stats-gate]");
+    const body = $("[data-stats-body]");
+    const form = $("[data-stats-form]");
+    const err  = $("[data-stats-error]");
+
+    const items = [
+      ...(SITE.insights || []).map(p => ({
+        kind: "post", id: p.id, group: "Insights", title: p.title, date: p.date || ""
+      })),
+      ...(SITE.publications || []).map(p => ({
+        kind: "pub", id: p.id, group: "Academics", title: p.title, date: p.year || ""
+      }))
+    ];
+
+    const readCount = async (key) => {
+      try {
+        const r = await fetch(`${tr.endpoint}/get/${encodeURIComponent(tr.namespace)}/${encodeURIComponent(key)}`);
+        if (!r.ok) return 0;                       // 還沒有紀錄的項目會 404
+        const j = await r.json();
+        return Number(j.value) || 0;
+      } catch (e) {
+        return 0;
+      }
+    };
+
+    const load = async () => {
+      const table = $("[data-stats-table]");
+      table.innerHTML = `<p class="muted small">讀取中…</p>`;
+
+      const rows = await Promise.all(items.map(async it => ({
+        ...it, count: await readCount(`${it.kind}-${it.id}`)
+      })));
+      rows.sort((a, b) => b.count - a.count);
+
+      const total = rows.reduce((s, r) => s + r.count, 0);
+      const sum = (g) => rows.filter(r => r.group === g).reduce((s, r) => s + r.count, 0);
+
+      $("[data-stats-summary]").innerHTML = `
+        <div class="statbox"><span class="statbox__n">${total}</span><span class="statbox__l">總點擊</span></div>
+        <div class="statbox"><span class="statbox__n">${sum("Insights")}</span><span class="statbox__l">Insights</span></div>
+        <div class="statbox"><span class="statbox__n">${sum("Academics")}</span><span class="statbox__l">Academics</span></div>`;
+
+      table.innerHTML = rows.map(r => `
+        <tr>
+          <td class="stats-tb__n">${r.count}</td>
+          <td>
+            <span class="stats-tb__group">${esc(r.group)}</span>
+            <a href="article.html?type=${r.kind}&id=${encodeURIComponent(r.id)}">${esc(r.title)}</a>
+            ${r.date ? `<span class="stats-tb__date">${esc(r.date)}</span>` : ""}
+          </td>
+        </tr>`).join("");
+    };
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const val = ($(".stats-gate__input", form) || {}).value || "";
+        if (val === tr.statsKey) {
+          try { sessionStorage.setItem("stats-unlocked", "1"); } catch (e2) {}
+          gate.hidden = true;
+          body.hidden = false;
+          load();
+        } else if (err) {
+          err.textContent = "密碼不正確。";
+        }
+      });
+    }
+
+    let unlocked = false;
+    try { unlocked = sessionStorage.getItem("stats-unlocked") === "1"; } catch (e) {}
+    if (unlocked) { gate.hidden = true; body.hidden = false; load(); }
   }
 
   /* ---------- 閱讀頁（論文 / 文章共用） ---------- */
@@ -418,6 +571,9 @@
     }
 
     document.title = `${item.title} — ${t(SITE.profile.name, "en")}`;
+
+    // 記錄這次點擊（站長可在 stats.html 看到）
+    recordView(isPub ? "pub" : "post", item.id);
 
     /* --- 頁首 --- */
     const self = t(SITE.profile.name, "en");
@@ -494,6 +650,7 @@
     renderAcademics();
     renderInsights();
     renderArticle();
+    renderStats();
     initReveal();
     initParallax();
     initProgress();

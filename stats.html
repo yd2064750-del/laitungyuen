@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stats</title>
+<!-- 這是後台頁面，沒有連到任何導覽列，網址是 stats.html -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="">
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" data-nav-brand>Home</a>
+    <nav class="nav__links" aria-label="主導覽">
+      <a class="nav__link" href="about.html">About Me</a>
+      <a class="nav__link" href="academics.html">Academics</a>
+      <a class="nav__link" href="insights.html">Insights</a>
+      <a class="nav__link" href="#">CV</a>
+    </nav>
+    <button class="nav__toggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main class="section wrap" data-stats>
+
+  <h1 style="font-size:clamp(1.75rem,4vw,2.5rem)">點擊量統計</h1>
+  <p class="muted small" style="margin-top:.75rem">
+    只有你看得到這個頁面。文章被點開時會自動累計，重新整理即可更新。
+  </p>
+
+  <!-- 密碼閘 -->
+  <div class="stats-gate" data-stats-gate>
+    <form class="stats-gate__form" data-stats-form>
+      <input class="stats-gate__input" type="password" placeholder="輸入檢視密碼"
+             aria-label="檢視密碼" autocomplete="current-password">
+      <button class="btn" type="submit">進入</button>
+    </form>
+    <p class="stats-gate__err" data-stats-error></p>
+    <p class="stats-gate__hint">
+      密碼定義在 <code>assets/js/content.js</code> 的 <code>tracking.statsKey</code>。
+    </p>
+  </div>
+
+  <!-- 統計內容 -->
+  <div data-stats-body hidden>
+    <div class="stats-summary" data-stats-summary></div>
+    <table class="stats-table">
+      <tbody data-stats-table></tbody>
+    </table>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>&copy; <span data-year>2026</span> <span data-footer-name></span>. All rights reserved.</div>
+    <div><a href="index.html">Home</a></div>
+  </div>
+</footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

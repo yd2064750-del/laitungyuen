@@ -13,6 +13,8 @@ window.SITE = {
      --------------------------------------------------------------- */
   profile: {
     name:      { en: "Lai Tung Yuen",        zh: "黎東源" },
+    /* 學術頁（Academics 作者卡）顯示的名字，留空則沿用 name */
+    nameAcademic: "Dongyuan Li",
     /* 左側導覽列顯示的文字（可改成名字，或留空自動用 name） */
     navBrand:  "Home",
     /* 首頁大圖下方那行小字（role）已移除；
@@ -147,9 +149,46 @@ window.SITE = {
      --------------------------------------------------------------- */
   insights: [
     {
+      id: "post-4",
+      date: "2026-09-11",
+      category: "Law & Society",
+      tags: ["Law & Society", "Political Economy", "Governance", "Institutions",
+             "Law", "Political Philosophy", "Academic Writing", "Duke Kunshan University"],
+      title: "Beyond Institutions: Who Will Restrain Power?",
+      excerpt: "I'm pleased to share my latest article published as part of the ILMS Law & Society Series IV at Duke Kunshan University.",
+      readTime: "4 min",
+      body: [
+        { p: [
+          "On August 31, Professor Yao Yang, Dean of the Di-shui-hu Advanced Finance Institute at Shanghai University of Finance and Economics, delivered a thought-provoking lecture at Duke Kunshan University titled “Rethinking Rule of Man.”"
+        ]},
+        { p: [
+          "The lecture began with a fundamental question:"
+        ], quote: "Can good institutions function effectively without good people?" },
+        { p: [
+          "Drawing on James Madison's Federalist No. 51, Oliver Hart's theory of incomplete contracts, and ideas from Confucian political thought, Professor Yao explored the limits of institutional design and the role of human judgment, character, and competence in governance."
+        ]},
+        { p: [
+          "What I found particularly interesting was the tension between institutional constraints and individual discretion. Laws and institutions cannot anticipate every possible situation. At some point, governance depends on the people who interpret, implement, and operate those institutions."
+        ]},
+        { p: [
+          "The discussion also introduced the concept of political meritocracy and raised a broader question: rather than viewing meritocracy and democracy as mutually exclusive, can modern democratic systems learn something from the emphasis on political competence and leadership selection?"
+        ]},
+        { p: [
+          "I was honored to contribute to the ILMS Law & Society Series by writing this lecture recap. The experience also gave me an opportunity to think more deeply about the intersection of law, institutions, political economy, and governance."
+        ]},
+        { p: [
+          "Many thanks to Professor Yao Yang, the Institute of Law, Markets and Society (ILMS) at Duke Kunshan University, and everyone who contributed to the event."
+        ]},
+        { h: "Read the full article", p: [
+          "The full piece is available here: <a href=\"https://lnkd.in/gzjkZPb7\" target=\"_blank\" rel=\"noopener\">Read the full article →</a>"
+        ]}
+      ]
+    },
+    {
       id: "post-1",
       date: "2026-09-15",
       category: "Macro",
+      tags: ["Macro", "Markets"],
       title: "文章標題一：關於市場週期的觀察",
       excerpt: "一段 1–2 句的摘要，讓讀者在列表頁就能判斷要不要點進來讀。",
       readTime: "8 min",
@@ -161,6 +200,7 @@ window.SITE = {
       id: "post-2",
       date: "2026-08-02",
       category: "Valuation",
+      tags: ["Valuation"],
       title: "文章標題二：估值方法筆記",
       excerpt: "摘要待上傳。",
       readTime: "6 min",
@@ -170,10 +210,25 @@ window.SITE = {
       id: "post-3",
       date: "2026-06-20",
       category: "Portfolio",
+      tags: ["Portfolio"],
       title: "文章標題三：資產配置的思考",
       excerpt: "摘要待上傳。",
       readTime: "10 min",
       body: []
     }
-  ]
+  ],
+
+  /* ---------------------------------------------------------------
+     6. 點擊量統計（後台，只有站長看得到）
+     endpoint：免費計數服務 abacus（免註冊、開放 CORS）
+     statsKey：stats.html 的檢視密碼
+     --------------------------------------------------------------- */
+  tracking: {
+    enabled: true,
+    endpoint: "https://abacus.jasoncameron.dev",
+    /* 命名空間＝計數的獨立空間。換一個字串就等於「歸零重算」 */
+    namespace: "laitungyuen-site",
+    /* stats.html 的檢視密碼，請自行改成你記得的字串 */
+    statsKey: "dy2026"
+  }
 };
