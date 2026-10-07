@@ -214,7 +214,7 @@ p  { margin: 0 0 1.1em; }
 .entry {
   position: relative;
   display: flex; flex-direction: column; justify-content: space-between;
-  min-height: 240px;
+  min-height: 200px;
   padding: clamp(1.5rem, 3vw, 2.25rem);
   border-radius: var(--radius);
   background: var(--surface);
@@ -234,10 +234,12 @@ p  { margin: 0 0 1.1em; }
 .entry__tc { font-family: var(--font-tc); font-size: var(--fs-sm); color: var(--text-2); margin-top: .4rem; letter-spacing: .08em; }
 .entry__desc { font-size: var(--fs-sm); color: var(--text-2); max-width: 30ch; margin-top: 1rem; }
 .entry__arrow {
-  font-size: var(--fs-sm); color: var(--accent);
-  display: inline-flex; align-items: center; gap: .35rem; margin-top: 1.5rem;
+  color: var(--accent);
+  align-self: flex-end;          /* 箭頭靠右下角 */
+  display: inline-flex; align-items: center;
+  transition: transform .5s var(--ease);
 }
-.entry__arrow svg { width: 12px; height: 12px; transition: transform .5s var(--ease); }
+.entry__arrow svg { width: 15px; height: 15px; }
 .entry:hover .entry__arrow svg { transform: translateX(4px); }
 
 /* ---------- 7. 页面头部（子页） ---------- */

@@ -176,14 +176,14 @@
   function renderEntries() {
     const grid = $("[data-entries]");
     if (!grid || !SITE.entries) return;
+    // 卡片只保留英文標題。
+    // 若日後想恢復中文副標題與描述，把下面被註解掉的兩行放回來即可
+    //   <div class="entry__tc">${esc(e.tc || "")}</div>
+    //   <p class="entry__desc">${esc(e.desc || e.descEn || "")}</p>
     grid.innerHTML = SITE.entries.map((e, i) => `
       <a class="entry reveal" href="${esc(e.href)}" data-delay="${i}">
-        <div>
-          <div class="entry__en">${esc(e.en)}</div>
-          <div class="entry__tc">${esc(e.tc || "")}</div>
-          <p class="entry__desc">${esc(e.desc || e.descEn || "")}</p>
-        </div>
-        <span class="entry__arrow">進入 ${arrowSvg}</span>
+        <div class="entry__en">${esc(e.en)}</div>
+        <span class="entry__arrow" aria-hidden="true">${arrowSvg}</span>
       </a>`).join("");
   }
 
