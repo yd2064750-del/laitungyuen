@@ -153,7 +153,7 @@ window.SITE = {
   insights: [
     {
       id: "post-6",
-      date: "2026-10-09",
+      date: "2026-05-03",
       category: "Political Economy",
       tags: ["Political Economy", "Macro", "Austerity", "Latin America"],
       title: "Austerity, Credibility, and Stabilization: Assessing Javier Milei’s Economic Reforms in Argentina",
