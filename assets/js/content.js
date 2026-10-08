@@ -102,50 +102,7 @@ window.SITE = {
   },
 
   /* 論文列表：body 為內文區塊，留空則閱讀頁顯示「內容待上傳」 */
-  publications: [
-    {
-      id: "pub-1",
-      year: "2026",
-      title: "Paper Title Goes Here: A Study of Asset Pricing",
-      authors: ["Lai Tung Yuen", "Co-Author A", "Co-Author B"],
-      venue: "Journal of Financial Economics",
-      type: "Journal Article",
-      citedBy: 0,
-      tags: ["Asset Pricing", "Machine Learning"],
-      pdf: "",
-      link: "",
-      abstract: "摘要待上傳。一兩句話說明這篇論文的研究問題、方法與主要發現。",
-      body: []
-    },
-    {
-      id: "pub-2",
-      year: "2025",
-      title: "Second Paper Title — Working Paper",
-      authors: ["Lai Tung Yuen"],
-      venue: "Working Paper",
-      type: "Working Paper",
-      citedBy: 0,
-      tags: ["Behavioral Finance"],
-      pdf: "",
-      link: "",
-      abstract: "摘要待上傳。",
-      body: []
-    },
-    {
-      id: "pub-3",
-      year: "2025",
-      title: "Third Paper Title — Conference Presentation",
-      authors: ["Lai Tung Yuen", "Co-Author C"],
-      venue: "Annual Meeting of the AFA",
-      type: "Conference",
-      citedBy: 0,
-      tags: ["Market Microstructure"],
-      pdf: "",
-      link: "",
-      abstract: "摘要待上傳。",
-      body: []
-    }
-  ],
+  publications: [],
 
   /* ---------------------------------------------------------------
      5. Insights —— 投資研究文章

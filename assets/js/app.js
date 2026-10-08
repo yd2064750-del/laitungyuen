@@ -344,6 +344,13 @@
       (byYear[y] = byYear[y] || []).push(p);
     });
 
+    // 還沒有任何論文時的提示（側欄卡片照常顯示）
+    if (!SITE.publications.length) {
+      list.innerHTML = `<div class="empty">論文與工作論文將於此處列出。<br>
+        <span class="muted">Papers and working papers will be listed here.</span></div>`;
+      return;
+    }
+
     const self = t(SITE.profile.name, "en");
     let html = "";
     Object.keys(byYear).sort((a, b) => b.localeCompare(a)).forEach(year => {
