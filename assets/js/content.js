@@ -456,24 +456,6 @@ window.SITE = {
         { h: "第一節小標題", p: ["段落內容待上傳。", "第二段內容。"] }
       ]
     },
-    {
-      id: "post-2",
-      date: "2026-08-02",
-      category: "Valuation",
-      tags: ["Valuation"],
-      title: "文章標題二：估值方法筆記",
-      excerpt: "摘要待上傳。",
-      body: []
-    },
-    {
-      id: "post-3",
-      date: "2026-06-20",
-      category: "Portfolio",
-      tags: ["Portfolio"],
-      title: "文章標題三：資產配置的思考",
-      excerpt: "摘要待上傳。",
-      body: []
-    }
   ],
 
   /* ---------------------------------------------------------------
