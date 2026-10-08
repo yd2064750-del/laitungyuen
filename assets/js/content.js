@@ -152,6 +152,83 @@ window.SITE = {
      --------------------------------------------------------------- */
   insights: [
     {
+      id: "post-6",
+      date: "2026-10-09",
+      category: "Political Economy",
+      tags: ["Political Economy", "Macro", "Austerity", "Latin America"],
+      title: "Austerity, Credibility, and Stabilization: Assessing Javier Milei’s Economic Reforms in Argentina",
+      excerpt: "By the end of 2023, Argentina’s macroeconomic crisis had reached a tipping point: triple-digit inflation, persistent fiscal deficits, and widespread public distrust of the peso.",
+      body: [
+        {
+          p: [
+            "By the end of 2023, Argentina’s macroeconomic crisis had reached a tipping point: triple-digit inflation, persistent fiscal deficits, and widespread public distrust of the peso combined to create an economic situation where conventional policy tools could no longer function effectively (OECD, 2025). It was amid this breakdown that Javier Milei, a self identified anarcho capitalist, secured the presidency with a pledge to drastically shrink the state. Soon after taking office, his government moved quickly to cut public spending, tighten monetary conditions, and expand deregulation. This shock therapy approach quickly divided observers. Supporters argued that only a sharp break from past policies could restore market and institutional credibility; critics, meanwhile, emphasized rising hardship and deprivation among vulnerable groups. What makes this debate difficult to resolve is that both sides can point to tangible early outcomes. By early 2025, fiscal balances and exchange rate spreads had improved noticeably, yet poverty had climbed sharply and real wages continued to decline. The central question is whether those improvements can translate into lasting stability once social and political strains are fully accounted for. This paper tests the claim that Milei’s reforms represent a successful stabilization program by reviewing fiscal, inflation, and exchange rate performance, while also weighing distributional pressures, institutional weaknesses, and external constraints that might undermine long term results.",
+            "Argentina’s macroeconomic weaknesses did not emerge suddenly. For more than a decade, the central bank monetized fiscal shortfalls, allowing money supply growth to outstrip gains in real output. This pattern fed a self reinforcing cycle: households and businesses increasingly substituted away from pesos, anticipating further depreciation and inflation. As García and Saenz (2024) note, by late 2023 the gap between official and parallel exchange rates surpassed 100 percent, encouraging illegal arbitrage and hardening beliefs that the currency would continue to weaken. Repeated sovereign defaults left Argentina reliant on successive IMF programs, yet conditional lending rarely broke the cycle of crisis due to political resistance, policy reversals, and external shocks (Vreeland, 2007). When Milei took office, inflation expectations were effectively unanchored, creating a steep hurdle for any stabilization attempt.",
+          ],
+        },
+        {
+          figure: {
+            src: "assets/img/art-ars-crisis.svg",
+            alt: "示意圖：貨幣秩序逐步解體",
+            caption: "示意圖。阿根廷長期的財政貨幣化與貨幣替代，使披索的價值基準逐步鬆動。",
+            credit: "本文自製插圖 · 非數據圖表",
+          },
+        },
+        {
+          p: [
+            "Scholarly debates about stabilization offer competing lenses through which to judge Milei’s agenda. The credibility centered framework (Calvo & Végh, 1999) stresses that temporary or weakly enforced adjustments fail to reset inflation expectations, whereas durable, rule bound policies can shift beliefs before actual price changes slow. Rodrik (2006) reinforces this logic by observing that global financial markets value policy consistency more than the specific details of reform. Frieden (1991) further adds that in financially open economies, credible domestic institutional limits are needed to curb exchange rate and capital flow volatility.",
+            "Critical scholarship, by contrast, highlights the social and political dangers of orthodox austerity. Stiglitz (2002) and Babb (2005) show that front loaded fiscal consolidation disproportionately harms low income and informal populations, fueling unrest and eventual policy rollbacks. Vreeland (2007) demonstrates that IMF conditionality narrows domestic policy autonomy, while Moser and Sturm (2011) connect IMF lending requirements to fiscal conservatism that exacerbates income inequality. These two traditions yield contrasting expectations: credibility driven austerity may produce rapid nominal stabilization, but high social costs can erode political support and undo early progress. This paper engages both perspectives by evaluating Milei’s reforms against both nominal targets and real world social outcomes.",
+          ],
+        },
+        {
+          figure: {
+            src: "assets/img/art-ars-balance.svg",
+            alt: "示意圖：信譽收益與社會成本之間的權衡",
+            caption: "示意圖。緊縮政策在名目穩定上的收益，與其社會成本之間的權衡。",
+            credit: "本文自製插圖 · 非數據圖表",
+          },
+        },
+        {
+          p: [
+            "The Milei administration’s central policies—deep spending cuts, an end to central bank financing of deficits, and faster price liberalization—brought measurable improvements in three nominal areas. First, Argentina reached a primary fiscal surplus of roughly 0.3 percent of GDP by early 2025, a striking turnaround from years of deficits often above 3 percent of GDP (Reuters, 2025). The surplus came from lower energy and transport subsidies, public sector staffing reductions, and frozen intergovernmental transfers. Importantly, ending fiscal monetization removed the main structural source of excess money growth, supplying the nominal anchor Calvo and Végh (1999) regard as vital to re anchoring inflation expectations.",
+            "Second, monthly inflation slowed dramatically, from 25.5 percent in December 2023 to 2.7 percent by January 2025 (OECD, 2025). Although annual inflation remained above 100 percent due to base effects, the rapid deceleration weakened inertial price pressures. In line with credibility theory, shifting expectations appear to have altered how firms set prices and households negotiate wages, a psychological shift that usually precedes sustained disinflation.",
+            "Third, the parallel exchange rate premium narrowed sharply from more than 100 percent to approximately 20 percent over the same period. This decline reflected stronger confidence in the official exchange rate, lower incentives for speculative arbitrage, some reversal of currency substitution, and reduced stress on international reserves. The convergence of exchange rates both reflected and reinforced fiscal and monetary restraint, demonstrating how credibility and demand discipline can reinforce one another.",
+            "External credibility improved alongside domestic indicators. The IMF expressed approval in early 2024 and, by April 2026, reached an agreement to disburse roughly $1 billion in new funding, conditional on sustained fiscal discipline (IMF, 2024; Reuters, 2026). Sovereign bond spreads tightened, as markets priced in lower near term default risk. Although IMF support imposes policy constraints (Vreeland, 2007), it also serves as a stabilizing signal for investors and helps safeguard reserve levels during a fragile adjustment.",
+          ],
+        },
+        {
+          p: [
+            "Nevertheless, focusing only on nominal stabilization masks severe distributional and real economic costs. Poverty rose from roughly 40 percent to nearly 53 percent within months of the reform launch (Le Monde, 2024). Subsidy reductions and public sector job cuts lowered real incomes sharply, with the heaviest burden falling on informal workers who lack social protection. Real wages declined, and demand for emergency food aid rose substantially. These outcomes match Stiglitz’s (2002) warning that austerity shifts adjustment costs onto the most vulnerable groups. While rising protests and falling approval ratings show public dissatisfaction, one must also recognize that unaddressed hyperinflation would have severely eroded low income purchasing power. The central policy shortcoming is not stabilization itself, but the lack of a strong, targeted social safety net to cushion adjustment hardships.",
+            "Beyond rising poverty, real economic activity remains weak. Argentina’s GDP is projected to contract by 2.5 percent in 2024, with private investment staying subdued. Gains have been limited to nominal indicators—fiscal balances, inflation rates, and exchange rate expectations—while the real productive sector shows little sign of recovery.",
+            "Longstanding vulnerabilities also persist. The signature campaign promise of full dollarization has been delayed indefinitely, creating uncertainty over the long term monetary regime. If political support weakens further, demand for dollars could rebound and widen exchange rate gaps again. As Frieden (1991) suggests, Argentina remains exposed to commodity price swings, changes in global interest rates, and sudden capital flow stops. Together with ongoing IMF conditionality, these factors mean current stability remains fragile and potentially reversible.",
+          ],
+        },
+        {
+          p: [
+            "Overall, Milei’s reforms achieved rapid nominal stabilization in ways consistent with credibility centered theoretical expectations. Fiscal consolidation, disinflation, and exchange rate convergence all improved markedly, supporting the first part of this paper’s argument. At the same time, the absence of real recovery and the sharp rise in poverty confirm the second point: nominal stabilization does not guarantee inclusive, durable economic health. Confusing nominal progress with structural recovery risks misrepresenting the sustainability and fairness of the reform package. The gains achieved have corrected critical nominal imbalances but have not rebuilt an economic model that delivers broad based well being.",
+            "In conclusion, this paper assesses the stabilization effects of Argentina’s economic reforms in the early period of Javier Milei’s administration. Available evidence shows that Argentina has achieved meaningful nominal improvements in fiscal balances, inflation dynamics, and exchange rate stability, while external credibility has also strengthened. At the same time, poverty has surged, the real economy remains weak, and external and institutional risks persist. Argentina’s experience suggests that austerity policies pursued to boost credibility can quickly improve nominal economic indicators but impose high social costs.",
+          ],
+        },
+        {
+          h: "References",
+          ol: [
+            "Babb, S. (2005). The social consequences of structural adjustment: Recent evidence and current debates. <i>Annual Review of Sociology, 31</i>, 199–222. https://doi.org/10.1146/annurev.soc.31.041304.122258",
+            "Calvo, G. A., &amp; Végh, C. A. (1999). Inflation stabilization and BOP crises in developing countries. In J. B. Taylor &amp; M. Woodford (Eds.), <i>Handbook of macroeconomics</i> (Vol. 1, pp. 1531–1614). Elsevier. https://ideas.repec.org/p/nbr/nberwo/6925.html",
+            "Frieden, J. A. (1991). Invested interests: The politics of national economic policies in a world of global finance. <i>International Organization, 45</i>(4), 425–451. https://doi.org/10.1017/S0020818300033178",
+            "García, P., &amp; Saenz, M. (2024). Inflation dynamics in Argentina: Structural determinants and policy implications. arXiv. https://doi.org/10.48550/arXiv.2405.20822",
+            "International Monetary Fund. (2024, February 23). Argentina: Statement by the First Deputy Managing Director. https://www.imf.org/en/news/articles/2024/02/23/pr2455-argentina-statement-by-the-first-deputy-managing-director",
+            "Le Monde. (2024, December 30). With Javier Milei, a year of chainsaws and controlled inflation in Argentina. https://www.lemonde.fr/en/economy/article/2024/12/30/with-javier-milei-a-year-of-chainsaws-and-controlled-inflation-in-argentina_6736543_19.html",
+            "Moser, C., &amp; Sturm, J.-E. (2011). Explaining IMF lending decisions after the Cold War. <i>The Review of International Organizations, 6</i>(3–4), 307–340. https://doi.org/10.1007/s11558-011-9120-y",
+            "Organisation for Economic Co-operation and Development. (2025). <i>OECD economic surveys: Argentina 2025</i>. OECD Publishing. https://www.oecd.org/en/publications/2025/07/oecd-economic-surveys-argentina-2025_4a5ddf67",
+            "Reuters. (2025, January 17). Argentina logs first financial surplus in 14 years. <i>Reuters</i>. https://www.reuters.com/world/americas/argentina-logs-first-financial-surplus-14-years-2024-2025-01-17/",
+            "Reuters. (2026, April 16). Argentina reaches IMF staff deal, opening door to $1 billion in fresh funds. <i>Reuters</i>. https://www.reuters.com/world/americas/imf-reaches-agreement-with-argentina-unlock-1-billion-fresh-funds-2026-04-15/",
+            "Rodrik, D. (2006). Goodbye Washington consensus, hello Washington confusion? <i>Journal of Economic Literature, 44</i>(4), 973–987. https://www.aeaweb.org/articles?id=10.1257/jel.44.4.973",
+            "Stiglitz, J. E. (2002). <i>Globalization and its discontents</i>. W. W. Norton &amp; Company. https://wwnorton.com/books/globalization-and-its-discontents/",
+            "Vreeland, J. R. (2007). <i>The International Monetary Fund: Politics of conditional lending</i>. Routledge. https://www.academia.edu/86514686/Vreeland_The_International_Monetary_Fund_Politics_of_Conditional_Lending_2007",
+          ],
+        },
+      ]
+    },
+    {
       id: "post-5",
       date: "2026-08-20",
       category: "法制史",
