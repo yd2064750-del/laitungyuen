@@ -667,10 +667,19 @@
         html += blocks.map(b => {
           const h = b.h ? `<h2>${esc(b.h)}</h2>` : "";
           const h3 = b.h3 ? `<h3>${esc(b.h3)}</h3>` : "";
+          const fig = b.figure ? `
+            <figure class="fig">
+              <img src="${esc(b.figure.src)}" alt="${esc(b.figure.alt || "")}" loading="lazy" decoding="async">
+              <figcaption>
+                ${esc(b.figure.caption || "")}
+                ${b.figure.credit ? `<span class="fig__credit">${esc(b.figure.credit)}</span>` : ""}
+              </figcaption>
+            </figure>` : "";
           const paras = (b.p || []).map(p => `<p>${p}</p>`).join("");
+          const ol = (b.ol && b.ol.length) ? `<ol class="notes">${b.ol.map(li => `<li>${li}</li>`).join("")}</ol>` : "";
           const list = (b.ul && b.ul.length) ? `<ul>${b.ul.map(li => `<li>${li}</li>`).join("")}</ul>` : "";
           const quote = b.quote ? `<blockquote>${b.quote}</blockquote>` : "";
-          return h + h3 + paras + list + quote;
+          return h + h3 + fig + paras + ol + list + quote;
         }).join("");
       } else {
         // 有摘要但還沒有全文時，仍提示正文待上傳
