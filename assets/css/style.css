@@ -599,7 +599,13 @@ p  { margin: 0 0 1.1em; }
 .reader__byline { margin-top: 1rem; font-size: var(--fs-sm); color: var(--text-2); }
 .reader__byline .dot { color: var(--border); margin: 0 .5rem; }
 
-.prose { font-size: 1rem; line-height: 1.85; color: #2b2b2e; }
+.prose {
+  font-size: 1rem; line-height: 1.85; color: #2b2b2e;
+  /* 參考文獻裡的長 URL 沒有斷點，不換行會撐破容器（手機端尤其明顯） */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.prose a { word-break: break-word; }
 .prose h2 { font-size: var(--fs-xl); margin: 2.5rem 0 1rem; letter-spacing: -0.01em; color: var(--text); }
 .prose h3 { font-size: var(--fs-lg); margin: 2rem 0 .75rem; letter-spacing: -0.005em; color: var(--text-2); }
 
@@ -627,7 +633,10 @@ p  { margin: 0 0 1.1em; }
   margin: 1.5rem 0 0; padding-left: 1.6rem;
   font-size: var(--fs-sm); line-height: 1.75; color: var(--text-2);
 }
-.prose ol.notes li { margin-bottom: .85rem; padding-left: .25rem; }
+.prose ol.notes li {
+  margin-bottom: .85rem; padding-left: .25rem;
+  overflow-wrap: anywhere; word-break: break-word;
+}
 .prose ol.notes li::marker { color: var(--text-3); }
 .fnback { color: var(--text-3); text-decoration: none; margin-left: .25rem; }
 .fnback:hover { color: var(--accent); }
@@ -758,6 +767,13 @@ body { animation: pageIn .5s var(--ease) both; }
   .nav__link { padding: .75rem 0; font-size: 1rem; width: 100%; border-bottom: 1px solid var(--border-soft); }
   .nav__link::after { display: none; }
   .hero { height: 46vh; }
+  /* 手機：翻頁導航改上下堆疊，標題不再被 45% 寬度擠成三行又靠右 */
+  .pager { flex-direction: column; gap: 1.5rem; }
+  .pager a { max-width: 100%; }
+  .pager .pager__next { text-align: left; margin-left: 0; }
+  /* 手機：註釋與閱讀次數的間距收緊一點 */
+  .prose ol.notes { padding-left: 1.3rem; }
+  .viewcount { margin-top: 2rem; }
   /* 手機：縮放幅度減半，減少長距離位移 */
   .hero__media { transform: scale(calc(1.06 - var(--hero-t, 0) * 0.06)); }
 }
