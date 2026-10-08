@@ -601,6 +601,7 @@ p  { margin: 0 0 1.1em; }
 
 .prose { font-size: 1rem; line-height: 1.85; color: #2b2b2e; }
 .prose h2 { font-size: var(--fs-xl); margin: 2.5rem 0 1rem; letter-spacing: -0.01em; color: var(--text); }
+.prose h3 { font-size: var(--fs-lg); margin: 2rem 0 .75rem; letter-spacing: -0.005em; color: var(--text-2); }
 .prose h3 { font-size: var(--fs-lg); margin: 2rem 0 .75rem; color: var(--text); }
 .prose p { margin: 0 0 1.35em; }
 .prose ul, .prose ol { margin: 0 0 1.35em; padding-left: 1.35rem; }

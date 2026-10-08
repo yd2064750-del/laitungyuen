@@ -129,7 +129,10 @@
           io.unobserve(e.target);
         }
       });
-    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
+    // threshold 必須是 0：長文章的容器比視口高很多，
+    // 交叉比例永遠達不到 0.08，整塊會卡在 opacity:0 不出現。
+    // 延遲交給下方 rootMargin 控制即可。
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0 });
     targets.forEach(el => io.observe(el));
   }
 
@@ -663,10 +666,11 @@
       if (blocks.length) {
         html += blocks.map(b => {
           const h = b.h ? `<h2>${esc(b.h)}</h2>` : "";
+          const h3 = b.h3 ? `<h3>${esc(b.h3)}</h3>` : "";
           const paras = (b.p || []).map(p => `<p>${p}</p>`).join("");
           const list = (b.ul && b.ul.length) ? `<ul>${b.ul.map(li => `<li>${li}</li>`).join("")}</ul>` : "";
           const quote = b.quote ? `<blockquote>${b.quote}</blockquote>` : "";
-          return h + paras + list + quote;
+          return h + h3 + paras + list + quote;
         }).join("");
       } else {
         // 有摘要但還沒有全文時，仍提示正文待上傳
