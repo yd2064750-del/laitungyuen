@@ -24,6 +24,9 @@ window.SITE = {
     location:  { en: "Hong Kong, Shanghai", zh: "東莞" },
     avatar:    "assets/img/avatar.jpg",
     heroImage: "assets/img/hero.jpg",
+    /* 首頁大圖上的兩行文字。第二行留空就不顯示。 */
+    heroTitle:    "你好，我是黎東源！",
+    heroSubtitle: "Welcome to Lai Tung Yuen’s personal website!",
     /* 學術 / 社交連結，可自由增刪 */
     links: [
       { label: "Google Scholar", href: "#" },

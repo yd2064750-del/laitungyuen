@@ -61,15 +61,14 @@
       el.href = "mailto:" + (p.email || "");
     });
 
-    // 首頁大圖文字
-    const heroName = $("[data-hero-name]");
-    if (heroName) heroName.textContent = name;
-    const heroRole = $("[data-hero-role]");
-    if (heroRole) {
-      const r = t(p.role, "zh");
-      const rEn = t(p.role, "en");
-      heroRole.textContent = rEn && r ? `${rEn} · ${r}` : (rEn || r);
-      if (!heroRole.textContent) heroRole.remove();
+    // 首頁大圖文字：兩行，都可在 content.js 的 profile 裡改
+    const heroTitle = $("[data-hero-title]");
+    if (heroTitle) heroTitle.textContent = p.heroTitle || name;
+
+    const heroSub = $("[data-hero-subtitle]");
+    if (heroSub) {
+      if (p.heroSubtitle) heroSub.textContent = p.heroSubtitle;
+      else heroSub.remove();          // 沒填就整行不顯示
     }
 
     // 分頁標題：<body data-page="About Me">
