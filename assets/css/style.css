@@ -658,6 +658,9 @@ p  { margin: 0 0 1.1em; }
 
 .credit { margin-top: 1.75rem; font-size: var(--fs-xs); color: var(--text-3); }
 
+/* 頁首裡的搜尋框（Global Perspectives 用來搜城市） */
+.page-head__search { margin-top: 2rem; display: block; }
+
 /* ---------- 11. 内文阅读页 ---------- */
 .reader { padding-bottom: 6rem; }
 /* 返回：只有一個箭頭 */

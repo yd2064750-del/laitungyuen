@@ -474,10 +474,11 @@
     const credit = $("[data-cities-credit]");
     if (credit && g.credit) credit.textContent = g.credit;
 
-    // 城市卡片
-    grid.innerHTML = cities.map((c, i) => {
-      const n = posts.filter(p => p.city === c.id).length;
-      return `
+    // 城市卡片（可用頁首的搜尋框過濾）
+    const drawCities = (list) => {
+      grid.innerHTML = list.length ? list.map((c, i) => {
+        const n = posts.filter(p => p.city === c.id).length;
+        return `
         <a class="citycard reveal" href="global.html?city=${encodeURIComponent(c.id)}" data-delay="${i % 3}">
           <img src="${esc(c.image)}" alt="${esc(c.name)}" loading="lazy" decoding="async">
           <span class="citycard__scrim" aria-hidden="true"></span>
@@ -487,7 +488,20 @@
           </span>
           ${n ? `<span class="citycard__n">${n}</span>` : ""}
         </a>`;
-    }).join("");
+      }).join("") : `<p class="empty">找不到符合的城市。</p>`;
+      initReveal();
+    };
+    drawCities(cities);
+
+    const citySearch = $("[data-city-search]");
+    if (citySearch) {
+      citySearch.addEventListener("input", () => {
+        const k = citySearch.value.trim().toLowerCase();
+        drawCities(k
+          ? cities.filter(c => `${c.name} ${c.country}`.toLowerCase().includes(k))
+          : cities);
+      });
+    }
 
     // 選了城市就把列表捲到前面並顯示城市標題
     const listWrap = $("[data-global-list]");
