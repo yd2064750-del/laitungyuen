@@ -423,14 +423,25 @@ window.SITE = {
      --------------------------------------------------------------- */
   global: {
     cities: [
-      { id: "hong-kong", name: "Hong Kong", country: "China", image: "assets/img/city-hong-kong.jpg" },
-      { id: "shenzhen",  name: "Shenzhen",  country: "China", image: "assets/img/city-shenzhen.jpg" },
-      { id: "dubai",     name: "Dubai",     country: "UAE",   image: "assets/img/city-dubai.jpg" },
-      { id: "abu-dhabi", name: "Abu Dhabi", country: "UAE",   image: "assets/img/city-abu-dhabi.jpg" }
+      { id: "hong-kong",  name: "Hong Kong",  country: "China", image: "assets/img/city-hong-kong.jpg" },
+      { id: "dubai",      name: "Dubai",      country: "UAE",   image: "assets/img/city-dubai.jpg" },
+      { id: "abu-dhabi",  name: "Abu Dhabi",  country: "UAE",   image: "assets/img/city-abu-dhabi.jpg" },
+      { id: "shenzhen",   name: "Shenzhen",   country: "China", image: "assets/img/city-shenzhen.jpg" },
+      { id: "xiamen",     name: "Xiamen",     country: "China", image: "assets/img/city-xiamen.jpg" },
+      { id: "shanghai",   name: "Shanghai",   country: "China", image: "assets/img/city-shanghai.jpg" },
+      { id: "suzhou",     name: "Suzhou",     country: "China", image: "assets/img/city-suzhou.jpg" },
+      { id: "yangshuo",   name: "Yangshuo",   country: "China", image: "assets/img/city-yangshuo.jpg" },
+      { id: "taian",      name: "Tai'an",     country: "China", image: "assets/img/city-taian.jpg" },
+      { id: "jinan",      name: "Jinan",      country: "China", image: "assets/img/city-jinan.jpg" },
+      { id: "nanjing",    name: "Nanjing",    country: "China", image: "assets/img/city-nanjing.jpg" },
+      { id: "shantou",    name: "Shantou",    country: "China", image: "assets/img/city-shantou.jpg" },
+      { id: "xian",       name: "Xi'an",      country: "China", image: "assets/img/city-xian.jpg" },
+      { id: "lijiang",    name: "Lijiang",    country: "China", image: "assets/img/city-lijiang.jpg" },
+      { id: "shangri-la", name: "Shangri-La", country: "China", image: "assets/img/city-shangri-la.jpg" }
     ],
     /* 文章格式跟 insights 一樣：id / city / date / category / tags / title / excerpt / body */
     posts: [],
-    credit: "城市照片來自 Pexels（jbmalong、Wong Peter、Katetrysh、GSN Travel）"
+    credit: "所有照片 © Lai Tung Yuen，版權所有"
   },
 
   /* ---------------------------------------------------------------
