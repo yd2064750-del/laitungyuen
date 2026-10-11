@@ -543,6 +543,10 @@
   }
 
   function renderInsights() {
+    // 只在本頁執行。Global Perspectives / Leadership 也有 [data-posts]，
+    // 少了這道判斷，Insights 的文章會被渲染到別的頁面上。
+    if (document.body.dataset.page !== "Insights") return;
+
     const list = $("[data-posts]");
     if (!list || !SITE.insights) return;
 
