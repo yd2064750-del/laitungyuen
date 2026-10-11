@@ -459,7 +459,7 @@
     drawPosts();
   }
 
-  /* ---------- Global Perspectives ---------- */
+  /* ---------- Global Perspectives：城市索引頁 ---------- */
 
   function renderGlobal() {
     const grid = $("[data-cities]");
@@ -468,8 +468,6 @@
     const g = SITE.global || {};
     const cities = g.cities || [];
     const posts = g.posts || [];
-    const q = new URLSearchParams(location.search);
-    const cityId = q.get("city");
 
     const credit = $("[data-cities-credit]");
     if (credit && g.credit) credit.textContent = g.credit;
@@ -479,7 +477,7 @@
       grid.innerHTML = list.length ? list.map((c, i) => {
         const n = posts.filter(p => p.city === c.id).length;
         return `
-        <a class="citycard reveal" href="global.html?city=${encodeURIComponent(c.id)}" data-delay="${i % 3}">
+        <a class="citycard reveal" href="city.html?id=${encodeURIComponent(c.id)}" data-delay="${i % 3}">
           <img src="${esc(c.image)}" alt="${esc(c.name)}" loading="lazy" decoding="async">
           <span class="citycard__scrim" aria-hidden="true"></span>
           <span class="citycard__text">
@@ -502,32 +500,51 @@
           : cities);
       });
     }
+  }
 
-    // 選了城市就把列表捲到前面並顯示城市標題
-    const listWrap = $("[data-global-list]");
-    if (!cityId) return;
-    const city = cities.find(c => c.id === cityId);
-    if (!city) return;
+  /* ---------- 單一城市頁 ---------- */
 
-    const head = $("[data-city-head]");
-    if (head) {
-      head.hidden = false;
-      head.innerHTML = `
-        <img class="cityhead__img" src="${esc(city.image)}" alt="${esc(city.name)}" loading="lazy" decoding="async">
-        <div class="cityhead__text">
-          <p class="eyebrow">Location <span class="cityhead__n">${posts.filter(p => p.city === city.id).length}</span></p>
-          <h2 class="cityhead__name">${esc(city.name)}</h2>
-          <p class="cityhead__country">${esc(city.country)}</p>
-        </div>
-        <a class="cityhead__back" href="global.html">顯示全部城市</a>`;
+  function renderCity() {
+    const root = $("[data-city]");
+    if (!root) return;
+
+    const g = SITE.global || {};
+    const id = new URLSearchParams(location.search).get("id");
+    const city = (g.cities || []).find(c => c.id === id);
+
+    const back = $("[data-city-back]");
+    if (back) {
+      back.innerHTML = backSvg;
+      back.setAttribute("aria-label", "返回 Global Perspectives");
+      back.setAttribute("title", "返回 Global Perspectives");
     }
-    if (listWrap) listWrap.classList.add("is-city");
 
+    if (!city) {
+      const hero = $(".cityhero");
+      if (hero) hero.hidden = true;
+      $("[data-posts]").innerHTML = `<div class="placeholder">找不到這座城市。請從 Global Perspectives 重新進入。</div>`;
+      document.title = "Not found";
+      return;
+    }
+
+    document.title = `${city.name} — ${t(SITE.profile.name, "en")}`;
+
+    const media = $("[data-city-media]");
+    if (media) media.innerHTML =
+      `<img src="${esc(city.image)}" alt="${esc(city.name)}" fetchpriority="high"
+            style="object-position:center ${Number(city.focus) || 42}%">`;
+
+    const name = $("[data-city-name]");
+    if (name) name.textContent = city.name;
+    const country = $("[data-city-country]");
+    if (country) country.textContent = city.country;
+
+    const posts = (g.posts || []).filter(p => p.city === city.id);
     renderCollection({
       list: "[data-posts]",
       bar: "[data-tagbar]",
       search: "[data-search]",
-      items: posts.filter(p => p.city === city.id),
+      items: posts,
       empty: `${city.name} 還沒有文章。`
     });
   }
@@ -786,7 +803,7 @@
         label = "返回 Leadership"; href = "leadership.html";
       } else if (item && ((SITE.global || {}).posts || []).includes(item)) {
         label = "返回 Global Perspectives";
-        href = item.city ? `global.html?city=${encodeURIComponent(item.city)}` : "global.html";
+        href = item.city ? `city.html?id=${encodeURIComponent(item.city)}` : "global.html";
       } else {
         label = "返回投資研究 / Back to Insights"; href = "insights.html";
       }
@@ -899,6 +916,7 @@
     renderArticle();
     renderStats();
     renderGlobal();
+    renderCity();
     renderLeadership();
     initReveal();
     initScrollDriver();

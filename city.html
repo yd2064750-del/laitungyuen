@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>City — Lai Tung Yuen</title>
+<meta name="description" content="城市觀察：在這座城市生活與工作時的記錄。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="">
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" data-nav-brand>Home</a>
+    <nav class="nav__links" aria-label="主導覽">
+      <a class="nav__link" data-magnetic href="about.html">About Me</a>
+      <a class="nav__link" data-magnetic href="academics.html">Academics</a>
+      <a class="nav__link" data-magnetic href="insights.html">Insights</a>
+      <a class="nav__link" data-magnetic href="global.html">Global Perspectives</a>
+      <a class="nav__link" data-magnetic href="leadership.html">Leadership</a>
+      <a class="nav__link" data-magnetic href="#">CV</a>
+    </nav>
+    <button class="nav__toggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main data-city>
+
+  <!-- 城市大圖 -->
+  <section class="cityhero">
+    <div class="cityhero__media" data-city-media></div>
+    <div class="cityhero__scrim" aria-hidden="true"></div>
+    <a class="cityhero__back" href="global.html" data-city-back></a>
+    <div class="cityhero__caption">
+      <p class="cityhero__country" data-city-country></p>
+      <h1 class="cityhero__name" data-city-name></h1>
+    </div>
+  </section>
+
+  <!-- 這座城市的文章 -->
+  <section class="section wrap">
+    <div class="collection__bar">
+      <input class="collection__search" type="search" placeholder="搜尋文章…"
+             aria-label="搜尋文章" data-search>
+      <div class="tagbar__row" data-tagbar></div>
+    </div>
+
+    <div class="posts" data-posts></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>&copy; <span data-year>2026</span> <span data-footer-name>Lai Tung Yuen</span>. All rights reserved.</div>
+    <div>
+      <a href="#" data-email>Email</a> ·
+      <a href="global.html">Global Perspectives</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
