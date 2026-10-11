@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Global Perspectives — Lai Tung Yuen</title>
+<meta name="description" content="城市觀察：在不同城市生活與工作時的記錄與思考。">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="Global Perspectives">
+
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="index.html" data-nav-brand>Home</a>
+    <nav class="nav__links" aria-label="主導覽">
+      <a class="nav__link" data-magnetic href="about.html">About Me</a>
+      <a class="nav__link" data-magnetic href="academics.html">Academics</a>
+      <a class="nav__link" data-magnetic href="insights.html">Insights</a>
+      <a class="nav__link" data-magnetic href="global.html">Global Perspectives</a>
+      <a class="nav__link" data-magnetic href="leadership.html">Leadership</a>
+      <a class="nav__link" data-magnetic href="#">CV</a>
+    </nav>
+    <button class="nav__toggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-head wrap">
+    <h1 class="reveal">Global Perspectives</h1>
+    <p class="lede reveal" data-delay="1">
+      不同城市給人的參照點不一樣。這裡放的，是我在每座城市生活與工作時，觀察到的制度、市場與日常。
+    </p>
+    <p class="lede reveal" data-delay="2">
+      Notes from the cities I have lived and worked in — what each place made visible.
+    </p>
+  </section>
+
+  <hr class="rule">
+
+  <!-- 城市卡片 -->
+  <section class="section wrap">
+    <div class="citygrid" data-cities>
+      <!-- 由 app.js 依 content.js 的 global.cities 渲染 -->
+    </div>
+    <p class="credit" data-cities-credit></p>
+  </section>
+
+  <!-- 城市底下的文章 -->
+  <section class="section wrap" data-global-list>
+    <div class="cityhead" data-city-head hidden></div>
+
+    <div class="collection__bar">
+      <input class="collection__search" type="search" placeholder="搜尋文章…"
+             aria-label="搜尋文章" data-search>
+      <div class="tagbar__row" data-tagbar></div>
+    </div>
+
+    <div class="posts" data-posts></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>&copy; <span data-year>2026</span> <span data-footer-name>Lai Tung Yuen</span>. All rights reserved.</div>
+    <div>
+      <a href="#" data-email>Email</a> ·
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

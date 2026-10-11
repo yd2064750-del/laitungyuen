@@ -576,6 +576,88 @@ p  { margin: 0 0 1.1em; }
   background: var(--surface); color: var(--text-2); font-size: var(--fs-sm);
 }
 
+/* ---------- 10c. Global Perspectives / Leadership ---------- */
+
+/* 城市卡片：圖 + 左下角城市名／國家 */
+.citygrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+}
+.citycard {
+  position: relative; display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  color: #fff;
+}
+.citycard img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .9s var(--ease);
+}
+.citycard__scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg,
+    rgba(0,0,0,.74) 0%, rgba(0,0,0,.30) 40%, rgba(0,0,0,0) 70%);
+}
+.citycard__text { position: absolute; left: 1.25rem; right: 1.25rem; bottom: 1.15rem; }
+.citycard__name {
+  display: block; font-size: clamp(1.1rem, 2vw, 1.5rem);
+  letter-spacing: -0.01em; line-height: 1.2;
+}
+.citycard__country {
+  display: block; margin-top: .2rem;
+  font-size: var(--fs-xs); letter-spacing: .14em; text-transform: uppercase;
+  opacity: .8;
+}
+.citycard__n {
+  position: absolute; top: .9rem; right: .9rem;
+  font-size: var(--fs-xs); letter-spacing: .02em;
+  padding: .18rem .55rem; border-radius: 999px;
+  background: rgba(255,255,255,.92); color: var(--text);
+}
+.citycard:hover { color: #fff; }
+.citycard:hover img { transform: scale(1.05); }
+
+/* 選了城市之後的頁首 */
+.cityhead {
+  display: grid;
+  grid-template-columns: 132px 1fr auto;
+  gap: 1.5rem; align-items: center;
+  margin-bottom: 2.5rem; padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.cityhead[hidden] { display: none; }
+.cityhead__img {
+  width: 132px; height: 165px; object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+.cityhead__name { font-size: var(--fs-2xl); letter-spacing: -0.02em; }
+.cityhead__country {
+  margin-top: .3rem; font-size: var(--fs-sm); color: var(--text-3);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.cityhead__n { color: var(--text-3); }
+.cityhead__back { font-size: var(--fs-sm); color: var(--text-2); white-space: nowrap; }
+.cityhead__back:hover { color: var(--text); }
+
+/* 搜尋列 + 標籤（靠左） */
+.collection__bar {
+  display: flex; flex-direction: column; gap: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+.collection__search {
+  font-family: inherit; font-size: var(--fs-sm);
+  width: 100%; max-width: 380px;
+  padding: .6rem 1.1rem; border-radius: 999px;
+  border: 1px solid var(--border); background: #fff; color: var(--text);
+}
+.collection__search:focus { outline: none; border-color: var(--accent); }
+.collection__bar .tagbar__row { justify-content: flex-start; }
+
+.credit { margin-top: 1.75rem; font-size: var(--fs-xs); color: var(--text-3); }
+
 /* ---------- 11. 内文阅读页 ---------- */
 .reader { padding-bottom: 6rem; }
 /* 返回：只有一個箭頭 */
@@ -763,7 +845,8 @@ body { animation: pageIn .5s var(--ease) both; }
     max-height: 0; overflow: hidden;
     transition: max-height .45s var(--ease), padding .45s var(--ease);
   }
-  .nav.is-open .nav__links { max-height: 320px; padding: .5rem var(--gutter) 1.25rem; }
+  /* 6 個導覽項，展開高度要夠，不然最後一項會被裁掉 */
+  .nav.is-open .nav__links { max-height: 460px; padding: .5rem var(--gutter) 1.25rem; }
   .nav__link { padding: .75rem 0; font-size: 1rem; width: 100%; border-bottom: 1px solid var(--border-soft); }
   .nav__link::after { display: none; }
   .hero { height: 46vh; }
@@ -774,6 +857,14 @@ body { animation: pageIn .5s var(--ease) both; }
   /* 手機：註釋與閱讀次數的間距收緊一點 */
   .prose ol.notes { padding-left: 1.3rem; }
   .viewcount { margin-top: 2rem; }
+  /* 手機：城市卡片兩欄，頁首改上下排列 */
+  .citygrid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+  .citycard__text { left: .85rem; right: .85rem; bottom: .8rem; }
+  .citycard__name { font-size: 1rem; }
+  .citycard__n { top: .6rem; right: .6rem; }
+  .cityhead { grid-template-columns: 88px 1fr; gap: 1rem; }
+  .cityhead__img { width: 88px; height: 110px; }
+  .cityhead__back { grid-column: 1 / -1; }
   /* 手機：縮放幅度減半，減少長距離位移 */
   .hero__media { transform: scale(calc(1.06 - var(--hero-t, 0) * 0.06)); }
 }

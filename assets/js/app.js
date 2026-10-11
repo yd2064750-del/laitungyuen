@@ -383,6 +383,155 @@
   // 取一篇文章的標籤（沒有 tags 就退回 category）
   const itemTags = (p) => (p.tags && p.tags.length) ? p.tags : (p.category ? [p.category] : []);
 
+  // 文章卡片（Insights / Global Perspectives / Leadership 共用）
+  function postCard(p, i) {
+    return `
+      <a class="post reveal" href="article.html?type=post&id=${encodeURIComponent(p.id)}" data-delay="${i % 3}">
+        <div class="post__meta">
+          ${p.category ? `<span>${esc(p.category)}</span>` : ""}
+          ${p.date ? `<span>·</span><span>${esc(p.date)}</span>` : ""}
+        </div>
+        <h3 class="post__title">${esc(p.title)}</h3>
+        <p class="post__excerpt">${esc(p.excerpt || "")}</p>
+        <div class="post__more">閱讀全文 ${arrowSvg}</div>
+      </a>`;
+  }
+
+  /* ---------- 通用：搜尋欄 + 標籤 + 文章列表 ----------
+     給 Global Perspectives / Leadership 共用。
+     標籤列沿用 Insights 的 .tagpill 樣式，但只顯示前 5 個、不做展開面板。
+     ---------------------------------------------------- */
+
+  function renderCollection(opt) {
+    const list = $(opt.list);
+    if (!list) return;
+
+    const items = opt.items || [];
+    const bar = opt.bar ? $(opt.bar) : null;
+    const search = opt.search ? $(opt.search) : null;
+
+    // 標籤統計
+    const counts = new Map();
+    items.forEach(p => new Set(itemTags(p)).forEach(t => counts.set(t, (counts.get(t) || 0) + 1)));
+    const allTags = Array.from(counts, ([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+    let activeTag = null;
+    let kw = "";
+
+    const ordered = [...items].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+
+    const drawTags = () => {
+      if (!bar) return;
+      bar.innerHTML = allTags.slice(0, 5).map(t => `
+        <button class="tagpill${activeTag === t.name ? " is-active" : ""}" data-tag="${esc(t.name)}">
+          ${esc(t.name)}<span class="tagpill__n">${t.count}</span>
+        </button>`).join("");
+    };
+
+    const drawPosts = () => {
+      const k = kw.trim().toLowerCase();
+      const rows = ordered.filter(p => {
+        if (activeTag && !itemTags(p).includes(activeTag)) return false;
+        if (!k) return true;
+        return [p.title, p.excerpt, p.category, ...itemTags(p)]
+          .join(" ").toLowerCase().includes(k);
+      });
+      list.innerHTML = rows.length
+        ? rows.map(postCard).join("")
+        : `<div class="empty">${esc(opt.empty || "這裡還沒有文章。")}</div>`;
+      initReveal();
+    };
+
+    if (bar) {
+      bar.addEventListener("click", (e) => {
+        const pill = e.target.closest("[data-tag]");
+        if (!pill) return;
+        activeTag = (activeTag === pill.dataset.tag) ? null : pill.dataset.tag;
+        drawTags(); drawPosts();
+      });
+    }
+    if (search) {
+      search.addEventListener("input", () => { kw = search.value; drawPosts(); });
+    }
+
+    drawTags();
+    drawPosts();
+  }
+
+  /* ---------- Global Perspectives ---------- */
+
+  function renderGlobal() {
+    const grid = $("[data-cities]");
+    if (!grid) return;
+
+    const g = SITE.global || {};
+    const cities = g.cities || [];
+    const posts = g.posts || [];
+    const q = new URLSearchParams(location.search);
+    const cityId = q.get("city");
+
+    const credit = $("[data-cities-credit]");
+    if (credit && g.credit) credit.textContent = g.credit;
+
+    // 城市卡片
+    grid.innerHTML = cities.map((c, i) => {
+      const n = posts.filter(p => p.city === c.id).length;
+      return `
+        <a class="citycard reveal" href="global.html?city=${encodeURIComponent(c.id)}" data-delay="${i % 3}">
+          <img src="${esc(c.image)}" alt="${esc(c.name)}" loading="lazy" decoding="async">
+          <span class="citycard__scrim" aria-hidden="true"></span>
+          <span class="citycard__text">
+            <span class="citycard__name">${esc(c.name)}</span>
+            <span class="citycard__country">${esc(c.country)}</span>
+          </span>
+          ${n ? `<span class="citycard__n">${n}</span>` : ""}
+        </a>`;
+    }).join("");
+
+    // 選了城市就把列表捲到前面並顯示城市標題
+    const listWrap = $("[data-global-list]");
+    if (!cityId) return;
+    const city = cities.find(c => c.id === cityId);
+    if (!city) return;
+
+    const head = $("[data-city-head]");
+    if (head) {
+      head.hidden = false;
+      head.innerHTML = `
+        <img class="cityhead__img" src="${esc(city.image)}" alt="${esc(city.name)}" loading="lazy" decoding="async">
+        <div class="cityhead__text">
+          <p class="eyebrow">Location <span class="cityhead__n">${posts.filter(p => p.city === city.id).length}</span></p>
+          <h2 class="cityhead__name">${esc(city.name)}</h2>
+          <p class="cityhead__country">${esc(city.country)}</p>
+        </div>
+        <a class="cityhead__back" href="global.html">顯示全部城市</a>`;
+    }
+    if (listWrap) listWrap.classList.add("is-city");
+
+    renderCollection({
+      list: "[data-posts]",
+      bar: "[data-tagbar]",
+      search: "[data-search]",
+      items: posts.filter(p => p.city === city.id),
+      empty: `${city.name} 還沒有文章。`
+    });
+  }
+
+  /* ---------- Leadership ---------- */
+
+  function renderLeadership() {
+    if (!$("[data-leadership]")) return;
+    renderCollection({
+      list: "[data-posts]",
+      bar: "[data-tagbar]",
+      search: "[data-search]",
+      items: SITE.leadership || [],
+      empty: "這個部分還沒有文章。"
+    });
+  }
+
+
   // 統計所有標籤出現的文章數，多的排前面
   function tagCounts() {
     const map = new Map();
@@ -422,16 +571,7 @@
         initReveal();
         return;
       }
-      list.innerHTML = items.map((p, i) => `
-        <a class="post reveal" href="article.html?type=post&id=${encodeURIComponent(p.id)}" data-delay="${i % 3}">
-          <div class="post__meta">
-            ${p.category ? `<span>${esc(p.category)}</span>` : ""}
-            ${p.date ? `<span>·</span><span>${esc(p.date)}</span>` : ""}
-          </div>
-          <h3 class="post__title">${esc(p.title)}</h3>
-          <p class="post__excerpt">${esc(p.excerpt || "")}</p>
-          <div class="post__more">閱讀全文 ${arrowSvg}</div>
-        </a>`).join("");
+      list.innerHTML = items.map(postCard).join("");
       initReveal();
     };
 
@@ -607,15 +747,32 @@
     const id = q.get("id");
     const isPub = type === "pub";
 
-    const src = isPub ? (SITE.publications || []) : (SITE.insights || []);
-    const idx = src.findIndex(x => x.id === id);
-    const item = idx >= 0 ? src[idx] : null;
+    // 文章可能來自三個集合：Insights / Global Perspectives / Leadership
+    const pools = isPub
+      ? [SITE.publications || []]
+      : [SITE.insights || [], (SITE.global || {}).posts || [], SITE.leadership || []];
+    const src = pools.flat();
+    const item = src.find(x => x.id === id) || null;
+
+    // 上一篇／下一篇只在「同一來源」內移動，不跨集合
+    const pool = item ? (pools.find(a => a.includes(item)) || src) : src;
+    const idx = item ? pool.indexOf(item) : -1;
 
     // 返回連結：只留一個箭頭（文字放在 aria-label / title，維持無障礙）
     const back = $("[data-article-back]");
     if (back) {
-      const label = isPub ? "返回學術成果 / Back to Academics" : "返回投資研究 / Back to Insights";
-      back.href = isPub ? "academics.html" : "insights.html";
+      let label, href;
+      if (isPub) {
+        label = "返回學術成果 / Back to Academics"; href = "academics.html";
+      } else if (item && (SITE.leadership || []).includes(item)) {
+        label = "返回 Leadership"; href = "leadership.html";
+      } else if (item && ((SITE.global || {}).posts || []).includes(item)) {
+        label = "返回 Global Perspectives";
+        href = item.city ? `global.html?city=${encodeURIComponent(item.city)}` : "global.html";
+      } else {
+        label = "返回投資研究 / Back to Insights"; href = "insights.html";
+      }
+      back.href = href;
       back.innerHTML = backSvg;
       back.setAttribute("aria-label", label);
       back.setAttribute("title", label);
@@ -700,10 +857,10 @@
       body.innerHTML = html;
     }
 
-    /* --- 上一篇 / 下一篇 --- */
+    /* --- 上一篇 / 下一篇（只在同一集合內移動） --- */
     const pager = $("[data-article-pager]");
     if (pager && idx >= 0) {
-      const prev = src[idx - 1], next = src[idx + 1];
+      const prev = pool[idx - 1], next = pool[idx + 1];
       const make = (it, dir) => it
         ? `<a class="pager__${dir}" href="article.html?type=${type}&id=${encodeURIComponent(it.id)}">
              <span class="pager__dir">${dir === "prev" ? "Previous" : "Next"}</span>${esc(it.title)}</a>`
@@ -723,6 +880,8 @@
     renderInsights();
     renderArticle();
     renderStats();
+    renderGlobal();
+    renderLeadership();
     initReveal();
     initScrollDriver();
     initMagnetic();

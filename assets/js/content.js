@@ -417,7 +417,29 @@ window.SITE = {
   ],
 
   /* ---------------------------------------------------------------
-     7. 點擊量統計（後台，只有站長看得到）
+     8. Global Perspectives —— 城市觀察
+     cities：首頁卡片（圖片 + 城市 + 國家）
+     posts ：文章，city 要對應上面 cities 的 id
+     --------------------------------------------------------------- */
+  global: {
+    cities: [
+      { id: "hong-kong", name: "Hong Kong", country: "China", image: "assets/img/city-hong-kong.jpg" },
+      { id: "shenzhen",  name: "Shenzhen",  country: "China", image: "assets/img/city-shenzhen.jpg" },
+      { id: "dubai",     name: "Dubai",     country: "UAE",   image: "assets/img/city-dubai.jpg" },
+      { id: "abu-dhabi", name: "Abu Dhabi", country: "UAE",   image: "assets/img/city-abu-dhabi.jpg" }
+    ],
+    /* 文章格式跟 insights 一樣：id / city / date / category / tags / title / excerpt / body */
+    posts: [],
+    credit: "城市照片來自 Pexels（jbmalong、Wong Peter、Katetrysh、GSN Travel）"
+  },
+
+  /* ---------------------------------------------------------------
+     9. Leadership —— 文章格式同 insights
+     --------------------------------------------------------------- */
+  leadership: [],
+
+  /* ---------------------------------------------------------------
+     10. 點擊量統計（後台，只有站長看得到）
      endpoint：免費計數服務 abacus（免註冊、開放 CORS）
      statsKey：stats.html 的檢視密碼
      --------------------------------------------------------------- */
