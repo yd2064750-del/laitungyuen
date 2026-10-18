@@ -734,7 +734,54 @@ p  { margin: 0 0 1.1em; }
 }
 .fig__credit { display: block; margin-top: .4rem; opacity: .8; }
 
-/* 腳註 */
+/* 文章副標題 / 公式 / 表格 / 文獻 */
+.prose__sub {
+  font-size: var(--fs-lg); font-style: italic;
+  color: var(--text-2); margin: 0 0 2.25rem;
+}
+.prose .formula {
+  margin: 1.5rem 0; padding: .35rem 0 .35rem 1.15rem;
+  border-left: 2px solid var(--border);
+  font-size: 1.02rem; line-height: 1.9; color: var(--text);
+  overflow-x: auto;
+}
+.prose .formula sub { font-size: .7em; }
+.prose .formula sup { font-size: .7em; }
+
+.tbl { margin: 2.5rem 0; }
+.prose .tbl__caption {
+  font-size: var(--fs-sm); color: var(--text); font-weight: 400;
+  margin: 0 0 1rem; text-align: left;
+}
+.tbl__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.tbl table {
+  width: 100%; min-width: 480px;
+  border-collapse: collapse; margin: 0;
+  font-size: 0.8125rem; line-height: 1.6;
+}
+.tbl th, .tbl td {
+  text-align: left; vertical-align: top;
+  padding: .75rem .85rem .75rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.tbl thead th {
+  font-weight: 400; color: var(--text-3);
+  letter-spacing: .03em; border-bottom: 1px solid var(--border);
+  padding-bottom: .6rem;
+}
+.tbl tbody th { font-weight: 400; color: var(--text); }
+.tbl tbody td { color: var(--text-2); }
+.tbl tbody tr:last-child th, .tbl tbody tr:last-child td { border-bottom: 0; }
+.tbl__note {
+  margin: .9rem 0 0; font-size: var(--fs-xs);
+  line-height: 1.7; color: var(--text-3);
+}
+
+.refs p {
+  font-size: var(--fs-sm); line-height: 1.7; color: var(--text-2);
+  margin: 0 0 .9rem; padding-left: 1.4rem; text-indent: -1.4rem;
+}
+.refs p:last-child { margin-bottom: 0; }
 .prose .fnref { font-size: .66em; line-height: 0; vertical-align: super; margin-left: .1em; }
 .prose .fnref a { color: var(--accent); text-decoration: none; padding: 0 .12em; }
 .prose .fnref a:hover { text-decoration: underline; }
@@ -891,6 +938,13 @@ body { animation: pageIn .5s var(--ease) both; }
   .citycard__name { font-size: 1rem; }
   .citycard__n { top: .6rem; right: .6rem; }
   .cityhero { height: 38vh; }
+  /* 手機：表格靠橫向滑動，加一句提示免得被誤認為被裁掉 */
+  .tbl::after {
+    content: "Scroll horizontally to see the full table →";
+    display: block; margin-top: .75rem;
+    font-size: var(--fs-xs); color: var(--text-3);
+  }
+  .tbl table { font-size: 0.78125rem; }
   /* 手機：縮放幅度減半，減少長距離位移 */
   .hero__media { transform: scale(calc(1.06 - var(--hero-t, 0) * 0.06)); }
 }

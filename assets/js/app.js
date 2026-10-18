@@ -866,6 +866,8 @@
         html += blocks.map(b => {
           const h = b.h ? `<h2>${esc(b.h)}</h2>` : "";
           const h3 = b.h3 ? `<h3>${esc(b.h3)}</h3>` : "";
+          const sub = b.sub ? `<p class="prose__sub">${esc(b.sub)}</p>` : "";
+          const formula = b.formula ? `<p class="formula">${b.formula}</p>` : "";
           const fig = b.figure ? `
             <figure class="fig">
               <img src="${esc(b.figure.src)}" alt="${esc(b.figure.alt || "")}" loading="lazy" decoding="async">
@@ -874,11 +876,24 @@
                 ${b.figure.credit ? `<span class="fig__credit">${esc(b.figure.credit)}</span>` : ""}
               </figcaption>
             </figure>` : "";
+          const tbl = b.table ? `
+            <figure class="tbl">
+              ${b.table.caption ? `<figcaption class="tbl__caption">${esc(b.table.caption)}</figcaption>` : ""}
+              <div class="tbl__scroll">
+                <table>
+                  ${b.table.head ? `<thead><tr>${b.table.head.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead>` : ""}
+                  <tbody>${(b.table.rows || []).map(r => `<tr>${r.map((c, i) =>
+                    i === 0 ? `<th scope="row">${esc(c)}</th>` : `<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody>
+                </table>
+              </div>
+              ${b.table.note ? `<p class="tbl__note">${esc(b.table.note)}</p>` : ""}
+            </figure>` : "";
+          const refs = b.refs ? `<div class="refs">${b.refs.map(r => `<p>${esc(r)}</p>`).join("")}</div>` : "";
           const paras = (b.p || []).map(p => `<p>${p}</p>`).join("");
           const ol = (b.ol && b.ol.length) ? `<ol class="notes">${b.ol.map(li => `<li>${li}</li>`).join("")}</ol>` : "";
           const list = (b.ul && b.ul.length) ? `<ul>${b.ul.map(li => `<li>${li}</li>`).join("")}</ul>` : "";
           const quote = b.quote ? `<blockquote>${b.quote}</blockquote>` : "";
-          return h + h3 + fig + paras + ol + list + quote;
+          return h + h3 + sub + formula + fig + tbl + paras + ol + list + refs + quote;
         }).join("");
       } else {
         // 有摘要但還沒有全文時，仍提示正文待上傳

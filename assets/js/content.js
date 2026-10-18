@@ -109,6 +109,445 @@ window.SITE = {
      --------------------------------------------------------------- */
   insights: [
     {
+      id: "post-7",
+      date: "2026-10-18",
+      category: "International Relations",
+      tags: ["International Relations", "Trade", "Conflict", "Research Design"],
+      title: "Does Trade Bring Peace?",
+      excerpt: "A research proposal arguing that trade relocates conflict rather than eliminating it: it raises the cost of war while leaving tariffs, sanctions, and denunciation cheaper.",
+      body: [
+        {
+          sub: "Bilateral Trade and the Type of Conflict between States",
+        },
+        {
+          figure: {
+            src: "assets/img/trade-port.jpg",
+            alt: "Container terminal",
+            caption: "Container terminal. Trade volumes are the paper's central independent variable.",
+            credit: "Photo: Wolfgang Weiser / Pexels",
+          },
+        },
+        {
+          h: "1. Introduction",
+        },
+        {
+          p: [
+            "Between 2000 and 2018, goods trade between the United States and China rose from $116 billion to $659 billion a year (figure 1).<sup class=\"fnref\"><a href=\"#n-1\" id=\"fnref-1\">1</a></sup> Over the same period the two governments accused each other of espionage and intellectual-property theft, blocked each other’s technology firms, and from July 2018 imposed tariffs on hundreds of billions of dollars of imports. Bilateral trade fell by 16 percent in 2019, then recovered to $690 billion in 2022. What did not happen was a war. Two of the most deeply integrated economies in history converted a commercial relationship into an instrument of rivalry while continuing to exchange more than half a trillion dollars of goods every year.",
+            "That is the problem this proposal addresses. Trade creates gains from exchange and, with them, points of leverage. Dependence can make cooperation profitable, and it can make coercion cheap: the side that depends less can threaten the side that depends more. Interdependence therefore does not determine whether two states are peaceful; it changes the menu of conflicts available to them. The relationship is worth studying because a single variable carries two opposed mechanisms — the cost of war and the leverage of dependence — and the literature has never settled which one dominates under which conditions.",
+            "The argument also rests on a second decision: conflict is not one thing. Military conflict is the threat, display, or use of force. Economic conflict is the use of tariffs, sanctions, embargoes, export controls, and litigation at the World Trade Organization (WTO) to impose costs. Diplomatic conflict is hostility in words and symbols — denunciation, expelled envoys, deadlocked negotiations, votes cast against one another. These are not rungs on a single ladder. Two states can wage an intense economic and diplomatic struggle without approaching force, and two states with almost no trade can sustain a permanent military rivalry. If the three are collapsed into one index, effects that run in opposite directions average out to nothing, and the theory is rejected for the wrong reason. Disaggregation is the condition under which the liberal and realist arguments can be told apart at all.",
+            "The research question follows: How does increased bilateral trade affect the likelihood and the type of conflict between states? Two subsidiary questions make it testable. Does higher bilateral trade reduce the probability that a pair enters a militarized dispute? And does the effect differ across military, economic, and diplomatic outcomes, and depend on how unequally the two sides depend on the relationship? We expect that trade relocates conflict rather than eliminating it: it raises the cost of shooting and lowers the cost of suing, sanctioning, and denouncing. The study combines a comparative content analysis of three dyads between 2010 and 2022 with a dyad-year panel of politically relevant country pairs from 1950 to 2022, estimated separately for each form of conflict.",
+          ],
+        },
+        {
+          figure: {
+            src: "assets/img/trade-fig1.jpg",
+            alt: "US merchandise trade with China, 2000-2024",
+            caption: "United States merchandise trade with China, 2000–2024. Authors’ calculations from U.S. Census Bureau data (series IMPCH and EXPCH, retrieved through FRED). Values are annual totals of U.S. imports from and exports to China in billions of current U.S. dollars; the dashed line marks the first Section 301 tariff round in July 2018.",
+            credit: "Figure 1",
+          },
+        },
+        {
+          h: "2. Literature Review and Hypotheses",
+        },
+        {
+          h3: "2.1 What “trade” means",
+        },
+        {
+          p: [
+            "Trade is the exchange of goods and services across borders. Our core measure is the dyadic flow: the combined value of imports and exports between states i and j in year t. The choice is conventional and comparable across thousands of pairs, but it conflates two things the literature separates. Volume measures how much two economies exchange; interdependence measures how much they would lose if the exchange stopped. Keohane and Nye drew the distinction between sensitivity and vulnerability, and it matters here because a large economy can run a large dollar volume with a partner that is marginal to its own welfare.<sup class=\"fnref\"><a href=\"#n-2\" id=\"fnref-2\">2</a></sup> Barbieri made the point operational: salience, not size, is what a theory of dependence requires.<sup class=\"fnref\"><a href=\"#n-3\" id=\"fnref-3\">3</a></sup> We therefore treat trade as three dimensions — volume, dependence, and the asymmetry between the two sides’ dependence — and measure each separately in section 4.3.",
+            "Two alternatives were considered and excluded from the primary measure. The first is capital interdependence. Gartzke, Li, and Boehmer show that investment and financial ties pacify independently of goods trade, and Gartzke later generalized the claim into a “capitalist peace.”<sup class=\"fnref\"><a href=\"#n-4\" id=\"fnref-4\">4</a></sup><sup class=\"fnref\"><a href=\"#n-5\" id=\"fnref-5\">5</a></sup> We exclude capital flows because bilateral investment data are too sparse before the 1990s to support a panel that begins in 1950; they return as a robustness check on the post-1990 subsample. The second is trade openness, the ratio of trade to GDP. Openness measures exposure to the world, not to a particular partner, and is mechanically correlated with country size; using it would confound dependence with scale.",
+          ],
+        },
+        {
+          h3: "2.2 What “conflict” means",
+        },
+        {
+          p: [
+            "Conflict is an incompatibility of interests, needs, or goals between political actors. The definition is deliberately broad; the operational problem is that most of what states do to one another falls short of violence. The Correlates of War (COW) project codes military conflict as a militarized interstate dispute: a case in which one state threatens, displays, or uses force against another, from a threat to a border clash to war.<sup class=\"fnref\"><a href=\"#n-6\" id=\"fnref-6\">6</a></sup> Economic conflict is the deliberate use of economic instruments to change another state’s behavior — sanctions, tariffs, embargoes, export controls, and complaints in the WTO’s dispute-settlement system. Diplomatic conflict is public hostility between governments: denunciation, expulsion or recall of envoys, suspended negotiations, and opposition in United Nations voting. One alternative — conflict as a single latent dimension of “relationship quality,” the premise of event-based hostility indexes — is rejected here because it assumes that tariffs and gunfire lie on one continuum, and that assumption makes our central hypothesis untestable. We also set aside civil war and covert action, which fall outside a dyadic account of intergovernmental relations and cannot be coded comparably across the panel.",
+          ],
+        },
+        {
+          h3: "2.3 The liberal argument: trade raises the cost of war",
+        },
+        {
+          p: [
+            "The liberal expectation is old. Commerce generates gains that war destroys, so the more a state gains from trade with a partner, the more it loses by fighting that partner.<sup class=\"fnref\"><a href=\"#n-7\" id=\"fnref-7\">7</a></sup> Oneal and Russett supplied the canonical test, finding that trade is associated with fewer militarized disputes among states between 1950 and 1985, alongside democracy and shared membership in international organizations.<sup class=\"fnref\"><a href=\"#n-8\" id=\"fnref-8\">8</a></sup> Their results survived methodological criticism and alternative specifications,<sup class=\"fnref\"><a href=\"#n-9\" id=\"fnref-9\">9</a></sup> and extending the sample back to 1885 showed that the pacifying effect holds after controlling for prior conflict.<sup class=\"fnref\"><a href=\"#n-10\" id=\"fnref-10\">10</a></sup> A second mechanism is informational: repeated exchange reveals the other side’s resolve and provides a channel for credible signals.<sup class=\"fnref\"><a href=\"#n-11\" id=\"fnref-11\">11</a></sup> Morrow’s version cuts against the cost story, since a state willing to sacrifice trade can use the sacrifice as a signal of resolve, which means trade can escalate as well as dampen.<sup class=\"fnref\"><a href=\"#n-12\" id=\"fnref-12\">12</a></sup> Martin, Mayer, and Thoenig add a third qualification: bilateral trade reduces conflict, but global openness can increase it, because multilateral trade diffuses the cost of any single bilateral rupture.<sup class=\"fnref\"><a href=\"#n-13\" id=\"fnref-13\">13</a></sup>",
+          ],
+        },
+        {
+          h3: "2.4 The realist challenge: asymmetry, relative gains, and expectations",
+        },
+        {
+          p: [
+            "Realists do not deny that trade creates gains; they deny that gains are the whole story. Waltz’s objection is structural: in anarchy, what matters is not whether both sides benefit but who benefits more.<sup class=\"fnref\"><a href=\"#n-14\" id=\"fnref-14\">14</a></sup> Gowa showed that trade follows security, since states trade more with allies than with adversaries — which means the observed trade–peace association may be a product of alliance politics rather than a cause of it.<sup class=\"fnref\"><a href=\"#n-15\" id=\"fnref-15\">15</a></sup>",
+            "Barbieri’s finding is the most direct challenge. Across 14,341 dyad-years between 1870 and 1938, extensive interdependence does not reliably reduce militarized conflict and under some specifications is associated with more of it.<sup class=\"fnref\"><a href=\"#n-16\" id=\"fnref-16\">16</a></sup><sup class=\"fnref\"><a href=\"#n-17\" id=\"fnref-17\">17</a></sup> The mechanism is asymmetry: when one side depends heavily and the other does not, the trade tie stops being a mutual hostage and becomes a lever. The less dependent side can extract concessions by threatening access; the more dependent side faces a choice between submission and resistance, and resistance is cheaper before dependence deepens. Copeland pushes the argument into the future. What drives leaders is not the current level of trade but their expectations about its trajectory: when they expect trade to grow, interdependence is an asset worth protecting; when they expect it to contract, dependence becomes a vulnerability to be addressed before it is too late.<sup class=\"fnref\"><a href=\"#n-18\" id=\"fnref-18\">18</a></sup><sup class=\"fnref\"><a href=\"#n-19\" id=\"fnref-19\">19</a></sup> That account fits the case that motivates this study. The Sino-American relationship was most cooperative when both sides expected the gains to keep rising, and most adversarial once Washington began to expect relative decline.",
+          ],
+        },
+        {
+          h3: "2.5 Reverse causality and confounding",
+        },
+        {
+          p: [
+            "The correlation between trade and peace may run backwards. Keshk, Pollins, and Reuveny estimate a simultaneous model and find that conflict strongly reduces trade, and that politics explains trade better than trade explains conflict.<sup class=\"fnref\"><a href=\"#n-20\" id=\"fnref-20\">20</a></sup> Hegre, Oneal, and Russett reply with updated estimates and find reciprocal effects: conflict reduces trade, and trade still reduces conflict.<sup class=\"fnref\"><a href=\"#n-21\" id=\"fnref-21\">21</a></sup> The exchange is unresolved, and it sets the bar for any new design. A cross-sectional association between high trade and low conflict is consistent with three stories — trade causes peace, peace causes trade, or a third factor produces both — and only a design that addresses all three can separate them.",
+            "The confounders are largely geographic and political. Distance and contiguity shape both trade costs and the opportunity for border disputes;<sup class=\"fnref\"><a href=\"#n-22\" id=\"fnref-22\">22</a></sup> alliances shape both trade and conflict;<sup class=\"fnref\"><a href=\"#n-23\" id=\"fnref-23\">23</a></sup> regime type affects both, since democracies trade more with one another and fight one another less;<sup class=\"fnref\"><a href=\"#n-24\" id=\"fnref-24\">24</a></sup> capabilities and major-power status affect both the capacity to trade and the willingness to fight. Past rivalry is the most dangerous of the set, because it is a common cause of low trade and high conflict and is easily mistaken for evidence that low trade causes conflict.",
+          ],
+        },
+        {
+          h3: "2.6 Three hypotheses and their competing predictions",
+        },
+        {
+          p: [
+            "The literature yields three hypotheses that differ in mechanism and in observable implication.",
+            "H1 (liberal interdependence). Higher levels of mutual bilateral trade are associated with a lower probability that a dyad enters a militarized dispute. Mechanism: trade raises the opportunity cost of fighting. Implication: the coefficient on volume should be negative and substantively large in the military model, and larger where trade is a large share of both partners’ trade than where it is a small share of one large economy.",
+            "H2 (strategic competition). High but asymmetric dependence is associated with more economic and diplomatic disputes, even where it is associated with less military conflict. Mechanism: asymmetry converts a trade tie into leverage, and the less dependent side uses economic and diplomatic instruments to extract concessions. Implication: the coefficient on asymmetry should be positive for sanctions and diplomatic hostility, and the pacifying effect of volume should weaken as asymmetry rises.",
+            "H3 (conflict-type relocation). Higher bilateral trade is associated with less military conflict but not with fewer economic or diplomatic disputes. Mechanism: trade raises the cost of the most destructive instrument disproportionately, so states substitute cheaper ones — tariffs, sanctions, denunciations, votes — for force. Implication: the coefficient on volume should be negative in the military model and indistinguishable from zero, or positive, in the other two, estimated on the same dyad-years.",
+            "A fourth expectation serves as the null: once prior conflict and political affinity are controlled, trade has no independent association with any form of conflict, because politics drives trade rather than the reverse.<sup class=\"fnref\"><a href=\"#n-25\" id=\"fnref-25\">25</a></sup> Table 1 states the four predictions side by side.",
+          ],
+        },
+        {
+          table: {
+            caption: "Table 1. Hypotheses, mechanisms, and predicted associations",
+            head: ["", "Mechanism", "Military conflict", "Economic conflict", "Diplomatic conflict"],
+            rows: [
+              ["H1 Liberal interdependence", "Trade raises the opportunity cost of war", "Strong negative", "Negative or null", "Negative or null"],
+              ["H2 Strategic competition", "Asymmetric dependence becomes leverage", "Weak negative or null", "Positive", "Positive"],
+              ["H3 Conflict-type relocation", "Trade displaces conflict to cheaper instruments", "Negative", "Null or positive", "Null or positive"],
+              ["Null: political primacy", "Politics drives trade, not the reverse", "Null once politics controlled", "Null", "Null"],
+            ],
+            note: "“Negative” means that higher trade is associated with a lower probability of that form of conflict. H1 and H3 both predict a negative coefficient for military conflict and differ chiefly in rows two and three; H2 locates the effect in asymmetry rather than in volume."
+          },
+        },
+        {
+          p: [
+            "The hypotheses are distinguishable in two ways. H1 and H3 make the same prediction about military conflict and differ only in their predictions about the other two outcomes, so a negative coefficient in the military model is not evidence for either alone: the three-outcome comparison does the work. H2 differs in its independent variable, predicting an effect of asymmetry conditional on volume, and predicting that the pacifying effect of volume is concentrated in symmetric relationships. Volume reducing military conflict uniformly, with no asymmetry effect, would support H1 and falsify H2. Volume reducing military conflict while leaving the other two untouched, with asymmetry predicting the latter, would support H3 and H2 together — the result we consider most likely, and the one that would require the two traditions to be combined rather than treated as rivals.",
+          ],
+        },
+        {
+          figure: {
+            src: "assets/img/trade-ship.jpg",
+            alt: "Container ship at dusk",
+            caption: "Container ship at dusk.",
+            credit: "Photo: Hatta Sun / Pexels",
+          },
+        },
+        {
+          h: "3. Qualitative Methods Design",
+        },
+        {
+          h3: "3.1 Approach and why",
+        },
+        {
+          p: [
+            "The qualitative component is a comparative historical study built on qualitative content analysis of official documents. The choice follows from what the quantitative design cannot do: a panel can estimate whether trade is associated with more economic and less military conflict, but it cannot show that leaders reasoned about dependence as either theory claims. Documents are the closest available trace of that reasoning, because they record what governments said about a trade relationship while they were deciding how to treat it.<sup class=\"fnref\"><a href=\"#n-26\" id=\"fnref-26\">26</a></sup> The comparative structure supplies what a single case cannot: by placing dyads with different combinations of trade and conflict side by side, we can see whether the same mechanism appears where the outcome differs.",
+            "Three alternatives were considered and excluded. Interviews with officials would provide richer accounts, but elite access is not available to the research team, and retrospective accounts are reshaped by the outcomes they are meant to explain. Ethnography is unavailable at the level of state decision-making. A content analysis of newspaper coverage would capture elite opinion rather than official position, and press coverage is itself shaped by the rivalry we are trying to explain.",
+          ],
+        },
+        {
+          h3: "3.2 Cases",
+        },
+        {
+          p: [
+            "We compare three dyads between 2010 and 2022. Russia–Ukraine is a case of collapsing trade followed by full-scale war: bilateral trade fell sharply after 2014, and the relationship militarized in 2022. The United States–China is a case of expanding trade without war: trade roughly quintupled between 2000 and 2018, tariffs followed, and the relationship never militarized. India–Pakistan is a case of minimal trade with persistent conflict. The three occupy different corners of the trade–conflict space — one high-trade pair at war, one high-trade pair not at war, one low-trade pair in conflict — which is what makes comparison possible.",
+            "The selection has a cost we state rather than conceal: all three dyads are contentious, so the cases can recover mechanisms but not establish how common those mechanisms are in cooperative relationships. They also differ in region, regime type, and language, which reduces comparability but widens the range of conditions under which the mechanism can be observed. The panel is the check on generality; the cases are the check on mechanism.",
+          ],
+        },
+        {
+          h3: "3.3 Documents and sampling",
+        },
+        {
+          p: [
+            "For each dyad we collect fifteen to twenty official documents, forty-five to sixty in total: foreign- and trade-ministry statements, speeches by senior officials, white papers, and records of negotiations. Sampling is purposive and temporally stratified, drawing on the period before, during, and after each key episode rather than only on moments of crisis; a corpus built only from crises would guarantee hostility and make restraint invisible. Documents are collected in the original language where possible — Russian, Chinese, and English — and translated by the team, with translations checked against official English versions where these exist.",
+          ],
+        },
+        {
+          h3: "3.4 Coding",
+        },
+        {
+          p: [
+            "The unit of coding is the passage: a sequence of text expressing one complete idea. A passage may carry more than one code. The initial codebook has six categories, each tied to a mechanism in section 2: economic benefits of the relationship; the cost of escalation; dependence and vulnerability; security concerns and relative gains; economic pressure and coercion; and support for negotiation or institutional settlement. Codes are exclusive within a category but not across them, so one passage can record both a claimed benefit and a claimed vulnerability. Coding is thematic rather than lexical: a passage counts as “dependence and vulnerability” when it treats the relationship as a constraint on the state’s options, whatever words it uses.",
+            "Reliability is established before the full corpus is coded. Two coders independently code a shared sample of about one-fifth of the documents, compare codings, and revise the codebook until disagreements reflect ambiguity in the text rather than ambiguity in the rules. Agreement is reported as the percentage of passages coded identically, with a target of 0.80, and disagreements are retained rather than resolved by fiat, because the pattern of disagreement is itself evidence about how ambiguous official language is.",
+          ],
+        },
+        {
+          h3: "3.5 Analysis and discrimination between hypotheses",
+        },
+        {
+          p: [
+            "Analysis proceeds in two steps. Within each case we process-trace, lining up what officials said against what the trade data were doing in the same year and asking whether the timing fits the mechanism being claimed. Across cases we build a comparison matrix in which each dyad is a row and each code category a column, and read down the columns for patterns the quantitative results can then be tested against.",
+            "Each hypothesis implies a different documentary signature, which is what makes the design a test rather than an illustration. H1 predicts that officials in high-trade dyads justify restraint by citing the economic cost of disruption — lost exports, broken supply chains, domestic unemployment. H2 predicts the language of leverage: officials on the less dependent side describe the relationship as an instrument, and officials on the more dependent side describe it as a vulnerability to be reduced. H3 predicts substitution: the same officials who cite the cost of military escalation authorize tariffs, sanctions, or expulsions, and describe those measures as the responsible alternative to force. The third signature separates H3 from H1 most cleanly, because it requires the documents to contain restraint and escalation in the same period. If the corpus shows trade producing restraint across all three arenas, H1 survives and H3 fails; if it shows dependence producing hostility regardless of trade levels, H2 survives and H1 fails.",
+            "One limitation deserves emphasis. Official documents are strategic artifacts: governments have reasons to present their own conduct as defensive and their partner’s as aggressive, and they rarely record the calculations that produced a decision. The cases therefore establish how decisions were justified and how the trade relationship figured in public reasoning, not why decisions were made. That is why the panel matters: it tests whether the pattern officials describe is visible in the aggregate record, on data the officials did not produce.",
+          ],
+        },
+        {
+          figure: {
+            src: "assets/img/trade-containers.jpg",
+            alt: "Stacked intermodal containers",
+            caption: "Stacked intermodal containers.",
+            credit: "Photo: Samuel Wolfl / Pexels",
+          },
+        },
+        {
+          h: "4. Quantitative Methods Design",
+        },
+        {
+          h3: "4.1 Design and estimand",
+        },
+        {
+          p: [
+            "The quantitative component is an observational study of country pairs over time. An experiment is not available: no researcher can randomly assign two countries to trade with each other. The design is therefore a dyad-year panel, in which the unit of observation is a pair of states i and j in year t, and the estimand is the conditional association between the trade relationship in year t−1 and the probability of each form of conflict in year t, holding observable confounders and unobserved dyad-specific factors constant.",
+            "The panel is restricted to politically relevant dyads — pairs that are geographically contiguous or that include at least one major power.<sup class=\"fnref\"><a href=\"#n-27\" id=\"fnref-27\">27</a></sup> The restriction matters. The full set of dyads is dominated by pairs such as Bolivia and Nepal, which have no opportunity to fight and no reason to trade; including them would build a mechanical association between irrelevance and peace. Restricting to politically relevant pairs keeps the comparison inside the set of dyads that could plausibly do either.",
+            "The structure provides two comparisons, and the hypotheses require both. Across dyads, we compare high-trade pairs to low-trade pairs in the same year, which is the comparison the liberal literature usually makes. Within dyads, we compare the same pair over time — the United States and China before and after 2018, Russia and Ukraine before and after 2014 — which holds constant everything about the pair that does not change, including distance, contiguity, and the history of the rivalry. The second is the more demanding comparison, and it is where an association produced by stable dyad characteristics is most likely to disappear.",
+            "The window runs from 1950 to 2014 for the military models, because the militarized-dispute data end in 2014, and from 1950 to 2022 for the sanctions and diplomatic models, whose sources extend further.<sup class=\"fnref\"><a href=\"#n-28\" id=\"fnref-28\">28</a></sup> Models that must be compared directly — the tests of H3 — are estimated on the common 1950–2014 sample, so that differences in coefficients cannot be attributed to differences in the sample. The 2015–2022 extension is reported separately, and it is where the design earns its relevance to the present: the tariff war, the technology restrictions, and the post-2022 sanctions all fall inside it.",
+          ],
+        },
+        {
+          h3: "4.2 Data sources and merge",
+        },
+        {
+          p: [
+            "All components are public, documented, and merged on COW country codes and year. Table 2 lists the sources, their coverage, and the role each plays. Nothing depends on proprietary data, so the analysis can be replicated from the citations in the bibliography.",
+          ],
+        },
+        {
+          table: {
+            caption: "Table 2. Data sources, coverage, and role in the analysis",
+            head: ["Source", "Coverage", "Variables used", "Role"],
+            rows: [
+              ["IMF Direction of Trade Statistics", "1948–present", "Bilateral imports and exports; each country’s total trade", "Trade volume, dependence, asymmetry"],
+              ["COW Militarized Interstate Disputes v5.0; Dyadic MID 4.03", "1816–2014", "MID onset; highest hostility level; fatalities", "Military conflict (main and severity models)"],
+              ["TIES 4.0; Global Sanctions Data Base R3; WTO Dispute Settlement", "1945–2005; 1950–2022; 1995–present", "Sanctions threats and impositions; dyadic cases; dispute initiations", "Economic conflict (spliced across sources)"],
+              ["GDELT 2.0 event data", "2015–present", "Counts of hostile events, CAMEO-coded", "Diplomatic conflict (event counts)"],
+              ["UN General Assembly voting data", "1946–present", "Ideal-point estimates; vote agreement scores", "Diplomatic conflict (distance)"],
+              ["Gleditsch–Ward minimum distance; COW contiguity v3.2", "1946–2007; 1816–2016", "Logged capital-to-capital distance; contiguity", "Controls"],
+              ["ATOP 4.1; Polity5; V-Dem", "1815–2012; 1800–2018; 1789–present", "Alliance portfolio; regime type; democracy index", "Controls"],
+              ["COW National Material Capabilities v6.0; World Bank WDI", "1816–2016; 1960–present", "CINC scores; GDP and GDP per capita", "Controls"],
+            ],
+            note: "The sanctions measure is spliced because no single dataset covers the full window. TIES 4.0 ends in 2005, the Global Sanctions Data Base reaches 2022, and WTO dispute initiations cover 1995 onward. Where sources overlap, we use the overlap to check consistency rather than to extend coverage."
+          },
+        },
+        {
+          h3: "4.3 Measuring the trade relationship",
+        },
+        {
+          p: [
+            "Three measures operationalize the three dimensions identified in section 2.1. The first is volume. Because bilateral trade is heavily right-skewed and spans several orders of magnitude, we use the natural log of one plus the total flow, where T is the sum of i’s imports from j and i’s exports to j, in constant dollars:<sup class=\"fnref\"><a href=\"#n-29\" id=\"fnref-29\">29</a></sup>",
+          ],
+        },
+        {
+          formula: "Volume<sub>ij,t</sub> = ln(1 + T<sub>ij,t</sub>)",
+        },
+        {
+          p: [
+            "The second is dependence, the share of a country’s total trade that runs through the partner:",
+          ],
+        },
+        {
+          formula: "d<sub>ij,t</sub> = T<sub>ij,t</sub> / T<sub>i,t</sub>",
+        },
+        {
+          p: [
+            "This is the operational form of the salience argument: it measures how much of i’s exposure is concentrated in j. The third is asymmetry, the gap between the two sides’ dependence, taken as the absolute difference in logs:",
+          ],
+        },
+        {
+          formula: "A<sub>ij,t</sub> = | ln(d<sub>ij,t</sub>) − ln(d<sub>ji,t</sub>) |",
+        },
+        {
+          p: [
+            "A signed version records which side is more dependent. The signed measure matters for H2, because the realist mechanism is directional: it is the less dependent side that holds the leverage, so pressure should flow from the less dependent to the more dependent partner. An unsigned gap can establish that inequality matters; only the signed version can establish that direction matters, and the two are estimated separately.",
+            "Two construction details affect interpretation. Trade enters at t−1 throughout, so that the relationship is measured before the conflict it is supposed to explain. And zeros are kept rather than dropped: a dyad that trades nothing is not missing data but the lower bound of the independent variable. Because log(1+T) compresses small flows, the models are re-estimated with Poisson pseudo-maximum-likelihood, which handles zeros without an arbitrary transformation.<sup class=\"fnref\"><a href=\"#n-30\" id=\"fnref-30\">30</a></sup>",
+          ],
+        },
+        {
+          h3: "4.4 Measuring the three forms of conflict",
+        },
+        {
+          p: [
+            "Military conflict is the onset of a militarized interstate dispute: a binary indicator equal to one in the first year of a new MID between i and j. Onset rather than incidence is used because the hypotheses concern initiation, and because ongoing disputes would otherwise be counted repeatedly. Severity is measured separately with the highest hostility level reached — threat, display, use of force, or war — and with the fatality category, both estimated as ordered outcomes. The severity models are a direct test of the liberal cost mechanism: if trade works by raising the cost of the most destructive action, its coefficient should be largest at the top of the ladder.",
+            "Economic conflict is the onset of a sanctions episode in which one member of the dyad is the sender and the other the target. Because no single dataset covers the period, the measure is assembled from TIES 4.0 for 1945–2005, the Global Sanctions Data Base for 1950–2022, and WTO dispute initiations from 1995 onward, which capture the subset of economic conflict that states choose to litigate rather than retaliate.<sup class=\"fnref\"><a href=\"#n-31\" id=\"fnref-31\">31</a></sup><sup class=\"fnref\"><a href=\"#n-32\" id=\"fnref-32\">32</a></sup><sup class=\"fnref\"><a href=\"#n-33\" id=\"fnref-33\">33</a></sup> The WTO series is a complement rather than a substitute: it records formal complaints, a milder instrument than sanctions, and including it tests whether trade displaces conflict toward the most institutionalized and least costly channel available.",
+            "Diplomatic conflict is measured two ways. The first is the absolute difference between the two states’ ideal points estimated from United Nations General Assembly voting, which captures the structural dimension of alignment and is available annually for the whole panel.<sup class=\"fnref\"><a href=\"#n-34\" id=\"fnref-34\">34</a></sup><sup class=\"fnref\"><a href=\"#n-35\" id=\"fnref-35\">35</a></sup> The second is a count of hostile events — threats, accusations, expulsions, recalls — coded from the GDELT event stream for the years in which it is available.<sup class=\"fnref\"><a href=\"#n-36\" id=\"fnref-36\">36</a></sup> The two capture different things: voting distance is slow-moving and institutional, event counts are fast-moving and behavioral. Estimating the diplomatic model with both shows whether trade is associated with durable divergence of interests or only with episodic friction.",
+          ],
+        },
+        {
+          h3: "4.5 Alternative measurements considered and excluded",
+        },
+        {
+          p: [
+            "Five alternatives were set aside for stated reasons, and each survives as a robustness check. Trade openness, the ratio of bilateral trade to GDP, confounds dependence with country size and is not a dyadic measure. Unlogged trade in levels is dominated by a handful of large pairs, so the coefficients would describe the United States and Germany rather than the average dyad; Poisson estimation on levels is the alternative. Capital and financial interdependence, following Gartzke, Li, and Boehmer, is theoretically attractive but unavailable at bilateral level before the 1990s, so it is estimated on the post-1990 subsample.<sup class=\"fnref\"><a href=\"#n-37\" id=\"fnref-37\">37</a></sup> Interstate war alone is too rare — wars are a small fraction of militarized disputes — and would produce estimates dominated by a few observations. And a composite conflict index would make H3 untestable by construction, since the hypothesis predicts divergence across exactly the components an index would average away.",
+            "A sixth alternative is the most common in policy research: Goldstein-weighted event scores, which assign a valence and intensity to each reported interaction. They are excluded because the weights are not interval-scaled, because the underlying data reflect media attention rather than state behavior, and because the resulting index is the single continuum that section 2.2 rejects.",
+          ],
+        },
+        {
+          h3: "4.6 Estimation",
+        },
+        {
+          p: [
+            "Analysis begins descriptively: the distribution of each outcome, the pattern of missingness by year and region, and a correlation matrix among the trade measures and controls, reported before any model is estimated. Each binary outcome is then modeled with logistic regression. For dyad i,j in year t:",
+          ],
+        },
+        {
+          formula: "Pr(Y<sub>ij,t</sub> = 1) = Λ(β<sub>0</sub> + β<sub>1</sub>Vol<sub>ij,t−1</sub> + β<sub>2</sub>d<sub>ij,t−1</sub> + β<sub>3</sub>A<sub>ij,t−1</sub><br>+ β<sub>4</sub>(Vol × A)<sub>ij,t−1</sub> + γ′X<sub>ij,t</sub> + δ<sub>t</sub> + μ<sub>ij</sub>)",
+        },
+        {
+          p: [
+            "where Λ is the logistic function, X the vector of controls in table 2, δ the year fixed effects that absorb global shocks, and μ the dyad effects. The interaction between volume and asymmetry tests H2’s conditional claim: if liberal pacification requires symmetry, the interaction should be positive, meaning the negative effect of volume is concentrated where asymmetry is low. Diplomatic event counts are estimated with a negative binomial model, which accommodates overdispersion, and reported as average marginal effects so that coefficients read as changes in probability rather than in log odds.",
+            "Four features address problems specific to this data structure. Because conflict is rare relative to the number of dyad-years, rare-events logistic correction is applied as a check on the main estimates.<sup class=\"fnref\"><a href=\"#n-38\" id=\"fnref-38\">38</a></sup> Because the probability of conflict depends on how long the dyad has been at peace, the models include peace-years and cubic splines rather than a lagged dependent variable, following Beck, Katz, and Tucker.<sup class=\"fnref\"><a href=\"#n-39\" id=\"fnref-39\">39</a></sup> Because observations within a dyad are not independent, standard errors are clustered by dyad. And because the hypotheses concern differences across equations rather than within them, the three models are estimated on a common sample and compared with post-estimation tests rather than by reading significance stars separately.",
+          ],
+        },
+        {
+          h3: "4.7 Reverse causality and confounding",
+        },
+        {
+          p: [
+            "Four strategies, in ascending order of stringency, address the possibility that the association is produced by conflict reducing trade, or by a third factor producing both. The first is temporal ordering: trade at t−1 and conflict at t, so that conflict in year t cannot have caused trade in year t−1. This rules out simultaneous reverse causation but not anticipation, since governments that expect conflict may cut trade in advance.",
+            "The second is fixed effects. Dyad effects absorb every time-invariant characteristic of the pair — distance, contiguity, colonial history, and the persistent antagonism that makes some pairs both low-trading and conflict-prone — and year effects absorb shocks common to all dyads. What remains is variation within pairs over time, which is the comparison the theory needs: when a pair’s trade rises relative to its own history, does its conflict propensity fall?",
+            "The third is simultaneous estimation. Following Keshk, Pollins, and Reuveny, we specify a two-equation system in which conflict depends on lagged trade and trade on lagged conflict, with each endogenous variable instrumented by its own lags and by the exogenous controls in the other equation.<sup class=\"fnref\"><a href=\"#n-40\" id=\"fnref-40\">40</a></sup> This is the specification the field treats as the standard response to the endogeneity critique, and it is reported as a robustness check rather than as the main model, because the exclusion restrictions are plausible but not beyond dispute. The fourth is matching: for the post-1990 subsample, entropy balancing reweights high-trade dyad-years to match the covariate distribution of low-trade dyad-years, reducing dependence on the functional form of the regression.<sup class=\"fnref\"><a href=\"#n-41\" id=\"fnref-41\">41</a></sup> It cannot address unobserved confounding, and it is reported as a check on specification rather than as a causal estimate.",
+            "Throughout, the results are described as associations. The design narrows the range of plausible alternatives; it does not eliminate them, and the language of the paper is chosen to match what the design can support.",
+          ],
+        },
+        {
+          h3: "4.8 How the quantitative results discriminate between the hypotheses",
+        },
+        {
+          p: [
+            "The design does not rely on the significance of a single coefficient. It relies on the pattern of coefficients across three outcomes and two trade measures, and on formal tests of the restrictions each hypothesis implies. Table 3 states the predicted pattern.",
+          ],
+        },
+        {
+          table: {
+            caption: "Table 3. Predicted coefficient patterns by hypothesis",
+            head: ["Coefficient", "H1 Liberal", "H2 Asymmetry", "H3 Relocation", "Null: political primacy"],
+            rows: [
+              ["Volume → military onset", "Negative, large", "Negative, small", "Negative", "Zero"],
+              ["Volume → sanctions onset", "Negative or zero", "Zero", "Zero or positive", "Zero"],
+              ["Volume → diplomatic hostility", "Negative or zero", "Zero", "Zero or positive", "Zero"],
+              ["Asymmetry → military onset", "Zero", "Zero or positive", "Zero", "Zero"],
+              ["Asymmetry → economic and diplomatic", "Zero", "Positive", "Positive", "Zero"],
+              ["Volume × asymmetry", "Positive: pacification requires symmetry", "Positive", "Zero", "Zero"],
+            ],
+            note: "Patterns refer to the sign and relative magnitude of coefficients estimated on a common sample. H1 and H3 differ only in rows two and three, which is why all three outcomes must be estimated separately."
+          },
+        },
+        {
+          p: [
+            "Three tests do the discriminating work. H1 requires a negative and substantively large coefficient on volume in the military model; if it is indistinguishable from zero once fixed effects and controls are included, H1 fails on its own terms. H3 requires a difference across equations: the coefficient in the military model must be more negative than the corresponding coefficients in the economic and diplomatic models. Because the three models are estimated on the same dyad-years, this is a testable restriction rather than an impression, and we test it with a Wald test on the equality of coefficients across equations. A pattern in which volume reduces all three forms of conflict equally supports H1 and rejects H3, even though both predict a negative military coefficient.",
+            "H2 requires that asymmetry carry the effect and that the effect of volume be conditional on symmetry. Two results would support it: a positive coefficient on asymmetry in the economic and diplomatic models, and a positive interaction between volume and asymmetry, indicating that pacification weakens as the relationship becomes more unequal. The signed measure adds a directional test, since the realist mechanism predicts that pressure flows from the less dependent to the more dependent side. If conflict is equally likely in either direction, the leverage story loses its distinctively directional content.",
+            "The null generates a fourth pattern that is easy to overlook: trade coefficients that shrink toward zero once lagged conflict and dyad effects are included, while the lagged conflict term remains large. That is Keshk, Pollins, and Reuveny’s claim, and it is the result against which any finding of a trade effect has to be defended.",
+          ],
+        },
+        {
+          h3: "4.9 Feasibility and limits",
+        },
+        {
+          p: [
+            "The design is feasible with public data and standard software, but three problems will constrain what the results can support, and each has a planned response. Missing trade data come first: the IMF reports many dyad-years as missing rather than zero, especially for small economies before 1970, and treating missing as zero would manufacture pacifying effects, so we distinguish reported zeros from missing values and restrict the main sample to dyads with continuous coverage. Measurement error comes second: militarized disputes are under-reported where both states restrict information, sanctions where coercion is informal rather than announced, and both forms of error are likely correlated with regime type and with the severity of the relationship, so models are reported with and without the post-1990 period.",
+            "Truncation comes third. The military data end in 2014, so the period most relevant to the argument — the tariff war, the technology restrictions, the return of great-power competition — falls outside the window in which all three outcomes can be compared. The 2015–2022 extension compensates only partly, because post-2014 military conflict must be measured with event data that are noisier than the MID coding, and the qualitative cases are chosen in part to cover the gap. Beyond these, the design faces the ordinary limit of observational inference: trade policy is not assigned but chosen by the same governments choosing security policy, and the contribution of the quantitative component is to establish whether the predicted pattern is visible in a large sample and which hypothesis it is consistent with — not to prove that trade causes peace or conflict.",
+          ],
+        },
+        {
+          figure: {
+            src: "assets/img/trade-ship-night.jpg",
+            alt: "Container ship at night",
+            caption: "Container ship at night.",
+            credit: "Photo: Kordanalev / Pexels",
+          },
+        },
+        {
+          h: "5. Conclusion",
+        },
+        {
+          p: [
+            "This proposal asks how bilateral trade affects the likelihood and the type of conflict, and it answers with a design that treats conflict as three outcomes rather than one. The argument is that trade relocates conflict rather than eliminating it: it raises the cost of the most destructive instrument available to states and leaves the cheaper ones in place. If that is right, the liberal and realist traditions are not rivals so much as partial accounts of one relationship — one describing what trade does to the probability of war, the other what it does to the terms of bargaining.",
+            "The design disaggregates the dependent variable, without which the relocation hypothesis cannot be falsified. It separates volume, dependence, and asymmetry on the independent-variable side, without which the leverage mechanism cannot be distinguished from the opportunity-cost mechanism. And it combines a panel that establishes generality with cases that establish mechanism, so that the statistical pattern and the documentary record can be checked against each other. The payoff, if the pattern holds, is a more precise answer than the field currently offers: not whether trade brings peace, but which kind of peace trade brings, and what it does to the conflicts that remain.",
+          ],
+        },
+        {
+          h: "Notes",
+          ol: [
+            "U.S. Census Bureau, “Trade in Goods with China,” series IMPCH and EXPCH, Federal Reserve Bank of St. Louis, FRED, accessed October 17, 2026, https://fred.stlouisfed.org/.",
+            "Robert O. Keohane and Joseph S. Nye, Power and Interdependence: World Politics in Transition (Boston: Little, Brown, 1977), 11–19.",
+            "Katherine Barbieri, “Economic Interdependence: A Path to Peace or a Source of Interstate Conflict?,” Journal of Peace Research 33, no. 1 (1996): 29–49.",
+            "Erik Gartzke, Quan Li, and Charles Boehmer, “Investing in the Peace: Economic Interdependence and International Conflict,” International Organization 55, no. 2 (2001): 391–438.",
+            "Erik Gartzke, “The Capitalist Peace,” American Journal of Political Science 51, no. 1 (2007): 166–91.",
+            "Glenn Palmer et al., “The MID5 Dataset, 2011–2014: Procedures, Coding Rules, and Description,” Conflict Management and Peace Science 39, no. 4 (2022): 470–82.",
+            "Solomon W. Polachek, “Conflict and Trade,” Journal of Conflict Resolution 24, no. 1 (1980): 55–78.",
+            "John R. Oneal and Bruce M. Russett, “The Classical Liberals Were Right: Democracy, Interdependence, and Conflict, 1950–1985,” International Studies Quarterly 41, no. 2 (1997): 267–94.",
+            "John R. Oneal and Bruce Russett, “Assessing the Liberal Peace with Alternative Specifications: Trade Still Reduces Conflict,” Journal of Peace Research 36, no. 4 (1999): 423–42.",
+            "John R. Oneal, Bruce Russett, and Michael L. Berbaum, “Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992,” International Studies Quarterly 47, no. 3 (2003): 371–93.",
+            "James D. Fearon, “Rationalist Explanations for War,” International Organization 49, no. 2 (1995): 379–414.",
+            "James D. Morrow, “How Could Trade Affect Conflict?,” Journal of Peace Research 36, no. 4 (1999): 481–89.",
+            "Philippe Martin, Thierry Mayer, and Mathias Thoenig, “Make Trade Not War?,” Review of Economic Studies 75, no. 3 (2008): 865–900.",
+            "Kenneth N. Waltz, Theory of International Politics (Reading, MA: Addison-Wesley, 1979), 105–7.",
+            "Joanne Gowa, Allies, Adversaries, and International Trade (Princeton, NJ: Princeton University Press, 1994), 6–10.",
+            "Barbieri, “Economic Interdependence,” 31.",
+            "Katherine Barbieri, The Liberal Illusion: Does Trade Promote Peace? (Ann Arbor: University of Michigan Press, 2002), 1–14.",
+            "Dale C. Copeland, “Economic Interdependence and War: A Theory of Trade Expectations,” International Security 20, no. 4 (1996): 5–41.",
+            "Dale C. Copeland, Economic Interdependence and War (Princeton, NJ: Princeton University Press, 2015), 1–24.",
+            "Omar M. G. Keshk, Brian M. Pollins, and Rafael Reuveny, “Trade Still Follows the Flag: The Primacy of Politics in a Simultaneous Model of Interdependence and Armed Conflict,” Journal of Politics 66, no. 4 (2004): 1155–79.",
+            "Håvard Hegre, John R. Oneal, and Bruce Russett, “Trade Does Promote Peace: New Simultaneous Estimates of the Reciprocal Effects of Trade and Conflict,” Journal of Peace Research 47, no. 6 (2010): 763–74.",
+            "Kristian Skrede Gleditsch and Michael D. Ward, “Measuring Space: A Minimum-Distance Database and Applications to International Studies,” Journal of Peace Research 38, no. 6 (2001): 739–58.",
+            "Gowa, Allies, Adversaries, 108.",
+            "Zeev Maoz and Bruce Russett, “Normative and Structural Causes of Democratic Peace, 1946–1986,” American Political Science Review 87, no. 3 (1993): 624–38.",
+            "Keshk, Pollins, and Reuveny, “Trade Still Follows the Flag,” 1160.",
+            "Earl R. Babbie, The Practice of Social Research, 15th ed. (Boston: Cengage Learning, 2021), 327–38.",
+            "Maoz and Russett, “Normative and Structural Causes,” 630.",
+            "Palmer et al., “MID5 Dataset,” 471.",
+            "International Monetary Fund, Direction of Trade Statistics Yearbook (Washington, DC: IMF, various years), https://data.imf.org/.",
+            "J. M. C. Santos Silva and Silvana Tenreyro, “The Log of Gravity,” Review of Economics and Statistics 88, no. 4 (2006): 641–58.",
+            "T. Clifton Morgan, Navin Bapat, and Yoshiharu Kobayashi, “Threat and Imposition of Economic Sanctions: Updating the TIES Dataset,” Conflict Management and Peace Science 31, no. 5 (2014): 541–58.",
+            "Gabriel Felbermayr et al., “The Global Sanctions Data Base,” European Economic Review 129 (2020): 103521.",
+            "Constantinos Syropoulos et al., “The Global Sanctions Data Base—Release 3: COVID-19, Russia, and Multilateral Sanctions,” WIFO Working Paper 651 (Vienna: Austrian Institute of Economic Research, 2022).",
+            "Erik Voeten, “Data and Analyses of Voting in the United Nations General Assembly,” in Routledge Handbook of International Organization, ed. Bob Reinalda (London: Routledge, 2013), 54–66.",
+            "Michael A. Bailey, Anton Strezhnev, and Erik Voeten, “Estimating Dynamic State Preferences from United Nations Voting Data,” Journal of Conflict Resolution 61, no. 2 (2017): 430–56.",
+            "Kalev Leetaru and Philip A. Schrodt, “GDELT: Global Data on Events, Location, and Tone, 1979–2012” (paper presented at the Annual Convention of the International Studies Association, San Francisco, April 2013).",
+            "Gartzke, Li, and Boehmer, “Investing in the Peace,” 396.",
+            "Gary King and Langche Zeng, “Logistic Regression in Rare Events Data,” Political Analysis 9, no. 2 (2001): 137–63.",
+            "Nathaniel Beck, Jonathan N. Katz, and Richard Tucker, “Taking Time Seriously: Time-Series-Cross-Section Analysis with a Binary Dependent Variable,” American Journal of Political Science 42, no. 4 (1998): 1260–88.",
+            "Keshk, Pollins, and Reuveny, “Trade Still Follows the Flag,” 1160.",
+            "Jens Hainmueller, “Entropy Balancing for Causal Effects: A Multivariate Reweighting Method to Produce Balanced Samples in Observational Studies,” Political Analysis 20, no. 1 (2012): 25–46.",
+          ],
+        },
+        {
+          h: "Bibliography",
+          refs: [
+            "Babbie, Earl R. The Practice of Social Research. 15th ed. Boston: Cengage Learning, 2021.",
+            "Bailey, Michael A., Anton Strezhnev, and Erik Voeten. “Estimating Dynamic State Preferences from United Nations Voting Data.” Journal of Conflict Resolution 61, no. 2 (2017): 430–56.",
+            "Barbieri, Katherine. “Economic Interdependence: A Path to Peace or a Source of Interstate Conflict?” Journal of Peace Research 33, no. 1 (1996): 29–49.",
+            "Barbieri, Katherine. The Liberal Illusion: Does Trade Promote Peace? Ann Arbor: University of Michigan Press, 2002.",
+            "Beck, Nathaniel, Jonathan N. Katz, and Richard Tucker. “Taking Time Seriously: Time-Series-Cross-Section Analysis with a Binary Dependent Variable.” American Journal of Political Science 42, no. 4 (1998): 1260–88.",
+            "Copeland, Dale C. “Economic Interdependence and War: A Theory of Trade Expectations.” International Security 20, no. 4 (1996): 5–41.",
+            "Copeland, Dale C. Economic Interdependence and War. Princeton, NJ: Princeton University Press, 2015.",
+            "Fearon, James D. “Rationalist Explanations for War.” International Organization 49, no. 2 (1995): 379–414.",
+            "Felbermayr, Gabriel, Aleksandra Kirilakha, Constantinos Syropoulos, Erdal Yalcin, and Yoto V. Yotov. “The Global Sanctions Data Base.” European Economic Review 129 (2020): 103521.",
+            "Gartzke, Erik. “The Capitalist Peace.” American Journal of Political Science 51, no. 1 (2007): 166–91.",
+            "Gartzke, Erik, Quan Li, and Charles Boehmer. “Investing in the Peace: Economic Interdependence and International Conflict.” International Organization 55, no. 2 (2001): 391–438.",
+            "Gleditsch, Kristian Skrede, and Michael D. Ward. “Measuring Space: A Minimum-Distance Database and Applications to International Studies.” Journal of Peace Research 38, no. 6 (2001): 739–58.",
+            "Gowa, Joanne. Allies, Adversaries, and International Trade. Princeton, NJ: Princeton University Press, 1994.",
+            "Hainmueller, Jens. “Entropy Balancing for Causal Effects: A Multivariate Reweighting Method to Produce Balanced Samples in Observational Studies.” Political Analysis 20, no. 1 (2012): 25–46.",
+            "Hegre, Håvard, John R. Oneal, and Bruce Russett. “Trade Does Promote Peace: New Simultaneous Estimates of the Reciprocal Effects of Trade and Conflict.” Journal of Peace Research 47, no. 6 (2010): 763–74.",
+            "International Monetary Fund. Direction of Trade Statistics Yearbook. Washington, DC: IMF, various years. https://data.imf.org/.",
+            "Keohane, Robert O., and Joseph S. Nye. Power and Interdependence: World Politics in Transition. Boston: Little, Brown, 1977.",
+            "Keshk, Omar M. G., Brian M. Pollins, and Rafael Reuveny. “Trade Still Follows the Flag: The Primacy of Politics in a Simultaneous Model of Interdependence and Armed Conflict.” Journal of Politics 66, no. 4 (2004): 1155–79.",
+            "King, Gary, and Langche Zeng. “Logistic Regression in Rare Events Data.” Political Analysis 9, no. 2 (2001): 137–63.",
+            "Leetaru, Kalev, and Philip A. Schrodt. “GDELT: Global Data on Events, Location, and Tone, 1979–2012.” Paper presented at the Annual Convention of the International Studies Association, San Francisco, April 2013.",
+            "Maoz, Zeev, and Bruce Russett. “Normative and Structural Causes of Democratic Peace, 1946–1986.” American Political Science Review 87, no. 3 (1993): 624–38.",
+            "Martin, Philippe, Thierry Mayer, and Mathias Thoenig. “Make Trade Not War?” Review of Economic Studies 75, no. 3 (2008): 865–900.",
+            "Morgan, T. Clifton, Navin Bapat, and Yoshiharu Kobayashi. “Threat and Imposition of Economic Sanctions: Updating the TIES Dataset.” Conflict Management and Peace Science 31, no. 5 (2014): 541–58.",
+            "Morrow, James D. “How Could Trade Affect Conflict?” Journal of Peace Research 36, no. 4 (1999): 481–89.",
+            "Oneal, John R., and Bruce M. Russett. “The Classical Liberals Were Right: Democracy, Interdependence, and Conflict, 1950–1985.” International Studies Quarterly 41, no. 2 (1997): 267–94.",
+            "Oneal, John R., and Bruce Russett. “Assessing the Liberal Peace with Alternative Specifications: Trade Still Reduces Conflict.” Journal of Peace Research 36, no. 4 (1999): 423–42.",
+            "Oneal, John R., Bruce Russett, and Michael L. Berbaum. “Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992.” International Studies Quarterly 47, no. 3 (2003): 371–93.",
+            "Palmer, Glenn, Roseanne W. McManus, Vito D’Orazio, Michael R. Kenwick, Mikaela Karstens, Chase Bloch, Nick Dietrich, Kayla Kahn, Kellan Ritter, and Michael J. Soules. “The MID5 Dataset, 2011–2014: Procedures, Coding Rules, and Description.” Conflict Management and Peace Science 39, no. 4 (2022): 470–82.",
+            "Polachek, Solomon W. “Conflict and Trade.” Journal of Conflict Resolution 24, no. 1 (1980): 55–78.",
+            "Santos Silva, J. M. C., and Silvana Tenreyro. “The Log of Gravity.” Review of Economics and Statistics 88, no. 4 (2006): 641–58.",
+            "Syropoulos, Constantinos, Gabriel Felbermayr, Aleksandra Kirilakha, Erdal Yalcin, and Yoto V. Yotov. “The Global Sanctions Data Base—Release 3: COVID-19, Russia, and Multilateral Sanctions.” WIFO Working Paper 651. Vienna: Austrian Institute of Economic Research, 2022.",
+            "Voeten, Erik. “Data and Analyses of Voting in the United Nations General Assembly.” In Routledge Handbook of International Organization, edited by Bob Reinalda, 54–66. London: Routledge, 2013.",
+            "Waltz, Kenneth N. Theory of International Politics. Reading, MA: Addison-Wesley, 1979.",
+          ],
+        },
+      ]
+    },
+    {
       id: "post-6",
       date: "2026-05-03",
       category: "Political Economy",
