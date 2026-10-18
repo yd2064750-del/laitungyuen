@@ -38,7 +38,7 @@
   /* 间距 */
   --gutter: clamp(1.5rem, 5vw, 6rem);
   --maxw: 1120px;
-  --maxw-read: 680px;
+  --maxw-read: 820px;
 
   /* 其他 */
   --radius:    18px;
@@ -904,6 +904,8 @@ body { animation: pageIn .5s var(--ease) both; }
   .resume__side, .scholar__card { position: static; }
   .entries__grid { grid-template-columns: 1fr; }
   .entry { min-height: auto; }
+  /* 平板：容器封頂在 820px，靠內距控制留白，避免貼邊也不至於過窄 */
+  .wrap--read { padding-inline: clamp(1.5rem, 7vw, 3.5rem); }
 }
 
 @media (max-width: 640px) {
