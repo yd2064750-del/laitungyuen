@@ -109,550 +109,202 @@ window.SITE = {
      --------------------------------------------------------------- */
   insights: [
     {
-      id: "post-7",
-      date: "2026-10-18",
-      category: "International Relations",
-      tags: ["International Relations", "Trade", "Conflict", "Research Design"],
-      title: "Does Trade Bring Peace?",
-      excerpt: "A research proposal arguing that trade relocates conflict rather than eliminating it: it raises the cost of war while leaving tariffs, sanctions, and denunciation cheaper.",
+      id: "post-8",
+      date: "2026-10-28",
+      category: "Investment Strategy",
+      tags: ["Investment Strategy", "Trading", "Risk Management", "Equity"],
+      title: "Martin Luk Trading Strategy and 2026 Performance",
+      excerpt: "A reconstruction of Martin Luk’s reported +785.8% 2026 return: the pullback method, position-sizing mechanics, and the limits of what public evidence can establish.",
       body: [
         {
-          sub: "Bilateral Trade and the Type of Conflict between States",
+          sub: "Independent Investment Strategy Analysis",
         },
         {
-          figure: {
-            src: "assets/img/trade-port.jpg",
-            alt: "Container terminal. Trade volumes are the paper's central independent variable.",
-            caption: "Container terminal. Trade volumes are the paper's central independent variable.",
-            credit: "Photo: Wolfgang Weiser / Pexels",
-          },
+          meta: ["Prepared for Dongyuan Li · October 28, 2026", "Performance cutoff: September 30, 2026 · Research cutoff: October 28, 2026"],
         },
         {
-          h: "1. Introduction",
+          h: "Scope and principal conclusion",
         },
         {
           p: [
-            "Between 2000 and 2018, goods trade between the United States and China rose from $116 billion to $659 billion a year (figure 1).<sup class=\"fnref\"><a href=\"#n-1\" id=\"fnref-1\">1</a></sup> Over the same period the two governments accused each other of espionage and intellectual-property theft, blocked each other’s technology firms, and from July 2018 imposed tariffs on hundreds of billions of dollars of imports. Bilateral trade fell by 16 percent in 2019, then recovered to $690 billion in 2022. What did not happen was a war. Two of the most deeply integrated economies in history converted a commercial relationship into an instrument of rivalry while continuing to exchange more than half a trillion dollars of goods every year.",
-            "That is the problem this proposal addresses. Trade creates gains from exchange and, with them, points of leverage. Dependence can make cooperation profitable, and it can make coercion cheap: the side that depends less can threaten the side that depends more. Interdependence therefore does not determine whether two states are peaceful; it changes the menu of conflicts available to them. The relationship is worth studying because a single variable carries two opposed mechanisms — the cost of war and the leverage of dependence — and the literature has never settled which one dominates under which conditions.",
-            "The argument also rests on a second decision: conflict is not one thing. Military conflict is the threat, display, or use of force. Economic conflict is the use of tariffs, sanctions, embargoes, export controls, and litigation at the World Trade Organization (WTO) to impose costs. Diplomatic conflict is hostility in words and symbols — denunciation, expelled envoys, deadlocked negotiations, votes cast against one another. These are not rungs on a single ladder. Two states can wage an intense economic and diplomatic struggle without approaching force, and two states with almost no trade can sustain a permanent military rivalry. If the three are collapsed into one index, effects that run in opposite directions average out to nothing, and the theory is rejected for the wrong reason. Disaggregation is the condition under which the liberal and realist arguments can be told apart at all.",
-            "The research question follows: how does increased bilateral trade affect the likelihood and the type of conflict between states? Two subsidiary questions make it testable. Does higher bilateral trade reduce the probability that a pair enters a militarized dispute? And does the effect differ across military, economic, and diplomatic outcomes, and depend on how unequally the two sides depend on the relationship? We expect that trade relocates conflict rather than eliminating it: it raises the cost of shooting and lowers the cost of suing, sanctioning, and denouncing. The study combines a comparative content analysis of four dyads with a dyad-year panel of politically relevant country pairs from 1950 to 2014, extended to 2022 for the outcomes whose sources reach that far, estimated separately for each form of conflict.",
+            "Martin Luk’s published competition return was +785.8% through September 2026. The evidence supports an exceptional account-level result, but does not identify how much profit came from pullbacks, breakouts, short positions, leverage, or discretionary execution. The period is incomplete; this is not a full-year 2026 performance report.<sup class=\"fnref\"><a href=\"#n-1\" id=\"fnref-1\">1</a></sup>",
+            "This report reconstructs his publicly described process and provides a conditional stock-selection mandate and worked paper-trading example. First-person language in the trading mandate is a clearly labeled analytical role-play, not a quotation, endorsement, or statement by Luk. No brokerage orders were placed.",
+            "Evidence boundary: no complete 2026 transaction ledger, daily account equity series, or validated historical intraday market dataset was obtained. Consequently, no replicated 2026 strategy return is claimed. Illustrative prices are invented solely to demonstrate execution arithmetic.",
           ],
         },
         {
-          figure: {
-            src: "assets/img/trade-fig1.jpg",
-            alt: "US merchandise trade with China, 2000-2024",
-            caption: "United States merchandise trade with China, 2000–2024. Authors’ calculations from U.S. Census Bureau data (series IMPCH and EXPCH, retrieved through FRED). Values are annual totals of U.S. imports from and exports to China in billions of current U.S. dollars; the dashed line marks the first Section 301 tariff round in July 2018.",
-            credit: "Figure 1",
-          },
+          h: "Reported 2026 Performance",
         },
         {
           p: [
-            "The contribution is not the claim that trade relocates conflict, which is old, but the discipline the design imposes on it. Three commitments follow. Theoretically, each hypothesis is stated so that it predicts a sign for every outcome, which makes the liberal and relocation arguments distinguishable on the evidence rather than on the interpretation of a null result. Empirically, disaggregation is carried through to measurement: coercive sanctions are separated from litigation, and slow-moving structural alignment from fast-moving hostile behaviour, because these pairs are not interchangeable and cannot be averaged without losing the variation the argument is about. Inferentially, the outcomes are estimated on a common sample and compared with formal tests of cross-equation restrictions, so that the pattern of coefficients, rather than the significance of any one of them, carries the argument.",
-            "Section 2 reviews the literature and states three hypotheses and a null. Section 3 sets out the qualitative design, section 4 the quantitative design, and section 5 what the two together can and cannot establish.",
-          ],
-        },
-        {
-          h: "2. Literature Review and Hypotheses",
-        },
-        {
-          h3: "2.1 What “trade” means",
-        },
-        {
-          p: [
-            "Trade is the exchange of goods and services across borders. Our core measure is the dyadic flow: the combined value of imports and exports between states i and j in year t. The choice is conventional and comparable across thousands of pairs, but it conflates two things the literature separates. Volume measures how much two economies exchange; interdependence measures how much they would lose if the exchange stopped. Keohane and Nye drew the distinction between sensitivity and vulnerability, and it matters here because a large economy can run a large dollar volume with a partner that is marginal to its own welfare.<sup class=\"fnref\"><a href=\"#n-2\" id=\"fnref-2\">2</a></sup> Barbieri made the point operational: salience, not size, is what a theory of dependence requires.<sup class=\"fnref\"><a href=\"#n-3\" id=\"fnref-3\">3</a></sup> We therefore treat trade as three dimensions — volume, dependence, and the asymmetry between the two sides’ dependence — and measure each separately in section 4.3, where asymmetry is reported in both unsigned and signed form.",
-            "Two alternatives were considered and excluded from the primary measure. The first is capital interdependence. Gartzke, Li, and Boehmer show that investment and financial ties pacify independently of goods trade, and Gartzke later generalized the claim into a “capitalist peace.”<sup class=\"fnref\"><a href=\"#n-4\" id=\"fnref-4\">4</a></sup><sup class=\"fnref\"><a href=\"#n-5\" id=\"fnref-5\">5</a></sup> We exclude capital flows because bilateral investment data are too sparse before the 1990s to support a panel that begins in 1950; they return as a robustness check on the post-1990 subsample. The second is trade openness, the ratio of trade to GDP. Openness measures exposure to the world, not to a particular partner, and is mechanically correlated with country size; using it would confound dependence with scale.",
-          ],
-        },
-        {
-          h3: "2.2 What “conflict” means",
-        },
-        {
-          p: [
-            "Conflict is an incompatibility of interests, needs, or goals between political actors. The definition is deliberately broad; the operational problem is that most of what states do to one another falls short of violence. The Correlates of War (COW) project codes military conflict as a militarized interstate dispute: a case in which one state threatens, displays, or uses force against another, from a threat to a border clash to war.<sup class=\"fnref\"><a href=\"#n-6\" id=\"fnref-6\">6</a></sup> Economic conflict is the deliberate use of economic instruments to change another state’s behaviour — sanctions, tariffs, embargoes, export controls, and complaints in the WTO’s dispute-settlement system. Diplomatic conflict is public hostility between governments: denunciation, expulsion or recall of envoys, suspended negotiations, and opposition in United Nations voting. One alternative — conflict as a single latent dimension of “relationship quality,” the premise of event-based hostility indexes — is rejected here because it assumes that tariffs and gunfire lie on one continuum, and that assumption makes our central hypothesis untestable. We also set aside civil war and covert action, which fall outside a dyadic account of intergovernmental relations and cannot be coded comparably across the panel.",
-            "Two distinctions inside these categories carry the measurement argument of section 4.4. Economic conflict divides into coercion and adjudication: a sanction is an act of pressure, a WTO complaint is a request for a ruling, and the two are initiated by different actors for different reasons. Diplomatic conflict divides into structure and behaviour: the distance between two states’ ideal points moves slowly, and the exchange of insults moves quickly. Treating either pair as one variable would produce a coefficient that describes neither of its parts.",
-          ],
-        },
-        {
-          h3: "2.3 The liberal argument: trade raises the cost of war",
-        },
-        {
-          p: [
-            "The liberal expectation is old. Commerce generates gains that war destroys, so the more a state gains from trade with a partner, the more it loses by fighting that partner.<sup class=\"fnref\"><a href=\"#n-7\" id=\"fnref-7\">7</a></sup> Oneal and Russett supplied the canonical test, finding that trade is associated with fewer militarized disputes among states between 1950 and 1985, alongside democracy and shared membership in international organizations.<sup class=\"fnref\"><a href=\"#n-8\" id=\"fnref-8\">8</a></sup> Their results survived methodological criticism and alternative specifications,<sup class=\"fnref\"><a href=\"#n-9\" id=\"fnref-9\">9</a></sup> and extending the sample back to 1885 showed that the pacifying effect holds after controlling for prior conflict.<sup class=\"fnref\"><a href=\"#n-10\" id=\"fnref-10\">10</a></sup> A second mechanism is informational: repeated exchange reveals the other side’s resolve and provides a channel for credible signals.<sup class=\"fnref\"><a href=\"#n-11\" id=\"fnref-11\">11</a></sup> Morrow’s version cuts against the cost story, since a state willing to sacrifice trade can use the sacrifice as a signal of resolve, which means trade can escalate as well as dampen.<sup class=\"fnref\"><a href=\"#n-12\" id=\"fnref-12\">12</a></sup> Martin, Mayer, and Thoenig add a third qualification: bilateral trade reduces conflict, but global openness can increase it, because multilateral trade diffuses the cost of any single bilateral rupture.<sup class=\"fnref\"><a href=\"#n-13\" id=\"fnref-13\">13</a></sup>",
-            "None of these arguments is specific to force. The gains that war destroys are also destroyed by a tariff war, an embargo, or the expulsion of an ambassador, and the informational channel works through any costly signal. The strong version of the liberal claim — the one H1 states below — is therefore that trade dampens conflict of every kind, not only the kind that kills. Most empirical work has tested the weak version, because military conflict is the outcome with the best data. That is a fact about measurement, not about the theory.",
-          ],
-        },
-        {
-          h3: "2.4 The realist challenge: asymmetry, relative gains, and expectations",
-        },
-        {
-          p: [
-            "Realists do not deny that trade creates gains; they deny that gains are the whole story. Waltz’s objection is structural: in anarchy, what matters is not whether both sides benefit but who benefits more.<sup class=\"fnref\"><a href=\"#n-14\" id=\"fnref-14\">14</a></sup> Gowa showed that trade follows security, since states trade more with allies than with adversaries — which means the observed trade–peace association may be a product of alliance politics rather than a cause of it.<sup class=\"fnref\"><a href=\"#n-15\" id=\"fnref-15\">15</a></sup>",
-            "Barbieri’s finding is the most direct challenge. Across 14,341 dyad-years between 1870 and 1938, extensive interdependence does not reliably reduce militarized conflict and under some specifications is associated with more of it.<sup class=\"fnref\"><a href=\"#n-3\" id=\"fnref-3-2\">3</a></sup><sup class=\"fnref\"><a href=\"#n-16\" id=\"fnref-16\">16</a></sup> The mechanism is asymmetry: when one side depends heavily and the other does not, the trade tie stops being a mutual hostage and becomes a lever. The less dependent side can extract concessions by threatening access; the more dependent side faces a choice between submission and resistance, and resistance is cheaper before dependence deepens. Copeland pushes the argument into the future. What drives leaders is not the current level of trade but their expectations about its trajectory: when they expect trade to grow, interdependence is an asset worth protecting; when they expect it to contract, dependence becomes a vulnerability to be addressed before it is too late.<sup class=\"fnref\"><a href=\"#n-17\" id=\"fnref-17\">17</a></sup><sup class=\"fnref\"><a href=\"#n-18\" id=\"fnref-18\">18</a></sup> That account fits the case that motivates this study. The Sino-American relationship was most cooperative when both sides expected the gains to keep rising, and most adversarial once Washington began to expect relative decline.",
-            "Two features of the realist argument are easy to state and hard to measure, and the design has to handle both. The first is direction: leverage runs from the less dependent side to the more dependent one, so a measure that records only the size of the gap cannot test the mechanism. The second is expectation: a level of trade is not the same as a trajectory, and the theory is about the trajectory. Section 4.3 builds the first into the measurement; section 3 builds the second into the case selection.",
-          ],
-        },
-        {
-          h3: "2.5 Reverse causality and confounding",
-        },
-        {
-          p: [
-            "The correlation between trade and peace may run backwards. Keshk, Pollins, and Reuveny estimate a simultaneous model and find that conflict strongly reduces trade, and that politics explains trade better than trade explains conflict.<sup class=\"fnref\"><a href=\"#n-19\" id=\"fnref-19\">19</a></sup> Hegre, Oneal, and Russett reply with updated estimates and find reciprocal effects: conflict reduces trade, and trade still reduces conflict.<sup class=\"fnref\"><a href=\"#n-20\" id=\"fnref-20\">20</a></sup> The exchange is unresolved, and it sets the bar for any new design. A cross-sectional association between high trade and low conflict is consistent with three stories — trade causes peace, peace causes trade, or a third factor produces both — and only a design that addresses all three can separate them.",
-            "The confounders are largely geographic and political. Distance and contiguity shape both trade costs and the opportunity for border disputes;<sup class=\"fnref\"><a href=\"#n-21\" id=\"fnref-21\">21</a></sup> alliances shape both trade and conflict;<sup class=\"fnref\"><a href=\"#n-15\" id=\"fnref-15-2\">15</a></sup> regime type affects both, since democracies trade more with one another and fight one another less;<sup class=\"fnref\"><a href=\"#n-22\" id=\"fnref-22\">22</a></sup> capabilities and major-power status affect both the capacity to trade and the willingness to fight. Past rivalry is the most dangerous of the set, because it is a common cause of low trade and high conflict and is easily mistaken for evidence that low trade causes conflict.",
-          ],
-        },
-        {
-          h3: "2.6 Three hypotheses and their competing predictions",
-        },
-        {
-          p: [
-            "The literature yields three hypotheses that differ in mechanism and in observable implication. Each is stated with a directional prediction for all three outcomes, because a hypothesis that predicts a null cannot be distinguished from a rival that predicts the same null.",
-            "H1 (strong liberal interdependence). Higher bilateral trade is associated with less military, economic, and diplomatic conflict. Mechanism: trade raises the opportunity cost of fighting, and the same logic applies to coercing and to denouncing, since each damages a relationship that yields gains. Implication: the coefficient on volume should be negative in all three models, and should not depend on how the gains are distributed, so the interaction between volume and asymmetry should be zero.",
-            "H2 (strategic competition). High but asymmetric dependence is associated with more economic and diplomatic conflict, even where it is associated with no more military conflict. Mechanism: asymmetry converts a trade tie into leverage, and the less dependent side uses economic and diplomatic instruments to extract concessions. Implication: the coefficient on asymmetry should be positive in the economic and diplomatic models; the pacifying effect of volume should weaken as asymmetry rises, which is a positive interaction; and in a directed sanctions model the pressure should originate with the less dependent partner.",
-            "H3 (conflict-type relocation). Higher bilateral trade is associated with less military conflict and with more economic and diplomatic conflict. Mechanism: trade raises the cost of the most destructive instrument disproportionately, so states substitute cheaper ones — tariffs, sanctions, complaints, denunciations, votes — for force. Implication: the coefficient on volume should be negative in the military model and positive in the other two, estimated on the same dyad-years; asymmetry should carry no independent effect once volume is accounted for, because the mechanism concerns the price of instruments rather than the distribution of dependence.",
-            "A fourth expectation serves as the null: once prior conflict and political affinity are controlled, trade has no independent association with any form of conflict, because politics drives trade rather than the reverse.<sup class=\"fnref\"><a href=\"#n-19\" id=\"fnref-19-2\">19</a></sup> Table 1 states the four predictions side by side.",
+            "The organizer’s archived standings report the following cumulative returns. The normalized account column starts at $100,000 and illustrates the reported percentage series; it is not Luk’s disclosed account balance.<sup class=\"fnref\"><a href=\"#n-2\" id=\"fnref-2\">2</a></sup>",
           ],
         },
         {
           table: {
-            caption: "Table 1. Hypotheses, mechanisms, and predicted associations",
-            head: ["", "Mechanism", "Military conflict", "Economic conflict", "Diplomatic conflict"],
+            caption: "Reported cumulative returns and normalized equity, 2026.",
+            head: ["Period end", "Reported YTD", "Normalized equity", "Implied interval"],
             rows: [
-              ["H1 Strong liberal interdependence", "Trade raises the opportunity cost of every instrument, not only of force", "Strong negative", "Negative", "Negative"],
-              ["H2 Strategic competition", "Asymmetric dependence becomes leverage; the less dependent side extracts concessions", "Weak negative or null", "Positive through asymmetry; volume effect conditional on asymmetry", "Positive through asymmetry; volume effect conditional on asymmetry"],
-              ["H3 Conflict-type relocation", "Trade raises the cost of force disproportionately, so states substitute cheaper instruments", "Negative", "Positive", "Positive"],
-              ["Null: political primacy", "Politics drives trade, not the reverse", "Null once politics is controlled", "Null", "Null"],
+              ["June 30", "+421.2%", "$521,200", "First half +421.2%"],
+              ["July 31", "+868.6%", "$968,600", "July +85.84%"],
+              ["August 31", "+844.5%", "$944,500", "August −2.49%"],
+              ["September 30", "+785.8%", "$885,800", "September −6.21%"],
             ],
-            note: "“Negative” means that higher trade is associated with a lower probability of that form of conflict; “positive” means the reverse. All three hypotheses predict a negative coefficient for military conflict, and H2 expects it to be weak; they are separated by the economic and diplomatic columns, where H1 and H3 assign opposite signs, and by the rows for asymmetry, where only H2 predicts an effect."
+            note: ""
           },
         },
         {
           p: [
-            "Two features of the table do the work of making the hypotheses falsifiable, and both are deliberate. The first is that H1 is stated in its strong form. The more common formulation confines the liberal claim to military conflict and lets the other two outcomes be indeterminate. That formulation is untestable against H3, because both hypotheses then predict a negative military coefficient and neither predicts anything in particular elsewhere. If the liberal argument is right that trade raises the cost of conflict, it should apply to instruments that impose costs and not only to those that kill; if it applies only to force, then it is not a general claim about interdependence but a claim about one instrument, and H3 is its correct statement rather than its rival. Stating H1 strongly is what allows the two to be told apart: the sign of the economic and diplomatic coefficients separates them.",
-            "The second is that a null result counts against both hypotheses rather than for either. This sounds like a small bookkeeping matter and is not. When a hypothesis predicts “null or positive,” an estimated zero confirms it; and since conflict is rare and the economic and diplomatic outcomes are measured with error, a zero is the estimate most likely to arise under almost any hypothesis. We therefore treat a null as uninformative on its own and require two things of any claim in its favour: a precisely estimated coefficient, and an equivalence test showing that the estimate lies inside a region of practical equivalence around zero.<sup class=\"fnref\"><a href=\"#n-23\" id=\"fnref-23\">23</a></sup> H3 is supported when the economic and diplomatic coefficients are positive, not when they fail to be negative. Section 4.5 makes this operational.",
-            "H2 is kept separate from H3 for the same reason. The temptation is to let the relocation hypothesis absorb the asymmetry predictions, since asymmetric pairs are where economic conflict is most visible, and the two claims then appear to reinforce one another. They are independent: H3 is about what trade does across instruments, H2 about what unequal dependence does within a relationship. A world in which trade pacifies all three arenas but asymmetry provokes sanctions is a world in which H1 and H2 hold and H3 does not. Where the evidence supports both, we report the combination as a joint hypothesis — strategic substitution — rather than crediting relocation with an effect produced by asymmetry.",
-            "One consequence of this arrangement is that the test is a test of patterns rather than of single coefficients. Another is that the qualitative component has a specific job: the panel can show which pattern holds, but only documents can show whether the mechanism attached to the winning hypothesis is the one operating.",
+            "Calculations use r(a,b) = (1 + R_b) / (1 + R_a) − 1, where R is the reported cumulative return in decimal form. Third-quarter growth is therefore 8.858 / 5.212 − 1 = 69.95%. These are implied returns, conditional on comparable reporting bases and cash-flow treatment across observations.",
+            "The July-to-September decline is 8.858 / 9.686 − 1 = −8.55%. Subtracting the two YTD percentages instead gives 82.8 percentage points, which is not an 82.8% loss of account equity. The four snapshots do not establish the maximum daily or intraday drawdown.",
+            "The latest table lists Luk first among reporting entrants in the $20,000+ stock division. This is an interim ranking, not a final championship result. Changes in the list of reporting competitors also prevent rank changes from being interpreted as relative investment returns.<sup class=\"fnref\"><a href=\"#n-3\" id=\"fnref-3\">3</a></sup>",
+            "The organizer accepts brokerage reporting and provides cash-flow calculation rules. The rules page retrieved now refers to the next competition year; it supplies methodological context, not proof of which calculation Luk used in 2026. Published standings are stronger evidence than promotional summaries, but this report did not independently audit his statements.<sup class=\"fnref\"><a href=\"#n-4\" id=\"fnref-4\">4</a></sup>",
           ],
         },
         {
-          figure: {
-            src: "assets/img/trade-ship.jpg",
-            alt: "Container ship at dusk.",
-            caption: "Container ship at dusk.",
-            credit: "Photo: Hatta Sun / Pexels",
-          },
-        },
-        {
-          h: "3. Qualitative Methods Design",
-        },
-        {
-          h3: "3.1 Approach and why",
+          h: "Reconstructing the Trading Method",
         },
         {
           p: [
-            "The qualitative component is a comparative historical study built on qualitative content analysis of official documents. The choice follows from what the quantitative design cannot do: a panel can estimate whether trade is associated with more economic and less military conflict, but it cannot show that leaders reasoned about dependence as either theory claims. Documents are the closest available trace of that reasoning, because they record what governments said about a trade relationship while they were deciding how to treat it.<sup class=\"fnref\"><a href=\"#n-24\" id=\"fnref-24\">24</a></sup> The comparative structure supplies what a single case cannot: by placing dyads with different combinations of trade and conflict side by side, we can see whether the same mechanism appears where the outcome differs. The cases also carry the one variable the panel cannot observe, which is expectation. Trade data record what happened to a relationship; documents record what officials thought would happen next, and it is the second that Copeland’s mechanism turns on.",
-            "Three alternatives were considered and excluded. Interviews with officials would provide richer accounts, but elite access is not available to the research team, and retrospective accounts are reshaped by the outcomes they are meant to explain. Ethnography is unavailable at the level of state decision-making. A content analysis of newspaper coverage would capture elite opinion rather than official position, and press coverage is itself shaped by the rivalry we are trying to explain.",
+            "In his first-person guest contribution, Luk describes predominantly 1–5% price stops, account risk of 0.5–1% per trade, and a preference for high average-daily-range stocks in strong themes. He classifies leaders using 9 EMA &gt; 21 EMA &gt; 50 EMA, scans recent strength and premarket gaps, and emphasizes immediate stops and reduced exposure after losses. These are historical descriptions, not verified 2026 settings.<sup class=\"fnref\"><a href=\"#n-5\" id=\"fnref-5\">5</a></sup>",
+            "A subsequent interview description emphasizes first pullbacks, anchored VWAP, and approximately 0.5% risk per trade. The accessible evidence includes publisher descriptions and chapter markers rather than a complete transcript; exact phrasing and every discretionary exception could not be checked.<sup class=\"fnref\"><a href=\"#n-6\" id=\"fnref-6\">6</a></sup>",
+            "Financial Wisdom’s later explanation associates the method with 9-, 21-, and 50-period EMAs, support confluence, and strong stocks consolidating after substantial advances. Its 30% momentum screen is treated here as a secondary interpretation rather than an independently confirmed mandatory rule.<sup class=\"fnref\"><a href=\"#n-7\" id=\"fnref-7\">7</a></sup>",
           ],
         },
         {
-          h3: "3.2 Cases",
+          h3: "Indicator implementation",
         },
         {
           p: [
-            "We compare four dyads, selected on the trajectory of their trade and on the expectations officials held about it rather than on the level of trade alone. The choice follows from the theory. If the mechanism runs through the cost of war, the level of trade is the variable that matters and cases should be chosen to vary it. If the mechanism runs through expectations, as Copeland argues, then what matters is whether leaders expected the relationship to keep yielding gains or to contract, and a case set chosen on levels holds that variable constant.<sup class=\"fnref\"><a href=\"#n-18\" id=\"fnref-18-2\">18</a></sup> Selecting on both yields the four cells in table 2.",
+            "For this report’s proposed model, daily EMA uses α = 2/(n+1), with EMA_t = αC_t + (1−α)EMA_(t−1). Use consistent split-adjusted prices and a warm-up history. An EMA is a trend reference; a touch alone does not establish a buy signal.",
+            "Anchored VWAP is Σ(P_iV_i)/ΣV_i from a recorded anchor. The proposed daily approximation uses P = (high + low + close)/3. Intraday VWAP from actual bars can differ. Record the anchor before entry, such as a known earnings gap or a previously confirmed pivot; selecting an anchor after seeing the outcome creates hindsight bias.",
+            "The economic hypothesis is that a retracement within an established trend permits a close invalidation level. The resulting payoff distribution may contain many small losses and a few large gains. This hypothesis is testable, but the account return alone does not prove that an EMA or VWAP rule independently generates excess returns.",
+          ],
+        },
+        {
+          h: "Conditional Stock Selection and Trading Mandate",
+        },
+        {
+          p: [
+            "Analytical role-play based on Luk’s method: I begin with liquid leaders, wait for a first pullback into identifiable support, and buy only after price confirms a reversal. I size the position from the stop distance. If the required evidence is missing, I retain cash.",
+            "The following names are selected for a research watchlist because they appear in the interview’s historical trade-review chapters. They are not verified October 2026 buy signals or identified contributors to Luk’s 2026 return.<sup class=\"fnref\"><a href=\"#n-8\" id=\"fnref-8\">8</a></sup>",
           ],
         },
         {
           table: {
-            caption: "Table 2. Cases selected on trade trajectory and expectations",
-            head: ["Case and window", "Trade trajectory", "Expectations of future gains", "Conflict outcome"],
+            caption: "Proposed watchlist and the setup each name would need.",
+            head: ["Ticker", "Required setup for the proposed model", "Decision now"],
             rows: [
-              ["United States–China, 2000–2022", "Rising nearly sixfold to 2018, then plateau and decline", "Rising until about 2015, then reversed", "Intense economic and diplomatic conflict; no militarized dispute"],
-              ["Russia–Ukraine, 2010–2022", "Contraction of roughly two-thirds after 2014, with no recovery", "Reversed after 2013–14", "Full-scale war in 2022"],
-              ["India–Pakistan, 2010–2022", "Low and stagnant; close to zero after 2019", "No expectation of gains", "Chronic low-level military conflict; periodic crises"],
-              ["Germany–France, 2010–2022", "High and stable", "Stable and positive", "Cooperation; conflict settled inside institutions"],
+              ["HOOD", "Rising EMA structure; first pullback; reclaim of a recorded support zone.", "Unconfirmed; no order"],
+              ["OKLO", "Trend and liquidity screens pass; pullback holds above preselected invalidation.", "Unconfirmed; no order"],
+              ["IONQ", "Support reclaim with enough room to overhead resistance; aggregate risk cap passes.", "Unconfirmed; no order"],
+              ["TSLA", "Orderly pullback; intraday reversal; stop width compatible with position cap.", "Unconfirmed; no order"],
             ],
-            note: "The windows differ because the cases enter the comparison at the point at which the relevant expectations were formed, which is earlier for the Sino-American relationship than for the others. Germany–France is a plausibility probe rather than a full case; see section 3.3."
+            note: ""
           },
         },
         {
           p: [
-            "The United States and China occupy the cell that the proposal’s opening example describes. Trade rose nearly sixfold between 2000 and 2018, flattened, and then declined; the expectation of continued gains, which had underwritten cooperation through the 2000s, reversed on the American side after 2015. Conflict followed in the economic and diplomatic arenas — tariffs, export controls, entity listings, tit-for-tat closures of consulates — and did not follow in the military one. The window runs from 2000 rather than 2010 because the decade before 2010 is when the expectations were formed, and a window that began in 2010 would begin with the reversal already under way.",
-            "Russia and Ukraine occupy a cell that is usually misdescribed. The pair is often presented as a high-trade relationship that went to war, and it was not one: bilateral trade fell by roughly two-thirds between 2013 and 2015, and by 2021 stood at about a quarter of its 2013 level. The war came after eight years in which the relationship had already been dismantled economically, and after the expectation of any future gain had been abandoned on both sides. That is the trajectory mechanism, not the high-trade corner, and treating the case as evidence that trade does not prevent war mistakes the sequence. The case is also strongly asymmetric — Ukraine depended on Russia far more than the reverse, and energy was the instrument through which the dependence was used — which makes it informative for H2 as well as for the expectations account.",
-            "India and Pakistan occupy the low-trade, high-conflict cell. Official trade has never amounted to a fraction of one percent of India’s total and has been close to zero since 2019; there is no expectation of future gains to reverse, and the conflict has been military and diplomatic for seventy-five years without acquiring a substantial economic dimension. The case is a check on the claim that economic instruments are the cheap substitute for force: where there is little trade to weaponize, the substitution has nowhere to go, and a finding of persistent military conflict with no economic conflict is what both H1 and H3 imply for this cell.",
-            "Germany and France occupy the cooperative cell and enter as a plausibility probe rather than as a fourth full case. Trade is high and stable, the expectation of gains has not been in question since the 1950s, and conflict is settled inside institutions. The dyad cannot test the hypotheses, since there is little variation in the outcome to explain, but it can do something the other three cannot: show whether the mechanisms the theory names are absent where the outcome is cooperation, or present and overridden. It is coded from a smaller corpus, eight to ten documents against fifteen to twenty for the others.",
-            "The four cases vary along two dimensions the panel cannot separate — whether trade was rising or falling, and whether it was high or low — and they vary in asymmetry, which matters for H2. The cost of the design is stated rather than concealed: three of the four dyads are contentious, and the cooperative case is a probe rather than a test, so the cases can recover mechanisms but cannot establish how common those mechanisms are. They are used for mechanism tracing only. The panel is the check on incidence, and the conclusion is written to that limit.",
+            "Analyst-defined screening rules: restrict to US-listed common stocks priced above $5 with 20-day average dollar volume above $50 million. Require 9 EMA &gt; 21 EMA &gt; 50 EMA, a rising 21 EMA over five sessions, and a positive 63-session return relative to SPY. These thresholds operationalize the research exercise; they are not attributed to Luk.",
+            "Rank qualifying names by 63-session relative strength, then liquidity. Before the session, record the support zone, anchor date, scheduled earnings, and invalidation. A candidate must touch the planned support area and then break a completed five-minute reversal bar’s high. Place the initial stop below that bar’s low; reject a stop wider than 5%.",
+            "A current trading decision requires timestamped prices, volumes, corporate-action data, and completed intraday bars. Those inputs were not validated here. Cash is therefore the model’s present allocation; naming a stock does not authorize an assumed fill.",
           ],
         },
         {
-          h3: "3.3 Documents and sampling",
+          h: "Position Sizing and Paper Trade Mechanics",
         },
         {
           p: [
-            "For each contentious dyad we collect fifteen to twenty official documents, and eight to ten for Germany–France: fifty-three to seventy in total. The corpus comprises foreign- and trade-ministry statements, speeches by senior officials, white papers, and records of negotiations. Sampling is purposive and temporally stratified, drawing on the period before, during, and after each key episode rather than only on moments of crisis; a corpus built only from crises would guarantee hostility and make restraint invisible. Documents are collected in the original language where possible — Russian, Chinese, and English — and translated by the team, with translations checked against official English versions where these exist. The sampling frame, the inclusion rules, and the list of documents are reported in an appendix, so that a reader can see which statements were eligible and which were chosen.",
+            "The proposed implementation starts with $100,000, risks at most 0.5% of current equity per trade, caps each position at 25%, limits gross exposure to 100%, and limits aggregate initial stop risk to 2%. These portfolio caps are analyst safeguards, not a reproduction of Luk’s leverage.",
+            "Shares = floor[min(risk budget / (entry − stop), position cap / entry)]. Entry slippage and estimated fees must reduce the available risk budget. Stops can execute below their trigger during gaps, so planned risk is not a guaranteed maximum loss.",
           ],
         },
         {
-          h3: "3.4 Coding",
+          h3: "Worked execution example with invented prices",
         },
         {
           p: [
-            "The unit of coding is the passage: a sequence of text expressing one complete idea. A passage may carry more than one code. The initial codebook has six categories, each tied to a mechanism in section 2: economic benefits of the relationship; the cost of escalation; dependence and vulnerability; security concerns and relative gains; economic pressure and coercion; and support for negotiation or institutional settlement. Codes are exclusive within a category but not across them, so one passage can record both a claimed benefit and a claimed vulnerability.",
-            "Coding is thematic rather than lexical: a passage counts as “dependence and vulnerability” when it treats the relationship as a constraint on the state’s options, whatever words it uses. To make that judgement reproducible rather than intuitive, each category is defined by a rule and anchored by two or three positive and two or three negative examples. A passage that mentions dependence without treating it as a constraint is a negative example; a passage that describes a supply relationship as a vulnerability to be reduced is a positive one. The anchors are part of the codebook, not an illustration of it.",
-            "Reliability is established before the full corpus is coded. Two coders independently code a shared sample of about one-fifth of the documents, compare codings, and revise the codebook until disagreements reflect ambiguity in the text rather than ambiguity in the rules. Agreement is reported as Krippendorff’s alpha for each category, with a target of .80, and as Cohen’s kappa where the category is binary; percentages are reported alongside because they are what readers of this literature expect to see, but they are not the criterion, since they do not correct for agreement by chance.<sup class=\"fnref\"><a href=\"#n-25\" id=\"fnref-25\">25</a></sup> A category that falls below .67 is redefined and the sample recoded, and the revision is documented. Disagreements are retained rather than resolved by fiat, because the pattern of disagreement is itself evidence about how ambiguous official language is.",
-          ],
-        },
-        {
-          h3: "3.5 Analysis and discrimination between hypotheses",
-        },
-        {
-          p: [
-            "Analysis proceeds in two steps. Within each case we process-trace, lining up what officials said against what the trade data were doing in the same year and asking whether the timing fits the mechanism being claimed. Across cases we build a comparison matrix in which each dyad is a row and each code category a column, and read down the columns for patterns the quantitative results can then be tested against. Each case also yields a timeline matrix — trade flows, conflict events, key documents, and coded categories by year — reported in an appendix so that the inference can be checked rather than taken on trust.",
-            "Each hypothesis implies a different documentary signature, and each signature is a particular kind of test.<sup class=\"fnref\"><a href=\"#n-26\" id=\"fnref-26\">26</a></sup> H1 predicts that officials in high-trade dyads justify restraint by citing the economic cost of disruption — lost exports, broken supply chains, domestic unemployment. Absence of that language where trade is high is a hoop test that H1 fails; its presence is necessary but not sufficient, since any government can cite costs it does not weigh.",
-            "H2 predicts the language of leverage: officials on the less dependent side describe the relationship as an instrument, and officials on the more dependent side describe it as a vulnerability to be reduced. The test is a hoop test and a directional one, and the direction is what matters. If the language is symmetric — if both sides talk about mutual vulnerability — the leverage mechanism is not being described, whatever else the documents show.",
-            "H3 predicts substitution: the same officials who cite the cost of military escalation authorize tariffs, sanctions, or expulsions, and describe those measures as the responsible alternative to force. This is the closest thing in the design to a smoking-gun test, because it requires restraint and escalation in the same period, in the same documents, from the same speakers. A corpus in which trade produces restraint across all three arenas leaves H3 without support; one in which trade produces hostility across all three leaves H1 without support; one in which the two coexist is the pattern the relocation argument predicts and the pattern the other two hypotheses cannot produce.",
-            "Rival explanations are specified in advance for each case — alliance politics, domestic coalitions, territorial disputes, and the personal dispositions of leaders — and the trace is judged against them as well as against the hypothesis it favours. A case in which tariffs follow a domestic coalitional shift rather than a change in dependence is a case in which the H2 signature is present but the mechanism is not, and the codebook has to be able to record that difference.",
-          ],
-        },
-        {
-          h3: "3.6 Limits of the qualitative evidence",
-        },
-        {
-          p: [
-            "One limitation deserves emphasis. Official documents are strategic artifacts: governments have reasons to present their own conduct as defensive and their partner’s as aggressive, and they rarely record the calculations that produced a decision. The cases therefore establish how decisions were justified and how the trade relationship figured in public reasoning, not why decisions were made. That is why the panel matters: it tests whether the pattern officials describe is visible in the aggregate record, on data the officials did not produce.",
-            "Two further limits follow from the selection of cases rather than from the nature of documents. The first is that the availability of documents is itself correlated with regime type: closed governments publish less, and what they publish is more carefully edited, so the Russian and Chinese corpora will be thinner and more guarded than the German and French ones, and the comparison across cases inherits that asymmetry. The second is that the cases are few. Four dyads can show that a mechanism operates; they cannot show how often it operates, and no claim in the conclusion is framed as though they could.",
-          ],
-        },
-        {
-          figure: {
-            src: "assets/img/trade-containers.jpg",
-            alt: "Stacked intermodal containers.",
-            caption: "Stacked intermodal containers.",
-            credit: "Photo: Samuel Wolfl / Pexels",
-          },
-        },
-        {
-          h: "4. Quantitative Methods Design",
-        },
-        {
-          h3: "4.1 Design, sample, and estimand",
-        },
-        {
-          p: [
-            "The quantitative component is an observational study of country pairs over time. An experiment is not available: no researcher can randomly assign two countries to trade with each other. The design is therefore a dyad-year panel, in which the unit of observation is a pair of states i and j in year t, and the estimand is the conditional association between the trade relationship in year t−1 and the probability of each form of conflict in year t, holding observable confounders and unobserved dyad-specific factors constant.",
-            "The panel is restricted to politically relevant dyads — pairs that are geographically contiguous or that include at least one major power.<sup class=\"fnref\"><a href=\"#n-22\" id=\"fnref-22-2\">22</a></sup> The restriction matters. The full set of dyads is dominated by pairs such as Bolivia and Nepal, which have no opportunity to fight and no reason to trade; including them would build a mechanical association between irrelevance and peace. Restricting to politically relevant pairs keeps the comparison inside the set of dyads that could plausibly do either.",
-            "The structure provides two comparisons, and the hypotheses require both. Across dyads, we compare high-trade pairs to low-trade pairs in the same year, which is the comparison the liberal literature usually makes. Within dyads, we compare the same pair over time — the United States and China before and after 2018, Russia and Ukraine before and after 2014 — which holds constant everything about the pair that does not change, including distance, contiguity, and the history of the rivalry. The second is the more demanding comparison, and it is where an association produced by stable dyad characteristics is most likely to disappear.",
-            "The windows differ by outcome, and the differences are not cosmetic. The military models run from 1950 to 2014, because the militarized-dispute data end there.<sup class=\"fnref\"><a href=\"#n-6\" id=\"fnref-6-2\">6</a></sup> The sanctions models run from 1950 to 2022. The structural diplomatic model runs from 1950 to 2022, and the behavioral one only from 2015, when the event data begin. The institutionalized trade dispute model runs from 1995, when the WTO’s dispute-settlement system was established. Models that must be compared directly — the tests of H1 against H3 — are estimated on the common 1950–2014 sample, so that differences in coefficients cannot be attributed to differences in the sample. The 2015–2022 extension is reported separately: it is where the design earns its relevance to the present, since the tariff war, the technology restrictions, and the post-2022 sanctions all fall inside it, but it is also where the outcome measures change, and pooling it with the earlier period would confound a change in the world with a change in the instrument.",
-          ],
-        },
-        {
-          h3: "4.2 Data and sample construction",
-        },
-        {
-          p: [
-            "All components are public, documented, and merged on COW country codes and year. Table 3 lists the sources, their coverage, and the role each plays; table 4 sets out how the estimation sample is built from them. Nothing depends on proprietary data, so the analysis can be replicated from the citations in the bibliography.",
+            "Assume an unnamed candidate passes every screen. It triggers at $100 with a $98 stop. Ignoring costs initially, $500 / $2 = 250 shares, matching the $25,000 position cap. This is a synthetic illustration, not a historical transaction.",
           ],
         },
         {
           table: {
-            caption: "Table 3. Data sources, coverage, and role in the analysis",
-            head: ["Source", "Coverage", "Variables used", "Role"],
+            caption: "Illustrative profit and loss for the worked example.",
+            head: ["Event", "Action", "Gross profit or loss"],
             rows: [
-              ["IMF Direction of Trade Statistics", "1948–present", "Bilateral imports and exports; each country’s total trade", "Volume, dependence, asymmetry"],
-              ["COW Militarized Interstate Disputes v5.0; Dyadic MID 4.03", "1816–2014", "MID onset; highest hostility level; fatalities", "Military conflict: main and severity models"],
-              ["Global Sanctions Data Base R3", "1950–2022", "Threats and impositions; sender, target, onset year", "Economic conflict: main model"],
-              ["TIES 4.0", "1945–2005", "Sanctions threats and impositions", "Economic conflict: consistency check on the overlap"],
-              ["WTO Dispute Settlement", "1995–present", "Dispute initiations and respondents", "Institutionalized trade disputes: separate outcome"],
-              ["UN General Assembly voting data", "1946–present", "Ideal-point estimates; vote agreement scores", "Structural diplomatic divergence: main diplomatic model"],
-              ["GDELT 2.0 event data", "2015–present", "Hostile event counts, CAMEO-coded; total events as offset", "Behavioral diplomatic hostility: 2015–2022 extension"],
-              ["Gleditsch–Ward minimum distance; COW contiguity v3.2", "1946–2007; 1816–2016", "Logged capital-to-capital distance; contiguity", "Controls, time-invariant"],
-              ["ATOP 4.1; Polity5; V-Dem", "1815–2012; 1800–2018; 1789–present", "Alliance portfolio; regime type; democracy index", "Controls, time-varying"],
-              ["COW National Material Capabilities v6.0; World Bank WDI", "1816–2016; 1960–present", "CINC scores; GDP and GDP per capita", "Controls, time-varying"],
+              ["Stop is hit at $98", "Sell all 250 shares", "−$500 or −0.50% of equity"],
+              ["Alternative path reaches $106", "Sell 125 shares at +3R", "+$750 realized"],
+              ["Remaining shares exit at $110", "Sell remaining 125 shares", "+$1,250 realized"],
+              ["Combined winning path", "Total of the two exits", "+$2,000 or +4R"],
             ],
-            note: "Rows are grouped by role. Where sources overlap, the overlap is used to check consistency rather than to extend coverage. The end dates in the last three rows matter and are discussed below."
-          },
-        },
-        {
-          table: {
-            caption: "Table 4. Construction of the estimation sample",
-            head: ["Stage", "Rule applied", "Consequence for the estimand"],
-            rows: [
-              ["1. All dyad-years, 1950–2022", "COW state-system membership; directed pairs collapsed to undirected", "Defines the universe"],
-              ["2. Politically relevant dyads", "Contiguous, or at least one major power", "Removes pairs with neither the opportunity nor the reason to fight"],
-              ["3. Trade observed", "Bilateral flow recorded, or recorded as zero, in t−1", "Excludes unrecorded trade; keeps reported zeros"],
-              ["4. Dependence defined", "Total trade of each partner greater than zero", "Drops a few micro-state observations from the dependence models"],
-              ["5. Controls observed", "Distance, contiguity, capabilities, regime type", "Sets the baseline sample; carried-forward values are flagged"],
-              ["6. Common sample, 1950–2014", "Intersection of the military, sanctions, and voting models", "The sample on which cross-equation restrictions are tested"],
-              ["7. Extension, 2015–2022", "Sanctions and voting models; GDELT from 2015", "Reported separately, never pooled with the main military model"],
-            ],
-            note: "The number of observations at each stage is reported in a flow diagram in the pre-analysis plan and in the replication package. The sequence is reported in full because the sample changes at every step, and its composition, not only its size, affects the comparison across outcomes."
+            note: ""
           },
         },
         {
           p: [
-            "Two decisions in that sequence are consequential and are stated here rather than buried in an appendix. The first is that missing and zero are distinguished. A dyad that reports no trade is at the lower bound of the independent variable and belongs in the sample; a dyad whose trade is unrecorded is missing, and treating the two alike would manufacture pacifying effects, because small and hostile pairs are the ones most likely to go unrecorded. The second is that the main sample requires continuous coverage, which excludes small states and the early years, and therefore builds in a selection that runs against finding economic conflict, since small states are the most frequent targets of sanctions. We report full-sample estimates alongside the restricted ones, and treat the difference between them as a measure of how much the selection matters rather than as a robustness check to be passed.",
-            "Table 3 also makes visible a problem that is easy to pass over: the controls do not all reach 2022. Distance and contiguity are effectively time-invariant, so their end dates do not truncate the panel. Alliance portfolio, regime type, and capabilities are time-varying, and for years beyond their coverage the last observation is carried forward, with a dummy flagging carried-forward values and a robustness check that ends the panel where coverage ends. This is a compromise, not a solution. Carried-forward capabilities are stalest precisely in the years when the extension matters most, which is one reason the 2015–2022 results are reported separately and never pooled with the main models.",
+            "For the proposed exit policy, sell half at +3R and trail the remainder using the prior completed daily 9 EMA, with a close below it triggering exit at the next available session open. The original protective stop remains active. A gap through either execution level must use the available price. These exact partial-sale and timing rules are analyst choices.",
+            "At five basis points per side on traded notional, the winning example incurs $12.50 on entry and $13.50 across both exits, leaving $1,974 before commissions and taxes. At twenty basis points per side, the same example leaves $1,896. This sensitivity holds prices fixed and does not model missed fills or market impact.",
           ],
         },
         {
-          h3: "4.3 Measuring the trade relationship",
+          h: "Risk Assessment and Replication Limits",
+        },
+        {
+          h3: "Expectancy and losing streaks",
         },
         {
           p: [
-            "Three measures operationalize the three dimensions identified in section 2.1. The first is volume. Because bilateral trade is heavily right-skewed and spans several orders of magnitude, the reported version uses the natural log of one plus the total flow, where T is the sum of i’s imports from j and i’s exports to j, in constant dollars:<sup class=\"fnref\"><a href=\"#n-27\" id=\"fnref-27\">27</a></sup>",
+            "For an illustrative 25% win rate, a 5R average winner and a 1R average loser, expectancy is 0.25 × 5 − 0.75 × 1 = +0.50R before costs. If the average winner falls to 3R, expectancy is zero before costs. These are scenarios, not measured 2026 trade statistics.",
+            "Eighteen full-stop losses at 0.5% of remaining equity reduce capital by 1 − 0.995^18 = 8.63%, even without gaps or fees. A low-win-rate method therefore requires both positive payoff asymmetry and tolerance for sustained adverse sequences. Tightening stops can also increase stop-outs; it does not mechanically improve expectancy.",
           ],
         },
         {
-          formula: "V<sub>ij,t</sub> = ln(1 + T<sub>ij,t</sub>)",
+          h3: "What the evidence cannot establish",
         },
         {
           p: [
-            "The second is dependence, the share of a country’s total trade that runs through the partner:",
+            "Neither Sharpe ratio, Sortino ratio, daily maximum drawdown, turnover, nor realized 2026 win rate can be estimated reliably from four cumulative observations. No security-level contribution, leverage-adjusted alpha, or causal attribution to pullback entries is reported. Comparing the account with an index would also require aligned dates and return conventions.",
+            "A valid replication needs a point-in-time universe including delisted names, adjusted daily history, intraday bars, spreads, earnings timestamps, commissions, and any financing or borrow costs. Every signal must use information available before execution. Intrabar stop/target conflicts require finer data or a conservative ordering rule.",
+            "Freeze the proposed rules before evaluating an untouched period. Log rejected setups and unfilled orders as well as completed trades. A watchlist assembled from interview winners cannot serve as an unbiased historical test universe. Compare the full rule set with simpler momentum and buy-and-hold baselines to determine whether the added entry filters improve results.",
           ],
         },
         {
-          formula: "d<sub>ij,t</sub> = T<sub>ij,t</sub> / T<sub>i,t</sub>",
+          h3: "Investment assessment",
         },
         {
           p: [
-            "and the partner’s dependence on i is the same flow divided by the partner’s total trade:",
-          ],
-        },
-        {
-          formula: "d<sub>ji,t</sub> = T<sub>ij,t</sub> / T<sub>j,t</sub>",
-        },
-        {
-          p: [
-            "This is the operational form of the salience argument: it measures how much of i’s exposure is concentrated in j. The third dimension is asymmetry. The unsigned version takes the absolute difference in logs, and the signed version keeps the direction:",
-          ],
-        },
-        {
-          formula: "A<sub>ij,t</sub> = | ln d<sub>ij,t</sub> − ln d<sub>ji,t</sub> |",
-        },
-        {
-          formula: "S<sub>ij,t</sub> = ln d<sub>ij,t</sub> − ln d<sub>ji,t</sub>",
-        },
-        {
-          p: [
-            "A positive value of S means that i depends more on j than j depends on i, and a negative value the reverse. The two versions answer different questions and are estimated separately, because they are not substitutes. An unsigned gap can establish that inequality matters; only the signed version can establish that direction matters, and the realist mechanism is directional: pressure should flow from the less dependent to the more dependent partner. For the sanctions models the dyad is directed, with i as potential sender and j as potential target, so that S identifies which side holds the lever. For military and diplomatic outcomes, which are not intrinsically directional, A is the main measure and S enters in both directions as a robustness check.",
-            "Three construction details affect interpretation. Trade enters at t−1 throughout, so that the relationship is measured before the conflict it is supposed to explain. Because the log transformation compresses small flows, depends on an arbitrary constant, and discards the information that a zero carries, we construct a second volume measure by Poisson pseudo-maximum-likelihood: bilateral trade is estimated on exporter-year, importer-year, and dyad fixed effects, and the fitted values enter the conflict models in levels, purged of country size and of multilateral resistance.<sup class=\"fnref\"><a href=\"#n-28\" id=\"fnref-28\">28</a></sup> The log measure remains the primary one because it is the measure the literature reports and the one a reader can reproduce from the raw data; the PPML measure is estimated alongside it, and where the two disagree the disagreement is informative about small flows rather than a nuisance to be set aside. Finally, zeros are kept rather than dropped, and dependence is defined only where both partners have positive total trade: a handful of micro-state observations drop out of the dependence models for that reason and are retained in the volume models.",
-          ],
-        },
-        {
-          h3: "4.4 Measuring the three forms of conflict",
-        },
-        {
-          p: [
-            "Military conflict is the onset of a militarized interstate dispute: a binary indicator equal to one in the first year of a new MID between i and j. Onset rather than incidence is used because the hypotheses concern initiation, and because ongoing disputes would otherwise be counted repeatedly. Severity is measured separately with the highest hostility level reached — threat, display, use of force, or war — and with the fatality category, both estimated as ordered outcomes. The severity models are a direct test of the liberal cost mechanism: if trade works by raising the cost of the most destructive action, its coefficient should be largest at the top of the ladder. Because MID coding ends in 2014, the main military models end there. The 2015–2022 extension uses event data that are not comparable to MID coding, and is reported as exploratory only.",
-            "Economic conflict is the onset of a sanctions episode in which one member of the dyad is the sender and the other the target. The main measure is the Global Sanctions Data Base, which covers 1950–2022 and codes threats and impositions separately.<sup class=\"fnref\"><a href=\"#n-29\" id=\"fnref-29\">29</a></sup><sup class=\"fnref\"><a href=\"#n-30\" id=\"fnref-30\">30</a></sup> The main model uses imposed sanctions, with threats as a robustness check, because a threat that is withdrawn is a different act from one carried out, and a measure that pools them changes meaning across episodes. Onset is the first year of a new episode rather than every year in which sanctions are in force, for the same reason that military onset is used: the hypotheses concern the decision to begin.",
-            "TIES 4.0 covers 1945–2005 and overlaps the sanctions database for most of that period.<sup class=\"fnref\"><a href=\"#n-31\" id=\"fnref-31\">31</a></sup> We do not splice the two into a single series. Splicing would create a break at the point where the source changes, and the break would fall in the middle of the Cold War, exactly where the trade and conflict series are most interesting. Instead the main model is estimated on the sanctions database, the TIES estimates for 1950–2005 are reported alongside as a consistency check, and where the two disagree the disagreement is reported rather than resolved. Where a spliced series is unavoidable — the years before 1950 in the descriptive figures — source fixed effects are included and coefficients are reported by source.",
-            "WTO dispute initiations are treated as a separate outcome rather than folded into sanctions. A complaint is a request for adjudication, not an act of coercion: it is initiated by the complainant, resolved by a panel, and often coexists with continued cooperation. Merging it with sanctions would produce a variable whose meaning changes across sources and across time, since the dispute system did not exist before 1995. We therefore estimate institutionalized trade disputes as a distinct economic outcome for 1995–2022. The separation also gives the substitution argument a hard test: if trade pushes conflict toward the cheapest available instrument, the effect should be strongest where legal adjudication is available, and that is a prediction H3 makes and H1 does not.",
-            "Diplomatic conflict is measured as two outcomes, not one, because the two things usually combined under that heading move at different speeds and mean different things. The first is structural: the absolute difference between the two states’ ideal points estimated from United Nations General Assembly voting, available annually for the whole panel, which captures durable divergence of alignment.<sup class=\"fnref\"><a href=\"#n-32\" id=\"fnref-32\">32</a></sup><sup class=\"fnref\"><a href=\"#n-33\" id=\"fnref-33\">33</a></sup> The second is behavioral: counts of hostile events — threats, accusations, expulsions, recalls — coded from the GDELT event stream, which capture episodic friction.<sup class=\"fnref\"><a href=\"#n-34\" id=\"fnref-34\">34</a></sup> A pair can be structurally distant and behaviorally quiet, or closely aligned and suddenly hostile, and the two are not interchangeable measures of one concept.",
-            "The main diplomatic model uses voting distance over 1950–2022. GDELT begins in 2015 and is estimated separately as an extension, with the total number of recorded events between the pair entered as an offset so that coefficients describe the hostile share of interaction rather than the volume of coverage. The source is known to report more events where Western media are attentive, and the offset, together with a control for the pair’s total event count, is an imperfect correction for that bias rather than a solution to it.<sup class=\"fnref\"><a href=\"#n-35\" id=\"fnref-35\">35</a></sup> The reason for keeping the two apart is not fastidiousness. Structural divergence is close to a slow-moving preference, and trade is unlikely to move it within a year; hostile events are cheap talk, and trade may well increase them. A single index would produce a coefficient that describes neither.",
-            "What is lost by these separations is coverage in the years before 1950 and a single economic-conflict variable that would be easier to report and easier to compare with earlier work. What is gained is that every coefficient has one meaning. Given that the hypotheses differ precisely in what they say about the several arenas, a measure that mixes them would make the central comparison uninterpretable, and the gain in coverage would be paid for with the argument.",
-          ],
-        },
-        {
-          h3: "4.5 Estimation and cross-equation tests",
-        },
-        {
-          p: [
-            "Analysis begins descriptively: the distribution of each outcome, the pattern of missingness by year and region, and a correlation matrix among the trade measures and controls, reported before any model is estimated. Each binary outcome is then modeled with logistic regression. For dyad i,j in year t:",
-          ],
-        },
-        {
-          formula: "Pr(Y<sub>ij,t</sub> = 1) = Λ(β<sub>0</sub> + β<sub>1</sub>V<sub>ij,t−1</sub> + β<sub>2</sub>d<sub>ij,t−1</sub> + β<sub>3</sub>A<sub>ij,t−1</sub><br>+ β<sub>4</sub>(V × A)<sub>ij,t−1</sub> + γ′X<sub>ij,t</sub> + δ<sub>t</sub> + μ<sub>ij</sub>)",
-        },
-        {
-          p: [
-            "where Λ is the logistic function, X the vector of controls listed in table 3, δ the year fixed effects that absorb global shocks, and μ the dyad effects. The interaction between volume and asymmetry tests H2’s conditional claim: if pacification requires symmetry, the interaction should be positive, meaning that the negative effect of volume is concentrated where asymmetry is low. H1, which predicts uniform pacification, implies that the interaction is zero. That difference is one of the restrictions table 5 sets out, and it is estimated rather than assumed.",
-            "The estimator deserves a word of its own, because the combination of dyad fixed effects, rare events, and duration dependence is not innocuous. A fixed-effects logit with a rare-events correction and peace-year splines asks the data to identify a within-pair effect from a small number of onsets, and the incidental-parameters problem is real: pairs that never experience the outcome contribute nothing to a conditional likelihood, while pairs that experience it once contribute a great deal.<sup class=\"fnref\"><a href=\"#n-36\" id=\"fnref-36\">36</a></sup> The main within-pair estimates therefore come from conditional (fixed-effects) logit, which conditions the nuisance parameters out, and from Firth’s bias-reduced penalized likelihood, which does not discard concordant pairs and behaves well when events are sparse.<sup class=\"fnref\"><a href=\"#n-37\" id=\"fnref-37\">37</a></sup> Duration dependence is handled with peace years and cubic splines rather than a lagged dependent variable, since a lagged outcome would absorb the effect the design is trying to estimate.<sup class=\"fnref\"><a href=\"#n-38\" id=\"fnref-38\">38</a></sup> A pooled logit with year fixed effects and standard errors clustered by dyad is reported alongside, since it is the specification most readers will want to see, and the rare-events correction is reported as a sensitivity rather than as the main model, because it addresses a bias that the fixed-effects estimator addresses differently.<sup class=\"fnref\"><a href=\"#n-39\" id=\"fnref-39\">39</a></sup> Where peace-year splines are collinear with the fixed effects — as they are for pairs with no history of conflict — only the splines are retained, and the choice is reported.",
-            "Reporting three estimators rather than one is not indecision. Each makes a different trade-off between bias from unobserved heterogeneity and bias from discarding information, and a result that survives all three is more informative than a result that depends on the one the author prefers.",
-            "The interaction is interpreted through marginal effects at the quartiles of asymmetry rather than through its coefficient, because the sign of an interaction term in a nonlinear model is not the sign of the interaction effect.<sup class=\"fnref\"><a href=\"#n-40\" id=\"fnref-40\">40</a></sup> Diplomatic event counts are estimated with a negative binomial model with an offset, which accommodates overdispersion, and are reported as average marginal effects so that coefficients read as changes in the expected count rather than in log counts.",
-            "The design does not rely on the significance of a single coefficient. It relies on the pattern of coefficients across outcomes and measures, and on formal tests of the restrictions each hypothesis implies. Table 5 states the predicted pattern.",
-          ],
-        },
-        {
-          table: {
-            caption: "Table 5. Predicted coefficient patterns by hypothesis",
-            head: ["Coefficient", "H1 Strong liberal", "H2 Strategic competition", "H3 Relocation", "Null: political primacy"],
-            rows: [
-              ["Volume → military onset", "Negative, large", "Negative, small; concentrated in symmetric dyads", "Negative", "Zero"],
-              ["Volume → sanctions onset", "Negative", "Zero", "Positive", "Zero"],
-              ["Volume → WTO disputes", "Negative", "Zero", "Positive", "Zero"],
-              ["Volume → UN voting distance", "Negative", "Zero", "Positive", "Zero"],
-              ["Volume → hostile events", "Negative", "Zero", "Positive", "Zero"],
-              ["Asymmetry → military onset", "Zero", "Zero or positive", "Zero", "Zero"],
-              ["Asymmetry → economic conflict", "Zero", "Positive", "Zero", "Zero"],
-              ["Asymmetry → diplomatic conflict", "Zero", "Positive", "Zero", "Zero"],
-              ["Volume × asymmetry → military", "Zero", "Positive", "Zero", "Zero"],
-              ["Volume × asymmetry → economic/diplomatic", "Zero", "Positive", "Zero", "Zero"],
-              ["Signed asymmetry → sanctions, sender", "Zero", "Positive: the less dependent side initiates", "Zero", "Zero"],
-            ],
-            note: "Predictions refer to the sign of coefficients estimated on a common sample with a common set of controls. The volume rows separate H1 from H3; the asymmetry and interaction rows identify H2. A null in any volume row counts against H1 and H3 alike and is not evidence for either. Equivalence tests are used to distinguish a precisely estimated null from an imprecise one."
-          },
-        },
-        {
-          p: [
-            "Three procedures do the discriminating work, and none of them is a comparison of asterisks. The first is a stacked model: the outcomes are pooled into a long file in which each dyad-year appears once per outcome, and volume is interacted with an outcome indicator, so that the difference between the military and the economic coefficient becomes a single parameter with a standard error instead of an inference drawn from two separately estimated models. The second is a cluster bootstrap over dyads, which gives a confidence interval for that difference without assuming the equations are independent — they are not, since they share dyads, years, and regressors. The third is equivalence testing: for H3 to be supported the economic and diplomatic coefficients must be positive and distinguishable from zero, and for H1 they must be negative and distinguishable from zero; a coefficient that is precisely zero counts against both.<sup class=\"fnref\"><a href=\"#n-23\" id=\"fnref-23-2\">23</a></sup>",
-            "H1 requires a negative and substantively large coefficient on volume in the military model, negative coefficients in the economic and diplomatic models, and an interaction indistinguishable from zero. If the military coefficient is indistinguishable from zero once fixed effects and controls are included, H1 fails on its own terms. If it is negative while the economic coefficient is positive, H1 fails and H3 is supported — provided that the difference survives the stacked test, since a positive coefficient in one model and a negative one in another is not by itself evidence of a difference between them.",
-            "H3 requires the cross-equation difference: the volume coefficient in the military model must be more negative than the corresponding coefficients in the economic and diplomatic models. It also requires that asymmetry carry no independent effect. The second condition is what separates H3 from the combination of H1 and H2, and it is the condition most likely to fail, since asymmetric pairs are precisely those in which economic instruments are used. That is why the two hypotheses are tested together rather than serially.",
-            "H2 requires that asymmetry carry the effect and that the effect of volume be conditional on symmetry. Three results would support it: a positive coefficient on asymmetry in the economic and diplomatic models; a positive interaction between volume and asymmetry; and, in the directed sanctions model, a positive coefficient on signed asymmetry of the predicted sign, indicating that the less dependent side initiates. If conflict is equally likely in either direction, the leverage story loses its distinctively directional content and is reduced to a claim about inequality, which is weaker and which the unsigned measure has already tested.",
-            "The null generates a fourth pattern that is easy to overlook: trade coefficients that shrink toward zero once lagged conflict and dyad effects are included, while the lagged conflict term remains large. That is Keshk, Pollins, and Reuveny’s claim, and it is the result against which any finding of a trade effect has to be defended.<sup class=\"fnref\"><a href=\"#n-19\" id=\"fnref-19-3\">19</a></sup>",
-            "The pattern we expect, on the existing evidence, is the joint one: volume negative in the military model, positive in the economic and diplomatic models, and asymmetry positive in the latter two. That result would support H2 and H3 together, and would count against H1 in the arenas where its prediction is reversed. It is worth saying in advance that this is the expected result, because a proposal that expects a clean single-hypothesis outcome is usually one that has not looked closely at the literature.",
-          ],
-        },
-        {
-          h3: "4.6 Identification and robustness",
-        },
-        {
-          p: [
-            "Five strategies, in ascending order of stringency, address the possibility that the association is produced by conflict reducing trade, or by a third factor producing both. The first is temporal ordering: trade at t−1 and conflict at t, so that conflict in year t cannot have caused trade in year t−1. This rules out simultaneous reverse causation but not anticipation, since governments that expect conflict may cut trade in advance. We therefore add an anticipation test: trade at t−2 and the trend in trade over the three years before onset are entered alongside the t−1 measure. If governments cut trade in anticipation, the t−2 coefficient should carry part of the effect and the pre-onset trend should be negative; if the t−1 effect survives both, anticipation is a less plausible account of it.",
-            "The second is fixed effects. Dyad effects absorb every time-invariant characteristic of the pair — distance, contiguity, colonial history, and the persistent antagonism that makes some pairs both low-trading and conflict-prone — and year effects absorb shocks common to all dyads. What remains is variation within pairs over time, which is the comparison the theory needs: when a pair’s trade rises relative to its own history, does its conflict propensity fall?",
-            "The third is simultaneous estimation. Following Keshk, Pollins, and Reuveny, we specify a two-equation system in which conflict depends on lagged trade and trade on lagged conflict, with each endogenous variable instrumented by its own lags and by the exogenous controls in the other equation.<sup class=\"fnref\"><a href=\"#n-19\" id=\"fnref-19-4\">19</a></sup> This is the specification the field treats as the standard response to the endogeneity critique, and it is reported as a robustness check rather than as the main model, because the exclusion restrictions are plausible but not beyond dispute.",
-            "The fourth is matching. For the post-1990 subsample, entropy balancing reweights high-trade dyad-years to match the covariate distribution of low-trade dyad-years, reducing dependence on the functional form of the regression.<sup class=\"fnref\"><a href=\"#n-41\" id=\"fnref-41\">41</a></sup> The thresholds are defined in advance: high-trade observations are those in the top tercile of volume within year, low-trade those in the bottom tercile, and the balance table reports standardized differences before and after weighting, with a target of .10. It cannot address unobserved confounding, and it is reported as a check on specification rather than as a causal estimate.",
-            "The fifth is a pair of falsification tests. The negative control uses an outcome that the theory does not connect to the dyad’s trade: i’s conflict with third parties should not respond to i–j trade once i’s own characteristics are controlled, and an effect there would suggest that the trade measure is picking up a country’s general propensity for conflict. The placebo reassigns trade flows to randomly chosen dyads in the same region and year, and re-estimates the main specification; the distribution of placebo coefficients should be centred on zero, and the share of placebo estimates at least as large as the real one is a design-based p-value.",
-            "No single strategy is decisive, and the design does not treat any of them as though it were. What matters is whether the pattern in table 5 survives all five. Throughout, the results are described as associations. The design narrows the range of plausible alternatives; it does not eliminate them, and the language of the paper is chosen to match what the design can support.",
-          ],
-        },
-        {
-          h3: "4.7 Alternative measures considered and excluded",
-        },
-        {
-          p: [
-            "Five alternatives were set aside for stated reasons, and each survives as a robustness check. Trade openness, the ratio of bilateral trade to GDP, confounds dependence with country size and is not a dyadic measure. Unlogged trade in levels is dominated by a handful of large pairs, so the coefficients would describe the United States and Germany rather than the average dyad; Poisson estimation on levels is the alternative, and it is reported alongside the log specification rather than in place of it. Capital and financial interdependence, following Gartzke, Li, and Boehmer, is theoretically attractive but unavailable at bilateral level before the 1990s, so it is estimated on the post-1990 subsample.<sup class=\"fnref\"><a href=\"#n-4\" id=\"fnref-4-2\">4</a></sup> Interstate war alone is too rare — wars are a small fraction of militarized disputes — and would produce estimates dominated by a few observations. And a composite conflict index would make H3 untestable by construction, since the hypothesis predicts divergence across exactly the components an index would average away.",
-            "A sixth alternative is the most common in policy research: Goldstein-weighted event scores, which assign a valence and intensity to each reported interaction. They are excluded because the weights are not interval-scaled, because the underlying data reflect media attention rather than state behaviour, and because the resulting index is the single continuum that section 2.2 rejects.",
-          ],
-        },
-        {
-          h3: "4.8 Power, multiple testing, and the limits of the design",
-        },
-        {
-          p: [
-            "Three statistical constraints are usually left implicit, and leaving them implicit is a way of not having to answer for them. The first is power. Conflict is rare, sanctions are rarer, and a design that clusters standard errors by dyad and absorbs dyad effects discards much of the variation that a naive calculation would count. We therefore conduct a simulation-based power analysis before estimation: effect sizes are drawn from the range implied by the existing literature, panels are simulated under the null and under each hypothesis with the observed outcome distribution and the observed clustering, and the share of replications in which each restriction is rejected is reported. If the design cannot separate H1 from H3 at plausible effect sizes, that is a finding about the design, and it is better to know it before the estimates are interpreted than after.",
-            "The second constraint is multiplicity. Four conflict measures, two trade measures, two asymmetry measures, and several specifications generate a grid of tests large enough that some will be significant by construction. We pre-specify three primary tests — volume in the military model, volume in the sanctions model, and asymmetry in the sanctions model — order the remainder hierarchically behind them, and report false-discovery-rate-adjusted q-values for the exploratory grid.<sup class=\"fnref\"><a href=\"#n-42\" id=\"fnref-42\">42</a></sup> The distinction between confirmatory and exploratory results is stated in the text rather than left to the reader.",
-            "The third constraint is that these choices should be visible before the results are. A pre-analysis plan covering measurement, specification, the primary tests, and the robustness list is deposited before the panel is estimated, and departures from it are reported as departures.<sup class=\"fnref\"><a href=\"#n-43\" id=\"fnref-43\">43</a></sup> The plan does not remove discretion; it makes discretion observable.",
-            "Beyond these, three problems will constrain what the results can support, and each has a planned response. Missing trade data come first: the IMF reports many dyad-years as missing rather than zero, especially for small economies before 1970, and treating missing as zero would manufacture pacifying effects, so we distinguish reported zeros from missing values and report both the restricted and the full sample. Measurement error comes second: militarized disputes are under-reported where both states restrict information, sanctions where coercion is informal rather than announced, and both forms of error are likely correlated with regime type and with the severity of the relationship, so models are reported with and without the post-1990 period.",
-            "Truncation comes third. The military data end in 2014, so the period most relevant to the argument — the tariff war, the technology restrictions, the return of great-power competition — falls outside the window in which all outcomes can be compared. The 2015–2022 extension compensates only partly, because post-2014 military conflict must be measured with event data that are noisier than the MID coding, and because the control variables are thinnest exactly there. The qualitative cases are chosen in part to cover the gap, which is one reason the Sino-American case runs to 2022.",
-            "Beyond these, the design faces the ordinary limit of observational inference: trade policy is not assigned but chosen by the same governments choosing security policy. The contribution of the quantitative component is to establish whether the predicted pattern is visible in a large sample and which hypothesis it is consistent with — not to prove that trade causes peace or conflict. The contribution of the qualitative component is to show whether the mechanism the pattern implies is the one officials described. Neither alone would be enough, and the proposal is designed so that neither has to be.",
-          ],
-        },
-        {
-          figure: {
-            src: "assets/img/trade-ship-night.jpg",
-            alt: "Container ship at night.",
-            caption: "Container ship at night.",
-            credit: "Photo: Kordanalev / Pexels",
-          },
-        },
-        {
-          h: "5. Conclusion",
-        },
-        {
-          p: [
-            "This proposal asks how bilateral trade affects the likelihood and the type of conflict, and it answers with a design that treats conflict as three outcomes rather than one. The argument is that trade relocates conflict rather than eliminating it: it raises the cost of the most destructive instrument available to states and leaves the cheaper ones in place. If that is right, the liberal and realist traditions are not rivals so much as partial accounts of one relationship — one describing what trade does to the probability of war, the other what it does to the terms of bargaining.",
-            "The design disaggregates the dependent variable, without which the relocation hypothesis cannot be falsified — and it states the hypotheses so that falsification is possible, since two hypotheses that both predict a null in the same place cannot be separated by any data. It separates volume, dependence, and asymmetry on the independent-variable side, and separates the unsigned from the signed measure, without which the leverage mechanism cannot be distinguished from the opportunity-cost mechanism. It separates coercion from adjudication and structure from behaviour on the outcome side, without which the coefficients would average over the very distinctions the argument depends on. And it combines a panel that establishes generality with cases that establish mechanism, so that the statistical pattern and the documentary record can be checked against each other.",
-            "Two limits belong in the conclusion rather than in a footnote. The cases are used for mechanism tracing, and nothing in them establishes how common a mechanism is; the panel establishes incidence, and the cases explain it. And the results will be associations, whatever pattern emerges, because governments choose their trade policy and their security policy together. The proposal is written to those limits, and the claims it will make are the claims the design can support.",
-            "The payoff, if the pattern holds, is a more precise answer than the field currently offers: not whether trade brings peace, but which kind of peace trade brings, and what it does to the conflicts that remain. A relationship can be pacified in the military arena and, at the same time, more contested in the economic and diplomatic ones. If that is the world the evidence describes, then the interesting question is no longer whether interdependence restrains states, but which instruments it leaves them free to use.",
+            "The published 2026 results justify studying Luk’s execution and risk discipline, but do not establish a transferable +785.8% strategy return. The appropriate output today is a conditional research mandate, not an asserted historical replica. A defensible replication result remains pending the required price and transaction data. No full-year projection is made.",
           ],
         },
         {
           h: "Notes",
           ol: [
-            "U.S. Census Bureau, “Trade in Goods with China,” series IMPCH and EXPCH, Federal Reserve Bank of St. Louis, FRED, accessed October 17, 2026, https://fred.stlouisfed.org/.",
-            "Robert O. Keohane and Joseph S. Nye, Power and Interdependence: World Politics in Transition (Boston: Little, Brown, 1977), 11–19.",
-            "Katherine Barbieri, “Economic Interdependence: A Path to Peace or a Source of Interstate Conflict?,” Journal of Peace Research 33, no. 1 (1996): 29–49.",
-            "Erik Gartzke, Quan Li, and Charles Boehmer, “Investing in the Peace: Economic Interdependence and International Conflict,” International Organization 55, no. 2 (2001): 391–438.",
-            "Erik Gartzke, “The Capitalist Peace,” American Journal of Political Science 51, no. 1 (2007): 166–91.",
-            "Glenn Palmer et al., “The MID5 Dataset, 2011–2014: Procedures, Coding Rules, and Description,” Conflict Management and Peace Science 39, no. 4 (2022): 470–82.",
-            "Solomon W. Polachek, “Conflict and Trade,” Journal of Conflict Resolution 24, no. 1 (1980): 55–78.",
-            "John R. Oneal and Bruce M. Russett, “The Classical Liberals Were Right: Democracy, Interdependence, and Conflict, 1950–1985,” International Studies Quarterly 41, no. 2 (1997): 267–94.",
-            "John R. Oneal and Bruce Russett, “Assessing the Liberal Peace with Alternative Specifications: Trade Still Reduces Conflict,” Journal of Peace Research 36, no. 4 (1999): 423–42.",
-            "John R. Oneal, Bruce Russett, and Michael L. Berbaum, “Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992,” International Studies Quarterly 47, no. 3 (2003): 371–93.",
-            "James D. Fearon, “Rationalist Explanations for War,” International Organization 49, no. 2 (1995): 379–414.",
-            "James D. Morrow, “How Could Trade Affect Conflict?,” Journal of Peace Research 36, no. 4 (1999): 481–89.",
-            "Philippe Martin, Thierry Mayer, and Mathias Thoenig, “Make Trade Not War?,” Review of Economic Studies 75, no. 3 (2008): 865–900.",
-            "Kenneth N. Waltz, Theory of International Politics (Reading, MA: Addison-Wesley, 1979), 105–7.",
-            "Joanne Gowa, Allies, Adversaries, and International Trade (Princeton, NJ: Princeton University Press, 1994), 6–10.",
-            "Katherine Barbieri, The Liberal Illusion: Does Trade Promote Peace? (Ann Arbor: University of Michigan Press, 2002), 1–14.",
-            "Dale C. Copeland, “Economic Interdependence and War: A Theory of Trade Expectations,” International Security 20, no. 4 (1996): 5–41.",
-            "Dale C. Copeland, Economic Interdependence and War (Princeton, NJ: Princeton University Press, 2015), 1–24.",
-            "Omar M. G. Keshk, Brian M. Pollins, and Rafael Reuveny, “Trade Still Follows the Flag: The Primacy of Politics in a Simultaneous Model of Interdependence and Armed Conflict,” Journal of Politics 66, no. 4 (2004): 1155–79.",
-            "Håvard Hegre, John R. Oneal, and Bruce Russett, “Trade Does Promote Peace: New Simultaneous Estimates of the Reciprocal Effects of Trade and Conflict,” Journal of Peace Research 47, no. 6 (2010): 763–74.",
-            "Kristian Skrede Gleditsch and Michael D. Ward, “Measuring Space: A Minimum-Distance Database and Applications to International Studies,” Journal of Peace Research 38, no. 6 (2001): 739–58.",
-            "Zeev Maoz and Bruce Russett, “Normative and Structural Causes of Democratic Peace, 1946–1986,” American Political Science Review 87, no. 3 (1993): 624–38.",
-            "Carlisle Rainey, “Arguing for a Negligible Effect,” American Journal of Political Science 58, no. 4 (2014): 1083–91.",
-            "Earl R. Babbie, The Practice of Social Research, 15th ed. (Boston: Cengage Learning, 2021), 327–38.",
-            "Andrew F. Hayes and Klaus Krippendorff, “Answering the Call for a Standard Reliability Measure for Coding Data,” Communication Methods and Measures 1, no. 1 (2007): 77–89.",
-            "David Collier, “Understanding Process Tracing,” PS: Political Science &amp; Politics 44, no. 4 (2011): 823–30.",
-            "International Monetary Fund, Direction of Trade Statistics Yearbook (Washington, DC: IMF, various years), https://data.imf.org/.",
-            "J. M. C. Santos Silva and Silvana Tenreyro, “The Log of Gravity,” Review of Economics and Statistics 88, no. 4 (2006): 641–58.",
-            "Gabriel Felbermayr et al., “The Global Sanctions Data Base,” European Economic Review 129 (2020): 103521.",
-            "Constantinos Syropoulos et al., “The Global Sanctions Data Base—Release 3: COVID-19, Russia, and Multilateral Sanctions,” WIFO Working Paper 651 (Vienna: Austrian Institute of Economic Research, 2022).",
-            "T. Clifton Morgan, Navin Bapat, and Yoshiharu Kobayashi, “Threat and Imposition of Economic Sanctions: Updating the TIES Dataset,” Conflict Management and Peace Science 31, no. 5 (2014): 541–58.",
-            "Erik Voeten, “Data and Analyses of Voting in the United Nations General Assembly,” in Routledge Handbook of International Organization, ed. Bob Reinalda (London: Routledge, 2013), 54–66.",
-            "Michael A. Bailey, Anton Strezhnev, and Erik Voeten, “Estimating Dynamic State Preferences from United Nations Voting Data,” Journal of Conflict Resolution 61, no. 2 (2017): 430–56.",
-            "Kalev Leetaru and Philip A. Schrodt, “GDELT: Global Data on Events, Location, and Tone, 1979–2012” (paper presented at the Annual Convention of the International Studies Association, San Francisco, April 2013).",
-            "Nils B. Weidmann, “A Closer Look at Reporting Bias in Conflict Event Data,” American Journal of Political Science 60, no. 1 (2016): 206–18.",
-            "Christopher Zorn, “A Solution to the Problem of Too Many Variables and Too Few Observations: Conditional Logit (CLOGIT) and the Estimation of Rare Events,” Political Analysis 13, no. 2 (2005): 157–71.",
-            "David Firth, “Bias Reduction of Maximum Likelihood Estimates,” Biometrika 80, no. 1 (1993): 27–38.",
-            "Nathaniel Beck, Jonathan N. Katz, and Richard Tucker, “Taking Time Seriously: Time-Series-Cross-Section Analysis with a Binary Dependent Variable,” American Journal of Political Science 42, no. 4 (1998): 1260–88.",
-            "Gary King and Langche Zeng, “Logistic Regression in Rare Events Data,” Political Analysis 9, no. 2 (2001): 137–63.",
-            "Trenton D. Mize, Long Doan, and J. Scott Long, “A General Framework for Comparing Predictions and Marginal Effects across Models,” Sociological Methodology 49, no. 1 (2019): 152–89.",
-            "Jens Hainmueller, “Entropy Balancing for Causal Effects: A Multivariate Reweighting Method to Produce Balanced Samples in Observational Studies,” Political Analysis 20, no. 1 (2012): 25–46.",
-            "Yoav Benjamini and Yosef Hochberg, “Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing,” Journal of the Royal Statistical Society, Series B 57, no. 1 (1995): 289–300.",
-            "Brian A. Nosek et al., “The Preregistration Revolution,” Proceedings of the National Academy of Sciences 115, no. 11 (2018): 2600–2606.",
+            "Financial Competitions, “September Standings 2026,” October 24, 2026, https://financial-competitions.com/previousstandings/2026/10/24/september-standings-2026.",
+            "Financial Competitions, “June Standings 2026,” July 27, 2026, https://financial-competitions.com/previousstandings/2026/7/27/june-standings-2026; “July Standings 2026,” August 26, 2026, https://financial-competitions.com/previousstandings/2026/8/26/july-standings-2026; “August Standings 2026,” September 23, 2026, https://financial-competitions.com/previousstandings/2026/9/23/august-standings-2026; and “September Standings 2026.” Interval returns and normalized equity are the author’s calculations.",
+            "Financial Competitions, “September Standings 2026.”",
+            "Financial Competitions, “Rules/How to Report,” accessed October 28, 2026, https://financial-competitions.com/rules. The retrieved page refers to 2027 and is not an archived 2026 rulebook.",
+            "Martin Luk, guest contribution in Kyna Kosling, “The 22-Year-Old Who Returned 283% in USIC 2024,” The Trading Resource Hub, February 1, 2025, https://tradingresourcehub.substack.com/p/martin-luk-283-usic-2024-key-lessons.",
+            "Martin Luk, interview, “+969% Return in 1 Year: The Pullback Strategy of a Trading Champion,” YouTube video, accessed October 28, 2026, https://www.youtube.com/watch?v=VKNEJA5r8zw, publisher description and chapters beginning at 40:38, 54:34, and 1:00:40. The full transcript was not retrieved.",
+            "Financial Wisdom, “Martin Luk’s Pullback Trading Strategy: How the 2025 U.S. Investing Champion Finds Low-Risk, High-Reward Entries,” June 1, 2026, updated October 19, 2026, https://www.financialwisdomtv.com/post/martin-luk-s-pullback-trading-strategy-how-the-2025-u-s-investing-champion-finds-low-risk-high-re.",
+            "Luk, “+969% Return in 1 Year,” publisher’s trade-review chapter descriptions beginning at 2:45:09, 3:07:04, and 3:19:15. Historical examples establish watchlist provenance only.",
           ],
         },
         {
           h: "Bibliography",
           refs: [
-            "Babbie, Earl R. The Practice of Social Research. 15th ed. Boston: Cengage Learning, 2021.",
-            "Bailey, Michael A., Anton Strezhnev, and Erik Voeten. “Estimating Dynamic State Preferences from United Nations Voting Data.” Journal of Conflict Resolution 61, no. 2 (2017): 430–56.",
-            "Barbieri, Katherine. “Economic Interdependence: A Path to Peace or a Source of Interstate Conflict?” Journal of Peace Research 33, no. 1 (1996): 29–49.",
-            "Barbieri, Katherine. The Liberal Illusion: Does Trade Promote Peace? Ann Arbor: University of Michigan Press, 2002.",
-            "Beck, Nathaniel, Jonathan N. Katz, and Richard Tucker. “Taking Time Seriously: Time-Series-Cross-Section Analysis with a Binary Dependent Variable.” American Journal of Political Science 42, no. 4 (1998): 1260–88.",
-            "Benjamini, Yoav, and Yosef Hochberg. “Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing.” Journal of the Royal Statistical Society, Series B 57, no. 1 (1995): 289–300.",
-            "Collier, David. “Understanding Process Tracing.” PS: Political Science & Politics 44, no. 4 (2011): 823–30.",
-            "Copeland, Dale C. “Economic Interdependence and War: A Theory of Trade Expectations.” International Security 20, no. 4 (1996): 5–41.",
-            "Copeland, Dale C. Economic Interdependence and War. Princeton, NJ: Princeton University Press, 2015.",
-            "Fearon, James D. “Rationalist Explanations for War.” International Organization 49, no. 2 (1995): 379–414.",
-            "Felbermayr, Gabriel, Aleksandra Kirilakha, Constantinos Syropoulos, Erdal Yalcin, and Yoto V. Yotov. “The Global Sanctions Data Base.” European Economic Review 129 (2020): 103521.",
-            "Firth, David. “Bias Reduction of Maximum Likelihood Estimates.” Biometrika 80, no. 1 (1993): 27–38.",
-            "Gartzke, Erik. “The Capitalist Peace.” American Journal of Political Science 51, no. 1 (2007): 166–91.",
-            "Gartzke, Erik, Quan Li, and Charles Boehmer. “Investing in the Peace: Economic Interdependence and International Conflict.” International Organization 55, no. 2 (2001): 391–438.",
-            "Gleditsch, Kristian Skrede, and Michael D. Ward. “Measuring Space: A Minimum-Distance Database and Applications to International Studies.” Journal of Peace Research 38, no. 6 (2001): 739–58.",
-            "Gowa, Joanne. Allies, Adversaries, and International Trade. Princeton, NJ: Princeton University Press, 1994.",
-            "Hainmueller, Jens. “Entropy Balancing for Causal Effects: A Multivariate Reweighting Method to Produce Balanced Samples in Observational Studies.” Political Analysis 20, no. 1 (2012): 25–46.",
-            "Hayes, Andrew F., and Klaus Krippendorff. “Answering the Call for a Standard Reliability Measure for Coding Data.” Communication Methods and Measures 1, no. 1 (2007): 77–89.",
-            "Hegre, Håvard, John R. Oneal, and Bruce Russett. “Trade Does Promote Peace: New Simultaneous Estimates of the Reciprocal Effects of Trade and Conflict.” Journal of Peace Research 47, no. 6 (2010): 763–74.",
-            "International Monetary Fund. Direction of Trade Statistics Yearbook. Washington, DC: IMF, various years. https://data.imf.org/.",
-            "Keohane, Robert O., and Joseph S. Nye. Power and Interdependence: World Politics in Transition. Boston: Little, Brown, 1977.",
-            "Keshk, Omar M. G., Brian M. Pollins, and Rafael Reuveny. “Trade Still Follows the Flag: The Primacy of Politics in a Simultaneous Model of Interdependence and Armed Conflict.” Journal of Politics 66, no. 4 (2004): 1155–79.",
-            "King, Gary, and Langche Zeng. “Logistic Regression in Rare Events Data.” Political Analysis 9, no. 2 (2001): 137–63.",
-            "Leetaru, Kalev, and Philip A. Schrodt. “GDELT: Global Data on Events, Location, and Tone, 1979–2012.” Paper presented at the Annual Convention of the International Studies Association, San Francisco, April 2013.",
-            "Maoz, Zeev, and Bruce Russett. “Normative and Structural Causes of Democratic Peace, 1946–1986.” American Political Science Review 87, no. 3 (1993): 624–38.",
-            "Martin, Philippe, Thierry Mayer, and Mathias Thoenig. “Make Trade Not War?” Review of Economic Studies 75, no. 3 (2008): 865–900.",
-            "Mize, Trenton D., Long Doan, and J. Scott Long. “A General Framework for Comparing Predictions and Marginal Effects across Models.” Sociological Methodology 49, no. 1 (2019): 152–89.",
-            "Morgan, T. Clifton, Navin Bapat, and Yoshiharu Kobayashi. “Threat and Imposition of Economic Sanctions: Updating the TIES Dataset.” Conflict Management and Peace Science 31, no. 5 (2014): 541–58.",
-            "Morrow, James D. “How Could Trade Affect Conflict?” Journal of Peace Research 36, no. 4 (1999): 481–89.",
-            "Nosek, Brian A., Charles R. Ebersole, Alexander C. DeHaven, and David T. Mellor. “The Preregistration Revolution.” Proceedings of the National Academy of Sciences 115, no. 11 (2018): 2600–2606.",
-            "Oneal, John R., and Bruce M. Russett. “The Classical Liberals Were Right: Democracy, Interdependence, and Conflict, 1950–1985.” International Studies Quarterly 41, no. 2 (1997): 267–94.",
-            "Oneal, John R., and Bruce Russett. “Assessing the Liberal Peace with Alternative Specifications: Trade Still Reduces Conflict.” Journal of Peace Research 36, no. 4 (1999): 423–42.",
-            "Oneal, John R., Bruce Russett, and Michael L. Berbaum. “Causes of Peace: Democracy, Interdependence, and International Organizations, 1885–1992.” International Studies Quarterly 47, no. 3 (2003): 371–93.",
-            "Palmer, Glenn, Roseanne W. McManus, Vito D’Orazio, Michael R. Kenwick, Mikaela Karstens, Chase Bloch, Nick Dietrich, Kayla Kahn, Kellan Ritter, and Michael J. Soules. “The MID5 Dataset, 2011–2014: Procedures, Coding Rules, and Description.” Conflict Management and Peace Science 39, no. 4 (2022): 470–82.",
-            "Polachek, Solomon W. “Conflict and Trade.” Journal of Conflict Resolution 24, no. 1 (1980): 55–78.",
-            "Rainey, Carlisle. “Arguing for a Negligible Effect.” American Journal of Political Science 58, no. 4 (2014): 1083–91.",
-            "Santos Silva, J. M. C., and Silvana Tenreyro. “The Log of Gravity.” Review of Economics and Statistics 88, no. 4 (2006): 641–58.",
-            "Syropoulos, Constantinos, Gabriel Felbermayr, Aleksandra Kirilakha, Erdal Yalcin, and Yoto V. Yotov. “The Global Sanctions Data Base—Release 3: COVID-19, Russia, and Multilateral Sanctions.” WIFO Working Paper 651. Vienna: Austrian Institute of Economic Research, 2022.",
-            "Voeten, Erik. “Data and Analyses of Voting in the United Nations General Assembly.” In Routledge Handbook of International Organization, edited by Bob Reinalda, 54–66. London: Routledge, 2013.",
-            "Waltz, Kenneth N. Theory of International Politics. Reading, MA: Addison-Wesley, 1979.",
-            "Weidmann, Nils B. “A Closer Look at Reporting Bias in Conflict Event Data.” American Journal of Political Science 60, no. 1 (2016): 206–18.",
-            "Zorn, Christopher. “A Solution to the Problem of Too Many Variables and Too Few Observations: Conditional Logit (CLOGIT) and the Estimation of Rare Events.” Political Analysis 13, no. 2 (2005): 157–71.",
+            "Financial Competitions. “August Standings 2026.” September 23, 2026. https://financial-competitions.com/previousstandings/2026/9/23/august-standings-2026.",
+            "Financial Competitions. “July Standings 2026.” August 26, 2026. https://financial-competitions.com/previousstandings/2026/8/26/july-standings-2026.",
+            "Financial Competitions. “June Standings 2026.” July 27, 2026. https://financial-competitions.com/previousstandings/2026/7/27/june-standings-2026.",
+            "Financial Competitions. “Rules/How to Report.” Accessed October 28, 2026. https://financial-competitions.com/rules.",
+            "Financial Competitions. “September Standings 2026.” October 24, 2026. https://financial-competitions.com/previousstandings/2026/10/24/september-standings-2026.",
+            "Financial Wisdom. “Martin Luk’s Pullback Trading Strategy: How the 2025 U.S. Investing Champion Finds Low-Risk, High-Reward Entries.” June 1, 2026. Updated October 19, 2026. https://www.financialwisdomtv.com/post/martin-luk-s-pullback-trading-strategy-how-the-2025-u-s-investing-champion-finds-low-risk-high-re.",
+            "Kosling, Kyna. “The 22-Year-Old Who Returned 283% in USIC 2024.” Guest contribution by Martin Luk. The Trading Resource Hub. February 1, 2025. https://tradingresourcehub.substack.com/p/martin-luk-283-usic-2024-key-lessons.",
+            "Luk, Martin. “+969% Return in 1 Year: The Pullback Strategy of a Trading Champion.” Interview. YouTube video. Accessed October 28, 2026. https://www.youtube.com/watch?v=VKNEJA5r8zw.",
           ],
         },
       ]
-    },    {
+    },
+    {
       id: "post-6",
       date: "2026-05-03",
       category: "Political Economy",
@@ -915,35 +567,52 @@ window.SITE = {
       id: "post-4",
       date: "2026-09-11",
       category: "Law & Society",
-      tags: ["Law & Society", "Political Economy", "Governance", "Institutions",
-             "Law", "Political Philosophy", "Academic Writing", "Duke Kunshan University"],
+      tags: ["Law & Society", "Political Economy", "Governance", "Institutions", "Law", "Political Philosophy", "Academic Writing", "Duke Kunshan University"],
       title: "Beyond Institutions: Who Will Restrain Power?",
       excerpt: "I'm pleased to share my latest article published as part of the ILMS Law & Society Series IV at Duke Kunshan University.",
       body: [
-        { p: [
-          "On August 31, Professor Yao Yang, Dean of the Di-shui-hu Advanced Finance Institute at Shanghai University of Finance and Economics, delivered a thought-provoking lecture at Duke Kunshan University titled “Rethinking Rule of Man.”"
-        ]},
-        { p: [
-          "The lecture began with a fundamental question:"
-        ], quote: "Can good institutions function effectively without good people?" },
-        { p: [
-          "Drawing on James Madison's Federalist No. 51, Oliver Hart's theory of incomplete contracts, and ideas from Confucian political thought, Professor Yao explored the limits of institutional design and the role of human judgment, character, and competence in governance."
-        ]},
-        { p: [
-          "What I found particularly interesting was the tension between institutional constraints and individual discretion. Laws and institutions cannot anticipate every possible situation. At some point, governance depends on the people who interpret, implement, and operate those institutions."
-        ]},
-        { p: [
-          "The discussion also introduced the concept of political meritocracy and raised a broader question: rather than viewing meritocracy and democracy as mutually exclusive, can modern democratic systems learn something from the emphasis on political competence and leadership selection?"
-        ]},
-        { p: [
-          "I was honored to contribute to the ILMS Law & Society Series by writing this lecture recap. The experience also gave me an opportunity to think more deeply about the intersection of law, institutions, political economy, and governance."
-        ]},
-        { p: [
-          "Many thanks to Professor Yao Yang, the Institute of Law, Markets and Society (ILMS) at Duke Kunshan University, and everyone who contributed to the event."
-        ]},
-        { h: "Read the full article", p: [
-          "The full piece is available here: <a href=\"https://mp.weixin.qq.com/s/QBh2dBbZnnqm-784HTGJ8w\" target=\"_blank\" rel=\"noopener\">Read the full article →</a>"
-        ]}
+        {
+          p: [
+            "On August 31, Professor Yao Yang, Dean of the Di-shui-hu Advanced Finance Institute at Shanghai University of Finance and Economics, delivered a thought-provoking lecture at Duke Kunshan University titled “Rethinking Rule of Man.”",
+          ],
+        },
+        {
+          p: [
+            "The lecture began with a fundamental question:",
+          ],
+          quote: "Can good institutions function effectively without good people?",
+        },
+        {
+          p: [
+            "Drawing on James Madison's Federalist No. 51, Oliver Hart's theory of incomplete contracts, and ideas from Confucian political thought, Professor Yao explored the limits of institutional design and the role of human judgment, character, and competence in governance.",
+          ],
+        },
+        {
+          p: [
+            "What I found particularly interesting was the tension between institutional constraints and individual discretion. Laws and institutions cannot anticipate every possible situation. At some point, governance depends on the people who interpret, implement, and operate those institutions.",
+          ],
+        },
+        {
+          p: [
+            "The discussion also introduced the concept of political meritocracy and raised a broader question: rather than viewing meritocracy and democracy as mutually exclusive, can modern democratic systems learn something from the emphasis on political competence and leadership selection?",
+          ],
+        },
+        {
+          p: [
+            "I was honored to contribute to the ILMS Law & Society Series by writing this lecture recap. The experience also gave me an opportunity to think more deeply about the intersection of law, institutions, political economy, and governance.",
+          ],
+        },
+        {
+          p: [
+            "Many thanks to Professor Yao Yang, the Institute of Law, Markets and Society (ILMS) at Duke Kunshan University, and everyone who contributed to the event.",
+          ],
+        },
+        {
+          h: "Read the full article",
+          p: [
+            "The full piece is available here: <a href=\"https://mp.weixin.qq.com/s/QBh2dBbZnnqm-784HTGJ8w\" target=\"_blank\" rel=\"noopener\">Read the full article →</a>",
+          ],
+        },
       ]
     },
   ],

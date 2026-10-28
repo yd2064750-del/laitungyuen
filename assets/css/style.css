@@ -739,6 +739,10 @@ p  { margin: 0 0 1.1em; }
   font-size: var(--fs-lg); font-style: italic;
   color: var(--text-2); margin: 0 0 2.25rem;
 }
+.prose__meta {
+  font-size: var(--fs-xs); line-height: 1.9; color: var(--text-3);
+  letter-spacing: .03em; margin: -1.6rem 0 2.5rem;
+}
 .prose .formula {
   margin: 1.5rem 0; padding: .35rem 0 .35rem 1.15rem;
   border-left: 2px solid var(--border);

@@ -867,6 +867,7 @@
           const h = b.h ? `<h2>${esc(b.h)}</h2>` : "";
           const h3 = b.h3 ? `<h3>${esc(b.h3)}</h3>` : "";
           const sub = b.sub ? `<p class="prose__sub">${esc(b.sub)}</p>` : "";
+          const meta = b.meta ? `<p class="prose__meta">${b.meta.map(esc).join("<br>")}</p>` : "";
           const formula = b.formula ? `<p class="formula">${b.formula}</p>` : "";
           const fig = b.figure ? `
             <figure class="fig">
@@ -893,7 +894,7 @@
           const ol = (b.ol && b.ol.length) ? `<ol class="notes">${b.ol.map(li => `<li>${li}</li>`).join("")}</ol>` : "";
           const list = (b.ul && b.ul.length) ? `<ul>${b.ul.map(li => `<li>${li}</li>`).join("")}</ul>` : "";
           const quote = b.quote ? `<blockquote>${b.quote}</blockquote>` : "";
-          return h + h3 + sub + formula + fig + tbl + paras + ol + list + refs + quote;
+          return h + h3 + sub + meta + formula + fig + tbl + paras + ol + list + refs + quote;
         }).join("");
       } else {
         // 有摘要但還沒有全文時，仍提示正文待上傳
