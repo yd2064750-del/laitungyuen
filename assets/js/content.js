@@ -615,6 +615,93 @@ window.SITE = {
         },
       ]
     },
+    {
+      id: "post-9",
+      date: "2026-11-01",
+      category: "FinTech",
+      tags: ["FinTech", "Quantitative Finance", "AI", "Investment Research", "Political Economy"],
+      title: "Building a Financial Research System Beyond My Major — Quantitative Political Economy",
+      excerpt: "A QPE student with no CS background built Wind GPT Investing System — a prototype linking Wind market data, AI, and investment research. Here is how it works, what it can and cannot yet do, and where I would value feedback.",
+      body: [
+        { sub: "Independent Financial Research · Project Brief" },
+        { meta: ["Dongyuan Li · Quantitative Political Economy, Duke Kunshan University", "Project Brief · November 2026"] },
+        {
+          p: [
+            "As a QPE student at Duke Kunshan University, my academic background is not in Computer Science or Data Science. However, my personal trading experience and interest in financial markets have motivated me to explore how technology can improve investment research.",
+            "Recently, I started developing a personal project: Wind GPT Investing System.",
+            "The idea came from a practical question: Could I connect financial market data directly to ChatGPT and build a more efficient, data-driven investment research workflow?",
+            "Using Python, Wind Financial Terminal, Model Context Protocol (MCP), and SQLite, I have built a functional prototype that connects financial data with AI-assisted analysis, while incorporating data storage, quality checks, and technical research tools."
+          ]
+        },
+        {
+          h: "Learning by Building",
+          p: [
+            "Much of the technical knowledge was new to me. I used AI as a learning and debugging assistant to bridge gaps in my understanding of programming, APIs, and database architecture. The process has been an opportunity to learn by building, testing, encountering problems, and improving the system."
+          ]
+        },
+        {
+          h: "Connecting to My HFT Research",
+          p: [
+            "This project also connects to my ongoing academic research on fairness and high-frequency trading (HFT) in China’s A-share market. I hope to use the system to support financial data collection, market microstructure analysis, and more reproducible research.",
+            "The system is still an early-stage prototype, with important work remaining in data validation, point-in-time database design, and strategy backtesting."
+          ]
+        },
+        {
+          h: "Feedback Welcome",
+          p: [
+            "I would greatly appreciate suggestions from professionals, researchers, and students working in finance, quantitative research, computer science, or AI on how I could improve the system.",
+            "Below is a short project overview outlining its current capabilities, limitations, and future development plans."
+          ]
+        },
+        {
+          h: "Project Overview"
+        },
+        {
+          h3: "How the prototype works",
+          p: [
+            "Wind Terminal → WindPy / Python → MCP tools → ChatGPT.",
+            "SQLite storage · data-quality checks · technical research interfaces."
+          ]
+        },
+        {
+          h: "Capabilities & Honest Status",
+          h3: "Working / partly tested",
+          ul: [
+            "Wind-to-ChatGPT data connection via a Python MCP service.",
+            "Persistent SQLite observations, audit history, and quality-control checks.",
+            "Selected daily-price, indicator, financial-snapshot and five-minute research tools.",
+            "A role-routing framework for Trend, Macro, Value, and Quant research."
+          ]
+        },
+        {
+          h3: "Not yet fully validated",
+          ul: [
+            "Complete financial point-in-time (PIT) metadata and database acceptance.",
+            "Rigorous, cost-aware, out-of-sample strategy backtesting.",
+            "Independent multi-agent execution and automated end-to-end reports.",
+            "Reliable identification of HFT participants or proven trading alpha."
+          ]
+        },
+        {
+          h: "Next Steps",
+          p: [
+            "My priorities are (1) completing PIT metadata and regression tests, (2) testing five-minute EMA / anchored-VWAP setups with realistic trading costs, and (3) improving traceable microstructure analysis and concise research outputs. I would especially value advice on reliable financial data engineering, cross-market backtesting, and rigorous ways to connect market microstructure evidence to research questions."
+          ]
+        },
+        {
+          h: "Status",
+          p: [
+            "Functional research prototype, November 2026. Not a production trading platform; no live orders or verified strategy returns."
+          ]
+        },
+        {
+          h: "Download",
+          p: [
+            "The original project brief is available here: <a href=\"assets/files/wind-gpt-brief.docx\" target=\"_blank\" rel=\"noopener\">Wind GPT Investing System — Project Brief (DOCX) →</a>"
+          ]
+        }
+      ]
+    }
   ],
 
   /* ---------------------------------------------------------------
